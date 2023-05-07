@@ -1,0 +1,11 @@
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.exe.config
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.exe
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.pdb
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Properties.Resources.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.exe
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.pdb
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Atendimento.resources
