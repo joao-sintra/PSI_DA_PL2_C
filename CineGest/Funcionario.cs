@@ -8,5 +8,9 @@ namespace CineGest
 {
     internal class Funcionario
     {
+        public int Id { get; set; }
+        public float Salario { get; set; }
+        public string Funcao { get; set; }
+
     }
 }

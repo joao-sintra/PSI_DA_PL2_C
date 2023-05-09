@@ -8,5 +8,8 @@ namespace CineGest
 {
     internal class Sessao
     {
+        public int Id { get; set; }
+        public DateTime DataHora { get; set; }
+        public float Preco { get; set; }
     }
 }

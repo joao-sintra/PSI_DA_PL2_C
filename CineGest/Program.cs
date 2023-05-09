@@ -11,6 +11,20 @@ namespace CineGest {
         /// </summary>
         [STAThread]
         static void Main() {
+
+            bool temCinema = false;
+            using (var db = new CinegestContext())
+            {
+                var cinema = db.Cinemas.FirstOrDefault();
+                if (cinema == null)
+                {
+                    temCinema=false;
+                }
+                else
+                {
+                    temCinema=true;
+                }
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Atendimento());

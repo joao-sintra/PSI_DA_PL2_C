@@ -8,5 +8,10 @@ namespace CineGest
 {
     internal class Filme
     {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public TimeSpan Duracao { get; set; }
+        public bool Activo { get; set; }
+        
     }
 }
