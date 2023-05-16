@@ -3,7 +3,6 @@ C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.exe
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.pdb
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Atendimento.resources
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Properties.Resources.resources
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
@@ -25,3 +24,11 @@ C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvo
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\obj\Debug\CineGest.csproj.CopyComplete
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\obj\Debug\CineGest.exe
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\obj\Debug\CineGest.pdb
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.dll
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.xml
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Atendimento.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.MainForm.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CopyComplete
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Sidebar.resources
