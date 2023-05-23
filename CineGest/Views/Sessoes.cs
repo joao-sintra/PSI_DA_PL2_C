@@ -15,6 +15,19 @@ namespace CineGest.Views
         public Sessoes()
         {
             InitializeComponent();
+
+            DataTable tableSessoes = new DataTable();
+         
+
+
+            tableSessoes.Columns.Add("Id", typeof(int));
+            tableSessoes.Columns.Add("Salas", typeof(string));
+            tableSessoes.Columns.Add("Filmes", typeof(string));
+            tableSessoes.Columns.Add("Data", typeof(DateTime));
+            tableSessoes.Columns.Add("Hora", typeof(DateTime));
+
+            tableSessoes.Rows.Add(1, "Sala 1", "LOTR", "22/04", "15:15");
+            ListaSessoes.DataSource = tableSessoes;
         }
     }
 }
