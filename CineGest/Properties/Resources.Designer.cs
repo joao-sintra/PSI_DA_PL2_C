@@ -63,6 +63,16 @@ namespace CineGest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cinema_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cinema-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cinema_film_play_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cinema-film-play-100", resourceCulture);
@@ -83,6 +93,56 @@ namespace CineGest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_client_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-client-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exit_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exit-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_movie_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-movie-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_movie_theater_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-movie-theater-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_movie_ticket_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-movie-ticket-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_página_inicial_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-página-inicial-24", resourceCulture);
@@ -96,6 +156,36 @@ namespace CineGest.Properties {
         internal static System.Drawing.Bitmap icons8_página_inicial_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-página-inicial-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_permanent_job_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-permanent-job-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_theatre_mask_70 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-theatre-mask-70", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_theatre_mask_701 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-theatre-mask-701", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

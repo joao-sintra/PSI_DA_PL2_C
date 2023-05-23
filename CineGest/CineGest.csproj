@@ -59,11 +59,22 @@
     <Compile Include="Models\Cinema.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Filme.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Atendimento.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Atendimento.Designer.cs">
       <DependentUpon>Atendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
@@ -83,24 +94,31 @@
     <Compile Include="Views\Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Timer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Timer.Designer.cs">
+      <DependentUpon>Timer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Atendimento.resx">
       <DependentUpon>Atendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Timer.resx">
+      <DependentUpon>Timer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -126,6 +144,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imgs\icons8-página-inicial-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\icons8-theatre-mask-70.png" />
+    <None Include="imgs\icons8-cinema-50.png" />
+    <Content Include="imgs\icons8-client-48.png" />
+    <Content Include="imgs\icons8-exit-48.png" />
+    <Content Include="imgs\icons8-movie-48.png" />
+    <Content Include="imgs\icons8-movie-theater-48.png" />
+    <Content Include="imgs\icons8-movie-ticket-48.png" />
+    <Content Include="imgs\icons8-permanent-job-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

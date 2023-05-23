@@ -117,44 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8-cinema-film-play-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-cinema-film-play-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-página-inicial-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-página-inicial-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-theatre-mask-70" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-theatre-mask-70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-movie-ticket-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-movie-ticket-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-cinema-film-play-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-cinema-film-play-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-exit-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-exit-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-movie-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-movie-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-cinema-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-cinema-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-movie-theater-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-movie-theater-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-página-inicial-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-página-inicial-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-permanent-job-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-permanent-job-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-client-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-client-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-theatre-mask-701" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons8-theatre-mask-70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

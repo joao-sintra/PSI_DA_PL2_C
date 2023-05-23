@@ -32,3 +32,5 @@ C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.MainForm.resources
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CopyComplete
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Sidebar.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Inicio.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Timer.resources
