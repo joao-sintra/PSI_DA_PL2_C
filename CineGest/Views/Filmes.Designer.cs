@@ -308,7 +308,7 @@
             this.ListaFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListaFilmes.Location = new System.Drawing.Point(23, 410);
             this.ListaFilmes.Name = "ListaFilmes";
-            this.ListaFilmes.Size = new System.Drawing.Size(563, 261);
+            this.ListaFilmes.Size = new System.Drawing.Size(563, 270);
             this.ListaFilmes.TabIndex = 24;
             // 
             // ListaCategorias
