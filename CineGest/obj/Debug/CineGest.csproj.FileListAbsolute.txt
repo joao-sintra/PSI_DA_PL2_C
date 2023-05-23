@@ -57,3 +57,28 @@ C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Proje
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Views.Cinema.resources
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Views.Filmes.resources
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Views.Funcionarios.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\bin\Debug\CineGest.exe.config
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\bin\Debug\CineGest.exe
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\bin\Debug\CineGest.pdb
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\bin\Debug\EntityFramework.dll
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\bin\Debug\EntityFramework.xml
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Atendimento.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Cinema.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Filmes.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Funcionarios.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Inicio.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.MainForm.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Properties.Resources.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Clientes.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Sessoes.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Sidebar.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.Views.Timer.resources
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.csproj.CopyComplete
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.exe
+C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.pdb

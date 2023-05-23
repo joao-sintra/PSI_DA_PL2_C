@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CineGest.Views
 {
-    public partial class Seesoes : UserControl
+    public partial class Sessoes : UserControl
     {
-        public Seesoes()
+        public Sessoes()
         {
             InitializeComponent();
         }
