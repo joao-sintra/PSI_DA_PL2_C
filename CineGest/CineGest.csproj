@@ -70,6 +70,24 @@
     <Compile Include="Views\Atendimento.Designer.cs">
       <DependentUpon>Atendimento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Cinema.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Cinema.Designer.cs">
+      <DependentUpon>Cinema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Filmes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Filmes.Designer.cs">
+      <DependentUpon>Filmes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionarios.Designer.cs">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Inicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +120,15 @@
     </Compile>
     <EmbeddedResource Include="Views\Atendimento.resx">
       <DependentUpon>Atendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cinema.resx">
+      <DependentUpon>Cinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Filmes.resx">
+      <DependentUpon>Filmes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionarios.resx">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

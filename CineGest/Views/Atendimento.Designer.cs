@@ -35,17 +35,17 @@
             this.listaBilhetes = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cliente = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btAnularBilhete = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBoxAnonimoCliente = new System.Windows.Forms.CheckBox();
-            this.txtNomeCliente = new System.Windows.Forms.TextBox();
-            this.txtNumFiscalCliente = new System.Windows.Forms.TextBox();
             this.txtMoradaCliente = new System.Windows.Forms.TextBox();
-            this.txtPesquisaClientes = new System.Windows.Forms.TextBox();
+            this.txtNumFiscalCliente = new System.Windows.Forms.TextBox();
+            this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.checkBoxAnonimoCliente = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listaClientes = new System.Windows.Forms.ListBox();
+            this.txtPesquisaClientes = new System.Windows.Forms.TextBox();
+            this.btAnularBilhete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.cliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -190,6 +190,64 @@
             this.cliente.TabStop = false;
             this.cliente.Text = "Cliente";
             // 
+            // txtMoradaCliente
+            // 
+            this.txtMoradaCliente.Location = new System.Drawing.Point(107, 120);
+            this.txtMoradaCliente.Name = "txtMoradaCliente";
+            this.txtMoradaCliente.Size = new System.Drawing.Size(174, 29);
+            this.txtMoradaCliente.TabIndex = 7;
+            // 
+            // txtNumFiscalCliente
+            // 
+            this.txtNumFiscalCliente.Location = new System.Drawing.Point(107, 81);
+            this.txtNumFiscalCliente.Name = "txtNumFiscalCliente";
+            this.txtNumFiscalCliente.Size = new System.Drawing.Size(174, 29);
+            this.txtNumFiscalCliente.TabIndex = 6;
+            // 
+            // txtNomeCliente
+            // 
+            this.txtNomeCliente.Location = new System.Drawing.Point(107, 44);
+            this.txtNomeCliente.Name = "txtNomeCliente";
+            this.txtNomeCliente.Size = new System.Drawing.Size(174, 29);
+            this.txtNomeCliente.TabIndex = 5;
+            // 
+            // checkBoxAnonimoCliente
+            // 
+            this.checkBoxAnonimoCliente.AutoSize = true;
+            this.checkBoxAnonimoCliente.Location = new System.Drawing.Point(188, 194);
+            this.checkBoxAnonimoCliente.Name = "checkBoxAnonimoCliente";
+            this.checkBoxAnonimoCliente.Size = new System.Drawing.Size(93, 25);
+            this.checkBoxAnonimoCliente.TabIndex = 4;
+            this.checkBoxAnonimoCliente.Text = "Anônimo";
+            this.checkBoxAnonimoCliente.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 21);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Morada:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 21);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Num. Fiscal:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 21);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Nome:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listaClientes);
@@ -201,6 +259,23 @@
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista Clientes";
+            // 
+            // listaClientes
+            // 
+            this.listaClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaClientes.FormattingEnabled = true;
+            this.listaClientes.ItemHeight = 21;
+            this.listaClientes.Location = new System.Drawing.Point(29, 94);
+            this.listaClientes.Name = "listaClientes";
+            this.listaClientes.Size = new System.Drawing.Size(252, 256);
+            this.listaClientes.TabIndex = 21;
+            // 
+            // txtPesquisaClientes
+            // 
+            this.txtPesquisaClientes.Location = new System.Drawing.Point(29, 42);
+            this.txtPesquisaClientes.Name = "txtPesquisaClientes";
+            this.txtPesquisaClientes.Size = new System.Drawing.Size(252, 29);
+            this.txtPesquisaClientes.TabIndex = 0;
             // 
             // btAnularBilhete
             // 
@@ -214,81 +289,6 @@
             this.btAnularBilhete.TabIndex = 20;
             this.btAnularBilhete.Text = "Anular Bilhete";
             this.btAnularBilhete.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 21);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Nome:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 81);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Num. Fiscal:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 21);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Morada:";
-            // 
-            // checkBoxAnonimoCliente
-            // 
-            this.checkBoxAnonimoCliente.AutoSize = true;
-            this.checkBoxAnonimoCliente.Location = new System.Drawing.Point(188, 194);
-            this.checkBoxAnonimoCliente.Name = "checkBoxAnonimoCliente";
-            this.checkBoxAnonimoCliente.Size = new System.Drawing.Size(93, 25);
-            this.checkBoxAnonimoCliente.TabIndex = 4;
-            this.checkBoxAnonimoCliente.Text = "Anônimo";
-            this.checkBoxAnonimoCliente.UseVisualStyleBackColor = true;
-            // 
-            // txtNomeCliente
-            // 
-            this.txtNomeCliente.Location = new System.Drawing.Point(107, 44);
-            this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(174, 29);
-            this.txtNomeCliente.TabIndex = 5;
-            // 
-            // txtNumFiscalCliente
-            // 
-            this.txtNumFiscalCliente.Location = new System.Drawing.Point(107, 81);
-            this.txtNumFiscalCliente.Name = "txtNumFiscalCliente";
-            this.txtNumFiscalCliente.Size = new System.Drawing.Size(174, 29);
-            this.txtNumFiscalCliente.TabIndex = 6;
-            // 
-            // txtMoradaCliente
-            // 
-            this.txtMoradaCliente.Location = new System.Drawing.Point(107, 120);
-            this.txtMoradaCliente.Name = "txtMoradaCliente";
-            this.txtMoradaCliente.Size = new System.Drawing.Size(174, 29);
-            this.txtMoradaCliente.TabIndex = 7;
-            // 
-            // txtPesquisaClientes
-            // 
-            this.txtPesquisaClientes.Location = new System.Drawing.Point(29, 42);
-            this.txtPesquisaClientes.Name = "txtPesquisaClientes";
-            this.txtPesquisaClientes.Size = new System.Drawing.Size(252, 29);
-            this.txtPesquisaClientes.TabIndex = 0;
-            // 
-            // listaClientes
-            // 
-            this.listaClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaClientes.FormattingEnabled = true;
-            this.listaClientes.ItemHeight = 21;
-            this.listaClientes.Location = new System.Drawing.Point(29, 94);
-            this.listaClientes.Name = "listaClientes";
-            this.listaClientes.Size = new System.Drawing.Size(252, 256);
-            this.listaClientes.TabIndex = 21;
             // 
             // label8
             // 
