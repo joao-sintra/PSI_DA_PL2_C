@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.label3 = new System.Windows.Forms.Label();
-            this.timer1 = new CineGest.Views.Timer();
             this.cliente = new System.Windows.Forms.GroupBox();
             this.btRemoverFun = new System.Windows.Forms.Button();
             this.btAlterarFun = new System.Windows.Forms.Button();
@@ -38,9 +37,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ListaFuncionarios = new System.Windows.Forms.DataGridView();
+            this.listaFuncionarios = new System.Windows.Forms.DataGridView();
+            this.timer1 = new CineGest.Views.Timer();
             this.cliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -52,13 +52,6 @@
             this.label3.Size = new System.Drawing.Size(242, 30);
             this.label3.TabIndex = 15;
             this.label3.Text = "Gestão de Funcionários";
-            // 
-            // timer1
-            // 
-            this.timer1.Location = new System.Drawing.Point(876, 19);
-            this.timer1.Name = "timer1";
-            this.timer1.Size = new System.Drawing.Size(224, 35);
-            this.timer1.TabIndex = 22;
             // 
             // cliente
             // 
@@ -148,6 +141,7 @@
             this.btNovoFun.TabIndex = 10;
             this.btNovoFun.Text = "Novo";
             this.btNovoFun.UseVisualStyleBackColor = false;
+            this.btNovoFun.Click += new System.EventHandler(this.btNovoFun_Click);
             // 
             // txtSalarioFun
             // 
@@ -197,19 +191,29 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Nome:";
             // 
-            // ListaFuncionarios
+            // listaFuncionarios
             // 
-            this.ListaFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaFuncionarios.Location = new System.Drawing.Point(26, 402);
-            this.ListaFuncionarios.Name = "ListaFuncionarios";
-            this.ListaFuncionarios.Size = new System.Drawing.Size(555, 261);
-            this.ListaFuncionarios.TabIndex = 25;
+            this.listaFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaFuncionarios.Location = new System.Drawing.Point(26, 402);
+            this.listaFuncionarios.Name = "listaFuncionarios";
+            this.listaFuncionarios.RowHeadersWidth = 51;
+            this.listaFuncionarios.Size = new System.Drawing.Size(555, 261);
+            this.listaFuncionarios.TabIndex = 25;
+            this.listaFuncionarios.DoubleClick += new System.EventHandler(this.listaFuncionarios_DoubleClick);
+            // 
+            // timer1
+            // 
+            this.timer1.Location = new System.Drawing.Point(872, 19);
+            this.timer1.Margin = new System.Windows.Forms.Padding(4);
+            this.timer1.Name = "timer1";
+            this.timer1.Size = new System.Drawing.Size(221, 35);
+            this.timer1.TabIndex = 22;
             // 
             // Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ListaFuncionarios);
+            this.Controls.Add(this.listaFuncionarios);
             this.Controls.Add(this.cliente);
             this.Controls.Add(this.timer1);
             this.Controls.Add(this.label3);
@@ -218,7 +222,7 @@
             this.Size = new System.Drawing.Size(1121, 733);
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +245,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView ListaFuncionarios;
+        private System.Windows.Forms.DataGridView listaFuncionarios;
     }
 }

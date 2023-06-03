@@ -24,21 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
             this.label3 = new System.Windows.Forms.Label();
-            this.timer1 = new CineGest.Views.Timer();
-            this.cliente = new System.Windows.Forms.GroupBox();
+            this.gbAdicionarFilme = new System.Windows.Forms.GroupBox();
+            this.cbCategoriaF = new System.Windows.Forms.ComboBox();
+            this.cbAtivoF = new System.Windows.Forms.CheckBox();
             this.btRemoverF = new System.Windows.Forms.Button();
             this.btAlterarF = new System.Windows.Forms.Button();
-            this.txtExibicao = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btLimparCamposF = new System.Windows.Forms.Button();
             this.btNovoF = new System.Windows.Forms.Button();
-            this.txtCategoriaF = new System.Windows.Forms.TextBox();
             this.txtDuracao = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbAdicionarCat = new System.Windows.Forms.GroupBox();
             this.cbCatAtiva = new System.Windows.Forms.CheckBox();
             this.btRemoverCat = new System.Windows.Forms.Button();
             this.btAlterarCat = new System.Windows.Forms.Button();
@@ -46,13 +44,14 @@
             this.btNovaCat = new System.Windows.Forms.Button();
             this.txtCat = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.ListaFilmes = new System.Windows.Forms.DataGridView();
-            this.ListaCategorias = new System.Windows.Forms.DataGridView();
+            this.listaFilmes = new System.Windows.Forms.DataGridView();
+            this.listaCategorias = new System.Windows.Forms.DataGridView();
             this.btNovaSessao = new System.Windows.Forms.Button();
-            this.cliente.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFilmes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaCategorias)).BeginInit();
+            this.timer1 = new CineGest.Views.Timer();
+            this.gbAdicionarFilme.SuspendLayout();
+            this.gbAdicionarCat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFilmes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCategorias)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -65,34 +64,44 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Gestão de Filmes";
             // 
-            // timer1
+            // gbAdicionarFilme
             // 
-            this.timer1.Location = new System.Drawing.Point(875, 18);
-            this.timer1.Name = "timer1";
-            this.timer1.Size = new System.Drawing.Size(224, 35);
-            this.timer1.TabIndex = 21;
+            this.gbAdicionarFilme.Controls.Add(this.cbCategoriaF);
+            this.gbAdicionarFilme.Controls.Add(this.cbAtivoF);
+            this.gbAdicionarFilme.Controls.Add(this.btRemoverF);
+            this.gbAdicionarFilme.Controls.Add(this.btAlterarF);
+            this.gbAdicionarFilme.Controls.Add(this.btLimparCamposF);
+            this.gbAdicionarFilme.Controls.Add(this.btNovoF);
+            this.gbAdicionarFilme.Controls.Add(this.txtDuracao);
+            this.gbAdicionarFilme.Controls.Add(this.txtNome);
+            this.gbAdicionarFilme.Controls.Add(this.label7);
+            this.gbAdicionarFilme.Controls.Add(this.label6);
+            this.gbAdicionarFilme.Controls.Add(this.label5);
+            this.gbAdicionarFilme.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAdicionarFilme.Location = new System.Drawing.Point(23, 76);
+            this.gbAdicionarFilme.Name = "gbAdicionarFilme";
+            this.gbAdicionarFilme.Size = new System.Drawing.Size(478, 300);
+            this.gbAdicionarFilme.TabIndex = 22;
+            this.gbAdicionarFilme.TabStop = false;
+            this.gbAdicionarFilme.Text = "Adicionar filme";
             // 
-            // cliente
+            // cbCategoriaF
             // 
-            this.cliente.Controls.Add(this.btRemoverF);
-            this.cliente.Controls.Add(this.btAlterarF);
-            this.cliente.Controls.Add(this.txtExibicao);
-            this.cliente.Controls.Add(this.label1);
-            this.cliente.Controls.Add(this.btLimparCamposF);
-            this.cliente.Controls.Add(this.btNovoF);
-            this.cliente.Controls.Add(this.txtCategoriaF);
-            this.cliente.Controls.Add(this.txtDuracao);
-            this.cliente.Controls.Add(this.txtNome);
-            this.cliente.Controls.Add(this.label7);
-            this.cliente.Controls.Add(this.label6);
-            this.cliente.Controls.Add(this.label5);
-            this.cliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cliente.Location = new System.Drawing.Point(23, 76);
-            this.cliente.Name = "cliente";
-            this.cliente.Size = new System.Drawing.Size(478, 300);
-            this.cliente.TabIndex = 22;
-            this.cliente.TabStop = false;
-            this.cliente.Text = "Adicionar filme";
+            this.cbCategoriaF.FormattingEnabled = true;
+            this.cbCategoriaF.Location = new System.Drawing.Point(111, 159);
+            this.cbCategoriaF.Name = "cbCategoriaF";
+            this.cbCategoriaF.Size = new System.Drawing.Size(297, 29);
+            this.cbCategoriaF.TabIndex = 25;
+            // 
+            // cbAtivoF
+            // 
+            this.cbAtivoF.AutoSize = true;
+            this.cbAtivoF.Location = new System.Drawing.Point(318, 196);
+            this.cbAtivoF.Name = "cbAtivoF";
+            this.cbAtivoF.Size = new System.Drawing.Size(72, 25);
+            this.cbAtivoF.TabIndex = 24;
+            this.cbAtivoF.Text = "Activo";
+            this.cbAtivoF.UseVisualStyleBackColor = true;
             // 
             // btRemoverF
             // 
@@ -106,6 +115,7 @@
             this.btRemoverF.TabIndex = 15;
             this.btRemoverF.Text = "Remover";
             this.btRemoverF.UseVisualStyleBackColor = false;
+            this.btRemoverF.Click += new System.EventHandler(this.btRemoverF_Click);
             // 
             // btAlterarF
             // 
@@ -119,22 +129,7 @@
             this.btAlterarF.TabIndex = 22;
             this.btAlterarF.Text = "Alterar";
             this.btAlterarF.UseVisualStyleBackColor = false;
-            // 
-            // txtExibicao
-            // 
-            this.txtExibicao.Location = new System.Drawing.Point(111, 196);
-            this.txtExibicao.Name = "txtExibicao";
-            this.txtExibicao.Size = new System.Drawing.Size(297, 29);
-            this.txtExibicao.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 199);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Exibição:";
+            this.btAlterarF.Click += new System.EventHandler(this.btAlterarF_Click);
             // 
             // btLimparCamposF
             // 
@@ -148,6 +143,7 @@
             this.btLimparCamposF.TabIndex = 21;
             this.btLimparCamposF.Text = "Limpar campos";
             this.btLimparCamposF.UseVisualStyleBackColor = false;
+            this.btLimparCamposF.Click += new System.EventHandler(this.btLimparCamposF_Click);
             // 
             // btNovoF
             // 
@@ -160,13 +156,7 @@
             this.btNovoF.TabIndex = 10;
             this.btNovoF.Text = "Novo";
             this.btNovoF.UseVisualStyleBackColor = false;
-            // 
-            // txtCategoriaF
-            // 
-            this.txtCategoriaF.Location = new System.Drawing.Point(111, 156);
-            this.txtCategoriaF.Name = "txtCategoriaF";
-            this.txtCategoriaF.Size = new System.Drawing.Size(297, 29);
-            this.txtCategoriaF.TabIndex = 7;
+            this.btNovoF.Click += new System.EventHandler(this.btNovoF_Click);
             // 
             // txtDuracao
             // 
@@ -185,7 +175,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 159);
+            this.label7.Location = new System.Drawing.Point(20, 162);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 21);
             this.label7.TabIndex = 2;
@@ -209,27 +199,27 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Nome:";
             // 
-            // groupBox1
+            // gbAdicionarCat
             // 
-            this.groupBox1.Controls.Add(this.cbCatAtiva);
-            this.groupBox1.Controls.Add(this.btRemoverCat);
-            this.groupBox1.Controls.Add(this.btAlterarCat);
-            this.groupBox1.Controls.Add(this.btLimparCamposCat);
-            this.groupBox1.Controls.Add(this.btNovaCat);
-            this.groupBox1.Controls.Add(this.txtCat);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(547, 76);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 300);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Adicionar categoria";
+            this.gbAdicionarCat.Controls.Add(this.cbCatAtiva);
+            this.gbAdicionarCat.Controls.Add(this.btRemoverCat);
+            this.gbAdicionarCat.Controls.Add(this.btAlterarCat);
+            this.gbAdicionarCat.Controls.Add(this.btLimparCamposCat);
+            this.gbAdicionarCat.Controls.Add(this.btNovaCat);
+            this.gbAdicionarCat.Controls.Add(this.txtCat);
+            this.gbAdicionarCat.Controls.Add(this.label4);
+            this.gbAdicionarCat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAdicionarCat.Location = new System.Drawing.Point(547, 76);
+            this.gbAdicionarCat.Name = "gbAdicionarCat";
+            this.gbAdicionarCat.Size = new System.Drawing.Size(478, 300);
+            this.gbAdicionarCat.TabIndex = 23;
+            this.gbAdicionarCat.TabStop = false;
+            this.gbAdicionarCat.Text = "Adicionar categoria";
             // 
             // cbCatAtiva
             // 
             this.cbCatAtiva.AutoSize = true;
-            this.cbCatAtiva.Location = new System.Drawing.Point(337, 160);
+            this.cbCatAtiva.Location = new System.Drawing.Point(320, 159);
             this.cbCatAtiva.Name = "cbCatAtiva";
             this.cbCatAtiva.Size = new System.Drawing.Size(71, 25);
             this.cbCatAtiva.TabIndex = 23;
@@ -248,6 +238,7 @@
             this.btRemoverCat.TabIndex = 15;
             this.btRemoverCat.Text = "Remover";
             this.btRemoverCat.UseVisualStyleBackColor = false;
+            this.btRemoverCat.Click += new System.EventHandler(this.btRemoverCat_Click);
             // 
             // btAlterarCat
             // 
@@ -261,6 +252,7 @@
             this.btAlterarCat.TabIndex = 22;
             this.btAlterarCat.Text = "Alterar";
             this.btAlterarCat.UseVisualStyleBackColor = false;
+            this.btAlterarCat.Click += new System.EventHandler(this.btAlterarCat_Click);
             // 
             // btLimparCamposCat
             // 
@@ -274,6 +266,7 @@
             this.btLimparCamposCat.TabIndex = 21;
             this.btLimparCamposCat.Text = "Limpar campos";
             this.btLimparCamposCat.UseVisualStyleBackColor = false;
+            this.btLimparCamposCat.Click += new System.EventHandler(this.btLimparCamposCat_Click);
             // 
             // btNovaCat
             // 
@@ -286,6 +279,7 @@
             this.btNovaCat.TabIndex = 10;
             this.btNovaCat.Text = "Novo";
             this.btNovaCat.UseVisualStyleBackColor = false;
+            this.btNovaCat.Click += new System.EventHandler(this.btNovaCat_Click);
             // 
             // txtCat
             // 
@@ -303,54 +297,69 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Categoria:";
             // 
-            // ListaFilmes
+            // listaFilmes
             // 
-            this.ListaFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaFilmes.Location = new System.Drawing.Point(23, 410);
-            this.ListaFilmes.Name = "ListaFilmes";
-            this.ListaFilmes.Size = new System.Drawing.Size(563, 270);
-            this.ListaFilmes.TabIndex = 24;
+            this.listaFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaFilmes.Location = new System.Drawing.Point(23, 410);
+            this.listaFilmes.Name = "listaFilmes";
+            this.listaFilmes.RowHeadersWidth = 51;
+            this.listaFilmes.Size = new System.Drawing.Size(555, 256);
+            this.listaFilmes.TabIndex = 24;
+            this.listaFilmes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaFilmes_CellMouseClick);
+            this.listaFilmes.DoubleClick += new System.EventHandler(this.listaFilmes_DoubleClick);
             // 
-            // ListaCategorias
+            // listaCategorias
             // 
-            this.ListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaCategorias.Location = new System.Drawing.Point(637, 410);
-            this.ListaCategorias.Name = "ListaCategorias";
-            this.ListaCategorias.Size = new System.Drawing.Size(318, 261);
-            this.ListaCategorias.TabIndex = 25;
+            this.listaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaCategorias.Location = new System.Drawing.Point(637, 410);
+            this.listaCategorias.Name = "listaCategorias";
+            this.listaCategorias.RowHeadersWidth = 51;
+            this.listaCategorias.Size = new System.Drawing.Size(353, 256);
+            this.listaCategorias.TabIndex = 25;
+            this.listaCategorias.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaCategorias_CellMouseClick);
+            this.listaCategorias.DoubleClick += new System.EventHandler(this.listaCategorias_DoubleClick);
             // 
             // btNovaSessao
             // 
-            this.btNovaSessao.BackColor = System.Drawing.Color.ForestGreen;
+            this.btNovaSessao.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btNovaSessao.Enabled = false;
             this.btNovaSessao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNovaSessao.ForeColor = System.Drawing.Color.White;
-            this.btNovaSessao.Location = new System.Drawing.Point(23, 688);
+            this.btNovaSessao.Location = new System.Drawing.Point(23, 682);
             this.btNovaSessao.Name = "btNovaSessao";
             this.btNovaSessao.Size = new System.Drawing.Size(189, 33);
             this.btNovaSessao.TabIndex = 23;
             this.btNovaSessao.Text = "Nova sessão";
             this.btNovaSessao.UseVisualStyleBackColor = false;
             // 
+            // timer1
+            // 
+            this.timer1.Location = new System.Drawing.Point(809, 21);
+            this.timer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.timer1.Name = "timer1";
+            this.timer1.Size = new System.Drawing.Size(290, 42);
+            this.timer1.TabIndex = 21;
+            // 
             // Filmes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btNovaSessao);
-            this.Controls.Add(this.ListaCategorias);
-            this.Controls.Add(this.ListaFilmes);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cliente);
+            this.Controls.Add(this.listaCategorias);
+            this.Controls.Add(this.listaFilmes);
+            this.Controls.Add(this.gbAdicionarCat);
+            this.Controls.Add(this.gbAdicionarFilme);
             this.Controls.Add(this.timer1);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Filmes";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.cliente.ResumeLayout(false);
-            this.cliente.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFilmes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaCategorias)).EndInit();
+            this.gbAdicionarFilme.ResumeLayout(false);
+            this.gbAdicionarFilme.PerformLayout();
+            this.gbAdicionarCat.ResumeLayout(false);
+            this.gbAdicionarCat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFilmes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,30 +368,29 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private Timer timer1;
-        private System.Windows.Forms.GroupBox cliente;
+        private System.Windows.Forms.GroupBox gbAdicionarFilme;
         private System.Windows.Forms.Button btRemoverF;
         private System.Windows.Forms.Button btAlterarF;
-        private System.Windows.Forms.TextBox txtExibicao;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btLimparCamposF;
         private System.Windows.Forms.Button btNovoF;
-        private System.Windows.Forms.TextBox txtCategoriaF;
         private System.Windows.Forms.TextBox txtDuracao;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbAdicionarCat;
         private System.Windows.Forms.Button btRemoverCat;
         private System.Windows.Forms.Button btAlterarCat;
         private System.Windows.Forms.Button btLimparCamposCat;
         private System.Windows.Forms.Button btNovaCat;
         private System.Windows.Forms.TextBox txtCat;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView ListaFilmes;
-        private System.Windows.Forms.DataGridView ListaCategorias;
+        private System.Windows.Forms.DataGridView listaFilmes;
+        private System.Windows.Forms.DataGridView listaCategorias;
         private System.Windows.Forms.CheckBox cbCatAtiva;
         private System.Windows.Forms.Button btNovaSessao;
+        private System.Windows.Forms.CheckBox cbAtivoF;
+        private System.Windows.Forms.ComboBox cbCategoriaF;
+        private Timer timer1;
     }
 }

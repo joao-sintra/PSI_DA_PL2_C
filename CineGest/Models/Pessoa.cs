@@ -11,6 +11,5 @@ namespace CineGest
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Morada { get; set; }
-
     }
 }

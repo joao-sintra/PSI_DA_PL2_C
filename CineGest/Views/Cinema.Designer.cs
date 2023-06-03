@@ -35,10 +35,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ListaSalas = new System.Windows.Forms.DataGridView();
+            this.listaSalas = new System.Windows.Forms.DataGridView();
             this.timer1 = new CineGest.Views.Timer();
             this.cliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaSalas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaSalas)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -47,7 +47,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(19, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 30);
+            this.label3.Size = new System.Drawing.Size(217, 37);
             this.label3.TabIndex = 13;
             this.label3.Text = "Gestão de Salas";
             // 
@@ -83,6 +83,7 @@
             this.btAlterarSala.TabIndex = 22;
             this.btAlterarSala.Text = "Alterar";
             this.btAlterarSala.UseVisualStyleBackColor = false;
+            this.btAlterarSala.Click += new System.EventHandler(this.btAlterarSala_Click);
             // 
             // btRemoverSala
             // 
@@ -96,6 +97,7 @@
             this.btRemoverSala.TabIndex = 15;
             this.btRemoverSala.Text = "Remover";
             this.btRemoverSala.UseVisualStyleBackColor = false;
+            this.btRemoverSala.Click += new System.EventHandler(this.btRemoverSala_Click);
             // 
             // btLimparCamposSala
             // 
@@ -109,6 +111,7 @@
             this.btLimparCamposSala.TabIndex = 21;
             this.btLimparCamposSala.Text = "Limpar campos";
             this.btLimparCamposSala.UseVisualStyleBackColor = false;
+            this.btLimparCamposSala.Click += new System.EventHandler(this.btLimparCamposSala_Click);
             // 
             // btNovoSala
             // 
@@ -121,26 +124,27 @@
             this.btNovoSala.TabIndex = 10;
             this.btNovoSala.Text = "Novo";
             this.btNovoSala.UseVisualStyleBackColor = false;
+            this.btNovoSala.Click += new System.EventHandler(this.btNovoSala_Click);
             // 
             // txtNumFilas
             // 
             this.txtNumFilas.Location = new System.Drawing.Point(127, 121);
             this.txtNumFilas.Name = "txtNumFilas";
-            this.txtNumFilas.Size = new System.Drawing.Size(191, 29);
+            this.txtNumFilas.Size = new System.Drawing.Size(191, 34);
             this.txtNumFilas.TabIndex = 7;
             // 
             // txtNumColunas
             // 
             this.txtNumColunas.Location = new System.Drawing.Point(127, 81);
             this.txtNumColunas.Name = "txtNumColunas";
-            this.txtNumColunas.Size = new System.Drawing.Size(191, 29);
+            this.txtNumColunas.Size = new System.Drawing.Size(191, 34);
             this.txtNumColunas.TabIndex = 6;
             // 
             // txtSala
             // 
             this.txtSala.Location = new System.Drawing.Point(127, 42);
             this.txtSala.Name = "txtSala";
-            this.txtSala.Size = new System.Drawing.Size(191, 29);
+            this.txtSala.Size = new System.Drawing.Size(191, 34);
             this.txtSala.TabIndex = 5;
             // 
             // label7
@@ -148,7 +152,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(36, 124);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 21);
+            this.label7.Size = new System.Drawing.Size(106, 28);
             this.label7.TabIndex = 2;
             this.label7.Text = "Nº de filas:";
             // 
@@ -157,7 +161,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 84);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 21);
+            this.label6.Size = new System.Drawing.Size(144, 28);
             this.label6.TabIndex = 1;
             this.label6.Text = "Nº de columas:";
             // 
@@ -166,31 +170,35 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(79, 45);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 21);
+            this.label5.Size = new System.Drawing.Size(52, 28);
             this.label5.TabIndex = 0;
             this.label5.Text = "Sala:";
             // 
-            // ListaSalas
+            // listaSalas
             // 
-            this.ListaSalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaSalas.Location = new System.Drawing.Point(24, 328);
-            this.ListaSalas.Name = "ListaSalas";
-            this.ListaSalas.Size = new System.Drawing.Size(544, 384);
-            this.ListaSalas.TabIndex = 21;
+            this.listaSalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaSalas.Location = new System.Drawing.Point(24, 328);
+            this.listaSalas.Name = "listaSalas";
+            this.listaSalas.RowHeadersWidth = 51;
+            this.listaSalas.Size = new System.Drawing.Size(544, 384);
+            this.listaSalas.TabIndex = 21;
+            this.listaSalas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaSalas_CellMouseClick);
+            this.listaSalas.DoubleClick += new System.EventHandler(this.listaSalas_DoubleClick);
             // 
             // timer1
             // 
-            this.timer1.Location = new System.Drawing.Point(876, 18);
+            this.timer1.Location = new System.Drawing.Point(851, 18);
+            this.timer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.timer1.Name = "timer1";
-            this.timer1.Size = new System.Drawing.Size(224, 35);
-            this.timer1.TabIndex = 20;
+            this.timer1.Size = new System.Drawing.Size(254, 37);
+            this.timer1.TabIndex = 22;
             // 
             // Cinema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ListaSalas);
             this.Controls.Add(this.timer1);
+            this.Controls.Add(this.listaSalas);
             this.Controls.Add(this.cliente);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,7 +206,7 @@
             this.Size = new System.Drawing.Size(1121, 733);
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaSalas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaSalas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +226,7 @@
         private System.Windows.Forms.Button btRemoverSala;
         private System.Windows.Forms.Button btAlterarSala;
         private System.Windows.Forms.Button btLimparCamposSala;
+        private System.Windows.Forms.DataGridView listaSalas;
         private Timer timer1;
-        private System.Windows.Forms.DataGridView ListaSalas;
     }
 }

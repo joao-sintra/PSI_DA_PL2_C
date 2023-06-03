@@ -12,5 +12,7 @@ namespace CineGest
         public string Nome { get; set; }
         public int Colunas { get; set; }
         public int Filas { get; set; }
+        public int Lugares { get; set; }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,5 @@ namespace CineGest
         public DbSet<Sala> Salas { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
 
-
-
-    }
+    }  
 }       

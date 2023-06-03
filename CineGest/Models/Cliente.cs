@@ -10,6 +10,7 @@ namespace CineGest
     {
         public int Id { get; set; }
         public int NIF { get; set; }
+        public Pessoa PessoaID { get; set; }
 
     }
 }

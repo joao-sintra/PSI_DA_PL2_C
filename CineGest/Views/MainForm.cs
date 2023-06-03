@@ -17,7 +17,7 @@ namespace CineGest {
             //ListViewItem item1 = new ListViewItem();
             //int colunas = 12;
             //int linhas = 12;
-            
+
             //for (int i = 0; i <= linhas; i++) {
             //    listViewLugares.Columns.Add(i.ToString(),40, HorizontalAlignment.Center);
             //    for (int j = 1; j <= colunas; j++) {
@@ -30,6 +30,7 @@ namespace CineGest {
             //item1.SubItems[0].BackColor = Color.Green;
 
             //}
+          
         }
 
         private void atendimento1_Load(object sender, EventArgs e) {
