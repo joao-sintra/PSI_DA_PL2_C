@@ -43,17 +43,43 @@ namespace CineGest.Controllers {
                     MessageBox.Show("Já existe uma categoria com este nome ("+nome+")!");
                     return;
                 }
+                //Filme func = db.Filmes.FirstOrDefault(f => f.CategoriaID == cat);
 
                 db.Categorias.Add(categorias);
                 db.SaveChanges();
             }
         }
 
-        public static void AlterarCategoria(int ID, string nome, bool activa) {
-
+        public static void AlterarCategoria(int selectedCategoriaID, string nome, bool activa) {
+            
             using (var db = new CinegestContext()) {
-                Categoria cat = db.Categorias.FirstOrDefault(categorias => categorias.Id == ID);
+                
+                Categoria cat = db.Categorias.FirstOrDefault(categorias => categorias.Id == selectedCategoriaID);
 
+                //Filme fil = db.Filmes.FirstOrDefault(filmes => filmes.Id == selectedFilmeID);
+
+                /*
+                 * List<Filme> list = db.Filmes
+                    .Where(x => x.CategoriaID == cat)
+                    .ToList();
+                */
+
+                List<Categoria> listCat = db.Categorias
+                    .Where(x => x.Nome == nome)
+                    .Where(x => x.Activa == activa)
+                    .ToList();
+
+                if (listCat.Count > 0) {
+                    MessageBox.Show("Não podes alterar o nome desta categoria para: (" + nome + "), porque já existe!");
+                    return;
+                } 
+
+                /*
+                if (list.Count > 0) {
+                    MessageBox.Show("Não podes alterar o estado da categoria, enquanto ela estiver relacionada com um filme!");
+                    return;
+                }*/
+                
                 cat.Nome = nome;
                 cat.Activa = activa;
 
@@ -61,14 +87,24 @@ namespace CineGest.Controllers {
             }
         }
 
-        public static void EliminarCategoria(int ID) {
-            using (var db = new CinegestContext()) {
-                Categoria ca = db.Categorias.FirstOrDefault(categorias => categorias.Id == ID);
+        public static void EliminarCategoria(int selectedCategoriaID, bool ativa) {
+            try {
+                using (var db = new CinegestContext()) {
+                    Categoria ca = db.Categorias.FirstOrDefault(categorias => categorias.Id == selectedCategoriaID);
 
-                db.Categorias.Remove(ca);
+                    if (ativa == true) {
+                        MessageBox.Show("Não podes eliminar esta categoria, enquanto ela estiver ativa!");
+                        return;
+                    }
 
-                db.SaveChanges();
-            }
+                    db.Categorias.Remove(ca);
+
+                    db.SaveChanges();
+                }
+
+            } catch (System.Data.Entity.Infrastructure.DbUpdateException) {
+                MessageBox.Show("Selecione uma categoria da Tabela Categorias, se pretende eliminá-la!");
+            }          
         }
     }
 }

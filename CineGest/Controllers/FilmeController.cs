@@ -43,6 +43,18 @@ namespace CineGest.Controllers {
 
                 Filme fil = db.Filmes.FirstOrDefault(filmes => filmes.Id == ID);
 
+                List<Filme> list = db.Filmes
+                    .Where(x => x.Nome == nome)
+                    .Where(x => x.Duracao == duracao)
+                    .Where(x => x.CategoriaID == cat)
+                    .Where(x => x.Activo == activo)
+                    .ToList();
+
+                if (list.Count > 0) {
+                    MessageBox.Show("Não podes alterar o nome deste filme para: (" + nome + "), porque já existe!");
+                    return;
+                }
+
                 fil.Nome = nome;
                 fil.Duracao = duracao;
                 fil.CategoriaID = cat;
@@ -61,6 +73,5 @@ namespace CineGest.Controllers {
                 db.SaveChanges();
             }
         }
-
     }
 }

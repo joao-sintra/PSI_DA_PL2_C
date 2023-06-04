@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CineGest.Controllers {
@@ -21,6 +22,14 @@ namespace CineGest.Controllers {
 
             using (var db = new CinegestContext()) {
                 var salas = new Sala { Nome = nome, Colunas = colunas, Filas = filas, Lugares = colunas*filas };
+
+                List<Sala> list = db.Salas.Where(x => x.Nome == nome).ToList();
+
+                if (list.Count > 0) {
+                    MessageBox.Show("Esta sala ("+nome+") já existe!");
+                    return;
+                }
+
                 db.Salas.Add(salas);
                 db.SaveChanges();
             }
@@ -30,6 +39,17 @@ namespace CineGest.Controllers {
 
             using (var db = new CinegestContext()) {
                 Sala sala = db.Salas.FirstOrDefault(salas => salas.Id == ID);
+
+                List<Sala> list = db.Salas
+                    .Where(x => x.Nome == txtSala)
+                    .Where(x => x.Colunas == txtNumColunas)
+                    .Where(x => x.Filas == txtNumFilas)
+                    .ToList();
+
+                if (list.Count > 0) {
+                    MessageBox.Show("Não podes alterar o nome desta sala para: ("+txtSala+"), porque já existe!");
+                    return;
+                }
 
                 sala.Nome = txtSala;
                 sala.Colunas = txtNumColunas;

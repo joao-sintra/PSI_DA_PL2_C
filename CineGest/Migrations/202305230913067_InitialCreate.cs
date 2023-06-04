@@ -57,27 +57,27 @@
                         Activo = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.Funcionarios",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Salario = c.Single(nullable: false),
-                        Funcao = c.String(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Salario = c.Single(nullable: false),
+                    Funcao = c.String(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.Pessoas",
                 c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false),
-                        Morada = c.String(nullable: false),
-                    })
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Nome = c.String(nullable: false),
+                    Morada = c.String(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
                 "dbo.Salas",
                 c => new
@@ -86,7 +86,8 @@
                         Nome = c.String(nullable: false),
                         Colunas = c.Int(nullable: false),
                         Filas = c.Int(nullable: false),
-                    })
+                        Lugares = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.Id);
             
             CreateTable(

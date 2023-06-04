@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace CineGest
 {
-    internal class Funcionario : Pessoa
+    internal class Funcionario
     {
+        public int Id { get; set; }
+
         public float Salario { get; set; }
+
         public string Funcao { get; set; }
+
+        public Pessoa PessoaId { get; set; }
     }
 }

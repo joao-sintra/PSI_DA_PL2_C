@@ -19,11 +19,20 @@ namespace CineGest.Views {
 
             cbCategoriaF.DropDownStyle = ComboBoxStyle.DropDownList;
 
-           // cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
+            listaFilmes.ReadOnly = true;
+            listaFilmes.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            listaCategorias.ReadOnly = true;
+            listaCategorias.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void limparLF() {
+            listaFilmes.ClearSelection();
         }
 
         private void listaFilmes_DoubleClick(object sender, EventArgs e) {
             listaFilmes.DataSource = FilmeController.GetFilmes();
+            limparLF();
         }
 
         private void limparCamposF() {
@@ -33,23 +42,33 @@ namespace CineGest.Views {
         }
 
         private void btNovoF_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtDuracao.Text)) {
+            if (string.IsNullOrEmpty(txtNome.Text)) {
                 MessageBox.Show("Por favor, preencha o(s) campo(s)!");
+
+            } else {
+                try {
+                    bool activo = cbAtivoF.Checked;
+                    int duracao = Int32.Parse(txtDuracao.Text);
+
+                    FilmeController.AdicionarFilme(txtNome.Text, duracao, cbCategoriaF.Text, activo);
+
+                    listaFilmes.DataSource = null;
+                    listaFilmes.DataSource = FilmeController.GetFilmes();
+
+                    limparCamposF();
+
+                } catch (FormatException fe) {
+                    MessageBox.Show("Campos no formato incorreto!\n\nCampo Nome: aceita tanto letras como números." +
+                        "\nCampo Duração: só aceita números inteiros.\n");
+
+                    limparCamposF();
+                }
             }
-
-            bool activo = cbAtivoF.Checked;
-            int duracao = Int32.Parse(txtDuracao.Text);
-            
-            FilmeController.AdicionarFilme(txtNome.Text, duracao, cbCategoriaF.Text, activo);
-
-            listaFilmes.DataSource = null;
-            listaFilmes.DataSource = FilmeController.GetFilmes();
-
-            limparCamposF();
         }
 
         private void btLimparCamposF_Click(object sender, EventArgs e) {
             limparCamposF();
+            limparLF();
         }
 
         private void listaFilmes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
@@ -65,59 +84,72 @@ namespace CineGest.Views {
         }
 
         private void btAlterarF_Click(object sender, EventArgs e) {
-            try {
-                if (listaFilmes.SelectedRows == null) {
-                    MessageBox.Show("Selecione um filme se quiser alterar os seus campos!");
+            if (string.IsNullOrEmpty(txtCat.Text)) {
+                MessageBox.Show("Só pode alterar o campo de um filme, se ele estiver adicionado e selecionado na Tabela Filmes!");
+                return;
+
+            } else {
+                if (listaFilmes.SelectedRows == null || listaCategorias.CurrentRow == null) {
+                    MessageBox.Show("Selecione uma linha da Tabela Filmes, se quiser alterar o seu campo!");
                     return;
+
+                } else {
+                    try {
+                        string id = listaFilmes.CurrentRow.Cells[0].Value.ToString();
+
+                        int selectedID = Int32.Parse(id);
+                        bool activo = cbAtivoF.Checked;
+                        int duracao = Int32.Parse(txtDuracao.Text);
+
+                        FilmeController.AlterarFilme(selectedID, txtNome.Text, duracao, cbCategoriaF.Text, activo);
+
+                        listaFilmes.DataSource = null;
+                        listaFilmes.DataSource = FilmeController.GetFilmes();
+
+                        limparLF();
+                        limparCamposF();
+
+                    } catch (FormatException fe) {
+                        MessageBox.Show("Campos no formato incorreto!\n\nCampo Nome: aceita tanto letras como números." +
+                            "\nCampo Duração: só aceita números inteiros.\n");
+
+                        limparLF();
+                        limparCamposF();
+                    }
                 }
-
-                string id = listaFilmes.CurrentRow.Cells[0].Value.ToString();
-
-                int selectedID = Int32.Parse(id);
-                bool activo = cbAtivoF.Checked;
-                int duracao = Int32.Parse(txtDuracao.Text);
-
-                FilmeController.AlterarFilme(selectedID, txtNome.Text, duracao, cbCategoriaF.Text, activo);
-
-                listaFilmes.DataSource = null;
-                listaFilmes.DataSource = FilmeController.GetFilmes();
-
-                limparCamposF();
-
-            } catch (FormatException fe) {
-                MessageBox.Show("Não pode deixar o(s) campo(s) vazio(s)!");
-            }
+            }  
         }
 
         private void btRemoverF_Click(object sender, EventArgs e) {
-            if (listaFilmes.SelectedRows == null) {
-                MessageBox.Show("Selecione um filme se pretende eliminá-lo!");
+            if (listaFilmes.SelectedRows == null || listaCategorias.CurrentRow == null) {
+                MessageBox.Show("Selecione um filme da Tabela Filmes, se pretende eliminá-lo!");
                 return;
-            }
+            } else {
+                string id = listaFilmes.CurrentRow.Cells[0].Value.ToString();
 
-            string id = listaFilmes.CurrentRow.Cells[0].Value.ToString();
+                int selectedID = Int32.Parse(id);
 
-            int selectedID = Int32.Parse(id);
+                DialogResult dr = MessageBox.Show("Pretende mesmo remover este filme?", "Confirmação de eliminação de filme",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-            DialogResult dr = MessageBox.Show("Pretende mesmo remover este filme?", "Confirmação de eliminação de filme",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Yes) {
+                    FilmeController.EliminarFilme(selectedID);
 
-            if (dr == DialogResult.Yes) {
-                FilmeController.EliminarFilme(selectedID);
+                    listaFilmes.DataSource = null;
+                    listaFilmes.DataSource = FilmeController.GetFilmes();
 
-                listaFilmes.DataSource = null;
-                listaFilmes.DataSource = FilmeController.GetFilmes();
-
-                limparCamposF();
+                    limparLF();
+                    limparCamposF();
+                }
             }
         }
 
 
 
         //Código para as Categorias
-        private void listaCategorias_DoubleClick(object sender, EventArgs e) {
-            listaCategorias.DataSource = CategoriaController.GetCategorias();
-            cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
+
+        private void limparLC() {
+            listaCategorias.ClearSelection();
         }
 
         private void limparCamposCat() {
@@ -125,73 +157,102 @@ namespace CineGest.Views {
             cbCatAtiva.Checked = false;
         }
 
+        private void listaCategorias_DoubleClick(object sender, EventArgs e) {
+            listaCategorias.DataSource = CategoriaController.GetCategorias();
+            cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
+            limparLC();
+        }
+
         private void btNovaCat_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(txtCat.Text)) {
                 MessageBox.Show("Por favor, preencha o campo!");
+                return;
+
+            } else {
+                try {
+                    bool ativa = cbCatAtiva.Checked;
+
+                    CategoriaController.AdicionarCategoria(txtCat.Text, ativa);
+
+                    listaCategorias.DataSource = null;
+                    listaCategorias.DataSource = CategoriaController.GetCategorias();
+                    cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
+
+                    limparCamposCat();
+
+                } catch (FormatException fe) {
+                    MessageBox.Show("Campo no formato incorreto!\n\nCampo Nome: aceita tanto letras como números.");
+
+                    limparCamposF();
+                }
             }
-
-            bool ativa = cbCatAtiva.Checked;
-
-            CategoriaController.AdicionarCategoria(txtCat.Text, ativa);
-
-            listaCategorias.DataSource = null;
-            listaCategorias.DataSource = CategoriaController.GetCategorias();
-            cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
-
-            limparCamposCat();
         }
 
         private void btLimparCamposCat_Click(object sender, EventArgs e) {
             limparCamposCat();
+            limparLC();
         }
 
         private void btAlterarCat_Click(object sender, EventArgs e) {
-            try {
-                if (listaCategorias.SelectedRows == null) {
-                    MessageBox.Show("Selecione uma categoria se quiser alterar os seus campos!");
+            if (string.IsNullOrEmpty(txtCat.Text)) {
+                MessageBox.Show("Só pode alterar o campo de uma categoria, se ela estiver adicionada e selecionada na Tabela Categorias!");
+                return;
+
+            } else {
+                if (listaCategorias.SelectedRows == null || listaCategorias.CurrentRow == null) {
+                    MessageBox.Show("Selecione uma linha da Tabela Categorias, se quiser alterar o seu campo!");
                     return;
+                } else {
+                    try {
+                        string idCat = listaCategorias.CurrentRow.Cells[0].Value.ToString();
+                        //string idFil = listaFilmes.CurrentRow.Cells[0].Value.ToString();
+
+                        int selectedCategoriaID = Int32.Parse(idCat);
+                        //int selectedFilmeID = Int32.Parse(idFil);
+
+                        bool ativa = cbCatAtiva.Checked;
+
+                        CategoriaController.AlterarCategoria(selectedCategoriaID, txtCat.Text, ativa);
+
+                        listaCategorias.DataSource = null;
+                        listaCategorias.DataSource = CategoriaController.GetCategorias();
+                        cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
+
+                        limparLC();
+                        limparCamposCat();
+
+                    } catch (FormatException fe) {
+                        MessageBox.Show("Não pode deixar o(s) campo(s) vazio(s)!");
+                        return;
+                    }
                 }
-
-                string id = listaCategorias.CurrentRow.Cells[0].Value.ToString();
-
-                int selectedID = Int32.Parse(id);
-
-                bool ativa = cbCatAtiva.Checked;
-
-                CategoriaController.AlterarCategoria(selectedID, txtCat.Text, ativa);
-
-                listaCategorias.DataSource = null;
-                listaCategorias.DataSource = CategoriaController.GetCategorias();
-                cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
-
-                limparCamposCat();
-
-            } catch (FormatException fe) {
-                MessageBox.Show("Não pode deixar o(s) campo(s) vazio(s)!");
-            }
+            }   
         }
 
         private void btRemoverCat_Click(object sender, EventArgs e) {
-            if (listaCategorias.SelectedRows == null) {
-                MessageBox.Show("Selecione uma categoria se pretende eliminá-la!");
+            if (listaCategorias.SelectedRows == null || listaCategorias.CurrentRow == null) {
+                MessageBox.Show("Selecione uma linha da Tabela Categorias, se quiser eliminá-la!");
                 return;
-            }
+            } else {
+                string idCat = listaCategorias.CurrentRow.Cells[0].Value.ToString();
 
-            string id = listaCategorias.CurrentRow.Cells[0].Value.ToString();
+                int selectedCategoriaID = Int32.Parse(idCat);
+         
+                bool ativa = cbCatAtiva.Checked;
 
-            int selectedID = Int32.Parse(id);
+                DialogResult dr = MessageBox.Show("Pretende mesmo remover esta categoria?", "Confirmação de eliminação de categoria",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-            DialogResult dr = MessageBox.Show("Pretende mesmo remover esta categoria?", "Confirmação de eliminação de categoria",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Yes) {
+                    CategoriaController.EliminarCategoria(selectedCategoriaID, ativa);
 
-            if (dr == DialogResult.Yes) {
-                CategoriaController.EliminarCategoria(selectedID);
+                    listaCategorias.DataSource = null;
+                    listaCategorias.DataSource = CategoriaController.GetCategorias();
+                    cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
 
-                listaCategorias.DataSource = null;
-                listaCategorias.DataSource = CategoriaController.GetCategorias();
-                cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
-
-                limparCamposCat();
+                    limparLC();
+                    limparCamposCat();
+                }
             }
         }
 

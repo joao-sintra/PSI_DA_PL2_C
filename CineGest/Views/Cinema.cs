@@ -13,10 +13,18 @@ namespace CineGest.Views {
     public partial class Cinema : UserControl {
         public Cinema() {
             InitializeComponent();
+
+            listaSalas.ReadOnly = true;
+            listaSalas.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void limparLS() {
+            listaSalas.ClearSelection();
         }
 
         private void listaSalas_DoubleClick(object sender, EventArgs e) {
             listaSalas.DataSource = SalaController.GetSalas();
+            limparLS();
         }
 
         private void limparCampos() {
@@ -28,48 +36,63 @@ namespace CineGest.Views {
         private void btNovoSala_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(txtSala.Text) || string.IsNullOrEmpty(txtNumColunas.Text) || string.IsNullOrEmpty(txtNumFilas.Text)) {
                 MessageBox.Show("Por favor, preencha os campos!");
+
+            } else {
+                try {
+                    int numColunas = Int32.Parse(txtNumColunas.Text);
+                    int numFilas = Int32.Parse(txtNumFilas.Text);
+
+                    SalaController.AdicionarSala(txtSala.Text, numColunas, numFilas);
+
+                    listaSalas.DataSource = null;
+                    listaSalas.DataSource = SalaController.GetSalas();
+                    limparCampos();
+
+                } catch (FormatException fe) {
+                    MessageBox.Show("Campos no formato incorreto!\n\nCampo Sala: aceita tanto letras como números." +
+                        "\nCampo Número de Colunas: só aceita números inteiros.\n" +
+                        "Campo Número de Filas: só aceita números inteiros.");
+
+                    limparCampos();
+                }
             }
-
-            int numColunas = Int32.Parse(txtNumColunas.Text);
-            int numFilas = Int32.Parse(txtNumFilas.Text);
-
-            SalaController.AdicionarSala(txtSala.Text, numColunas, numFilas);
-
-            listaSalas.DataSource = null;
-            listaSalas.DataSource = SalaController.GetSalas();
-
-            limparCampos();
-
         }
 
         private void btLimparCamposSala_Click(object sender, EventArgs e) {
             limparCampos();
+            limparLS();
         }
 
         private void btAlterarSala_Click(object sender, EventArgs e) {
-            try {
-                if (listaSalas.SelectedRows == null) {
-                    MessageBox.Show("Selecione uma sala se quiser alterar os seus campos!");
-                    return;
+            if (listaSalas.SelectedRows == null || listaSalas.CurrentRow == null) {
+                MessageBox.Show("Selecione uma sala da Tabela Salas, se quiser alterar os seus campos!");
+                return;
+            } else {
+                try {
+                    string id = listaSalas.CurrentRow.Cells[0].Value.ToString();
+
+                    int selectedID = Int32.Parse(id);
+                    int numColunas = Int32.Parse(txtNumColunas.Text);
+                    int numFilas = Int32.Parse(txtNumFilas.Text);
+
+                    SalaController.AlterarSala(selectedID, txtSala.Text, numColunas, numFilas);
+
+                    listaSalas.DataSource = null;
+                    listaSalas.DataSource = SalaController.GetSalas();
+                    
+                    limparLS();
+                    limparCampos();
+
+                } catch (FormatException ex) {
+                    MessageBox.Show("Campos no formato incorreto!\n\nCampo Sala: aceita tanto letras como números." +
+                        "\nCampo Número de Colunas: só aceita números inteiros.\n" +
+                        "Campo Número de Filas: só aceita números inteiros.");
+
+                    limparCampos();
                 }
-
-                string id = listaSalas.CurrentRow.Cells[0].Value.ToString();
-
-                int selectedID = Int32.Parse(id);
-                int numColunas = Int32.Parse(txtNumColunas.Text);
-                int numFilas = Int32.Parse(txtNumFilas.Text);
-
-                SalaController.AlterarSala(selectedID, txtSala.Text, numColunas, numFilas);
-
-                listaSalas.DataSource = null;
-                listaSalas.DataSource = SalaController.GetSalas();
-                limparCampos();
-
-            } catch (FormatException ex) {
-                MessageBox.Show("Não pode deixar os campos vazios!");
             }
-
         }
+            
 
         private void listaSalas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             txtSala.Text = listaSalas.CurrentRow.Cells[1].Value.ToString();
@@ -78,8 +101,8 @@ namespace CineGest.Views {
         }
 
         private void btRemoverSala_Click(object sender, EventArgs e) {
-            if (listaSalas.SelectedRows == null) {
-                MessageBox.Show("Selecione uma sala se pretende eliminá-la!");
+            if (listaSalas.SelectedRows == null || listaSalas.CurrentRow == null) {
+                MessageBox.Show("Selecione uma sala da Tabela Salas, se pretende eliminá-la!");
                 return;
             }
 
@@ -95,6 +118,8 @@ namespace CineGest.Views {
 
                 listaSalas.DataSource = null;
                 listaSalas.DataSource = SalaController.GetSalas();
+                
+                limparLS();
                 limparCampos();
             }
         }

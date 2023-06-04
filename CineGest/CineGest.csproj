@@ -64,17 +64,9 @@
     <Compile Include="Migrations\202305230913067_InitialCreate.designer.cs">
       <DependentUpon>202305230913067_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305301346413_salas.cs" />
-    <Compile Include="Migrations\202305301346413_salas.designer.cs">
-      <DependentUpon>202305301346413_salas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202306030054424_cenas.cs" />
     <Compile Include="Migrations\202306030054424_cenas.designer.cs">
       <DependentUpon>202306030054424_cenas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202306031642185_func.cs" />
-    <Compile Include="Migrations\202306031642185_func.Designer.cs">
-      <DependentUpon>202306031642185_func.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bilhete.cs" />
@@ -157,14 +149,8 @@
     <EmbeddedResource Include="Migrations\202305230913067_InitialCreate.resx">
       <DependentUpon>202305230913067_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305301346413_salas.resx">
-      <DependentUpon>202305301346413_salas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306030054424_cenas.resx">
       <DependentUpon>202306030054424_cenas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306031642185_func.resx">
-      <DependentUpon>202306031642185_func.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Atendimento.resx">
       <DependentUpon>Atendimento.cs</DependentUpon>

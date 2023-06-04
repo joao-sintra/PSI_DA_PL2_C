@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.label3 = new System.Windows.Forms.Label();
-            this.cliente = new System.Windows.Forms.GroupBox();
+            this.adicionarFunc = new System.Windows.Forms.GroupBox();
             this.btRemoverFun = new System.Windows.Forms.Button();
             this.btAlterarFun = new System.Windows.Forms.Button();
             this.txtFuncaoFun = new System.Windows.Forms.TextBox();
@@ -38,9 +38,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listaFuncionarios = new System.Windows.Forms.DataGridView();
+            this.listaPessoas = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new CineGest.Views.Timer();
-            this.cliente.SuspendLayout();
+            this.adicionarFunc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPessoas)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -53,27 +57,27 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Gestão de Funcionários";
             // 
-            // cliente
+            // adicionarFunc
             // 
-            this.cliente.Controls.Add(this.btRemoverFun);
-            this.cliente.Controls.Add(this.btAlterarFun);
-            this.cliente.Controls.Add(this.txtFuncaoFun);
-            this.cliente.Controls.Add(this.label1);
-            this.cliente.Controls.Add(this.btLimparCamposFun);
-            this.cliente.Controls.Add(this.btNovoFun);
-            this.cliente.Controls.Add(this.txtSalarioFun);
-            this.cliente.Controls.Add(this.txtMoradaFun);
-            this.cliente.Controls.Add(this.txtNomeFun);
-            this.cliente.Controls.Add(this.label7);
-            this.cliente.Controls.Add(this.label6);
-            this.cliente.Controls.Add(this.label5);
-            this.cliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cliente.Location = new System.Drawing.Point(26, 77);
-            this.cliente.Name = "cliente";
-            this.cliente.Size = new System.Drawing.Size(478, 300);
-            this.cliente.TabIndex = 23;
-            this.cliente.TabStop = false;
-            this.cliente.Text = "Adicionar funcionario";
+            this.adicionarFunc.Controls.Add(this.btRemoverFun);
+            this.adicionarFunc.Controls.Add(this.btAlterarFun);
+            this.adicionarFunc.Controls.Add(this.txtFuncaoFun);
+            this.adicionarFunc.Controls.Add(this.label1);
+            this.adicionarFunc.Controls.Add(this.btLimparCamposFun);
+            this.adicionarFunc.Controls.Add(this.btNovoFun);
+            this.adicionarFunc.Controls.Add(this.txtSalarioFun);
+            this.adicionarFunc.Controls.Add(this.txtMoradaFun);
+            this.adicionarFunc.Controls.Add(this.txtNomeFun);
+            this.adicionarFunc.Controls.Add(this.label7);
+            this.adicionarFunc.Controls.Add(this.label6);
+            this.adicionarFunc.Controls.Add(this.label5);
+            this.adicionarFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adicionarFunc.Location = new System.Drawing.Point(26, 77);
+            this.adicionarFunc.Name = "adicionarFunc";
+            this.adicionarFunc.Size = new System.Drawing.Size(478, 300);
+            this.adicionarFunc.TabIndex = 23;
+            this.adicionarFunc.TabStop = false;
+            this.adicionarFunc.Text = "Adicionar funcionário";
             // 
             // btRemoverFun
             // 
@@ -87,6 +91,7 @@
             this.btRemoverFun.TabIndex = 15;
             this.btRemoverFun.Text = "Remover";
             this.btRemoverFun.UseVisualStyleBackColor = false;
+            this.btRemoverFun.Click += new System.EventHandler(this.btRemoverFun_Click);
             // 
             // btAlterarFun
             // 
@@ -100,6 +105,7 @@
             this.btAlterarFun.TabIndex = 22;
             this.btAlterarFun.Text = "Alterar";
             this.btAlterarFun.UseVisualStyleBackColor = false;
+            this.btAlterarFun.Click += new System.EventHandler(this.btAlterarFun_Click);
             // 
             // txtFuncaoFun
             // 
@@ -129,6 +135,7 @@
             this.btLimparCamposFun.TabIndex = 21;
             this.btLimparCamposFun.Text = "Limpar campos";
             this.btLimparCamposFun.UseVisualStyleBackColor = false;
+            this.btLimparCamposFun.Click += new System.EventHandler(this.btLimparCamposFun_Click);
             // 
             // btNovoFun
             // 
@@ -194,12 +201,44 @@
             // listaFuncionarios
             // 
             this.listaFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaFuncionarios.Location = new System.Drawing.Point(26, 402);
+            this.listaFuncionarios.Location = new System.Drawing.Point(416, 439);
             this.listaFuncionarios.Name = "listaFuncionarios";
             this.listaFuncionarios.RowHeadersWidth = 51;
-            this.listaFuncionarios.Size = new System.Drawing.Size(555, 261);
+            this.listaFuncionarios.Size = new System.Drawing.Size(453, 261);
             this.listaFuncionarios.TabIndex = 25;
+            this.listaFuncionarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaFuncionarios_CellMouseClick);
             this.listaFuncionarios.DoubleClick += new System.EventHandler(this.listaFuncionarios_DoubleClick);
+            // 
+            // listaPessoas
+            // 
+            this.listaPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaPessoas.Location = new System.Drawing.Point(26, 439);
+            this.listaPessoas.Name = "listaPessoas";
+            this.listaPessoas.RowHeadersWidth = 51;
+            this.listaPessoas.Size = new System.Drawing.Size(355, 261);
+            this.listaPessoas.TabIndex = 26;
+            this.listaPessoas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaPessoas_CellMouseClick);
+            this.listaPessoas.DoubleClick += new System.EventHandler(this.listaPessoas_DoubleClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 406);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 30);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Tabela Pessoas";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(411, 406);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(207, 30);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Tabela Funcionários";
             // 
             // timer1
             // 
@@ -213,16 +252,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listaPessoas);
             this.Controls.Add(this.listaFuncionarios);
-            this.Controls.Add(this.cliente);
+            this.Controls.Add(this.adicionarFunc);
             this.Controls.Add(this.timer1);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Funcionarios";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.cliente.ResumeLayout(false);
-            this.cliente.PerformLayout();
+            this.adicionarFunc.ResumeLayout(false);
+            this.adicionarFunc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPessoas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,7 +275,7 @@
 
         private System.Windows.Forms.Label label3;
         private Timer timer1;
-        private System.Windows.Forms.GroupBox cliente;
+        private System.Windows.Forms.GroupBox adicionarFunc;
         private System.Windows.Forms.Button btRemoverFun;
         private System.Windows.Forms.Button btAlterarFun;
         private System.Windows.Forms.TextBox txtFuncaoFun;
@@ -246,5 +289,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView listaFuncionarios;
+        private System.Windows.Forms.DataGridView listaPessoas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

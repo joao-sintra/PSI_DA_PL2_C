@@ -48,6 +48,8 @@
             this.listaCategorias = new System.Windows.Forms.DataGridView();
             this.btNovaSessao = new System.Windows.Forms.Button();
             this.timer1 = new CineGest.Views.Timer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbAdicionarFilme.SuspendLayout();
             this.gbAdicionarCat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFilmes)).BeginInit();
@@ -300,10 +302,10 @@
             // listaFilmes
             // 
             this.listaFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaFilmes.Location = new System.Drawing.Point(23, 410);
+            this.listaFilmes.Location = new System.Drawing.Point(23, 431);
             this.listaFilmes.Name = "listaFilmes";
             this.listaFilmes.RowHeadersWidth = 51;
-            this.listaFilmes.Size = new System.Drawing.Size(555, 256);
+            this.listaFilmes.Size = new System.Drawing.Size(555, 235);
             this.listaFilmes.TabIndex = 24;
             this.listaFilmes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaFilmes_CellMouseClick);
             this.listaFilmes.DoubleClick += new System.EventHandler(this.listaFilmes_DoubleClick);
@@ -311,10 +313,10 @@
             // listaCategorias
             // 
             this.listaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaCategorias.Location = new System.Drawing.Point(637, 410);
+            this.listaCategorias.Location = new System.Drawing.Point(637, 431);
             this.listaCategorias.Name = "listaCategorias";
             this.listaCategorias.RowHeadersWidth = 51;
-            this.listaCategorias.Size = new System.Drawing.Size(353, 256);
+            this.listaCategorias.Size = new System.Drawing.Size(353, 235);
             this.listaCategorias.TabIndex = 25;
             this.listaCategorias.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaCategorias_CellMouseClick);
             this.listaCategorias.DoubleClick += new System.EventHandler(this.listaCategorias_DoubleClick);
@@ -340,10 +342,32 @@
             this.timer1.Size = new System.Drawing.Size(290, 42);
             this.timer1.TabIndex = 21;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 398);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 30);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Tabela Filmes";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(632, 398);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(184, 30);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Tabela Categorias";
+            // 
             // Filmes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btNovaSessao);
             this.Controls.Add(this.listaCategorias);
             this.Controls.Add(this.listaFilmes);
@@ -392,5 +416,7 @@
         private System.Windows.Forms.CheckBox cbAtivoF;
         private System.Windows.Forms.ComboBox cbCategoriaF;
         private Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
