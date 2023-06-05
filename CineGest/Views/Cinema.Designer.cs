@@ -37,6 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.listaSalas = new System.Windows.Forms.DataGridView();
             this.timer1 = new CineGest.Views.Timer();
+            this.label1 = new System.Windows.Forms.Label();
             this.cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaSalas)).BeginInit();
             this.SuspendLayout();
@@ -177,10 +178,10 @@
             // listaSalas
             // 
             this.listaSalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaSalas.Location = new System.Drawing.Point(24, 328);
+            this.listaSalas.Location = new System.Drawing.Point(24, 356);
             this.listaSalas.Name = "listaSalas";
             this.listaSalas.RowHeadersWidth = 51;
-            this.listaSalas.Size = new System.Drawing.Size(554, 384);
+            this.listaSalas.Size = new System.Drawing.Size(554, 356);
             this.listaSalas.TabIndex = 21;
             this.listaSalas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaSalas_CellMouseClick);
             this.listaSalas.DoubleClick += new System.EventHandler(this.listaSalas_DoubleClick);
@@ -193,10 +194,21 @@
             this.timer1.Size = new System.Drawing.Size(254, 37);
             this.timer1.TabIndex = 22;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 323);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 30);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Tabela Salas";
+            // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.timer1);
             this.Controls.Add(this.listaSalas);
             this.Controls.Add(this.cliente);
@@ -228,5 +240,6 @@
         private System.Windows.Forms.Button btLimparCamposSala;
         private System.Windows.Forms.DataGridView listaSalas;
         private Timer timer1;
+        private System.Windows.Forms.Label label1;
     }
 }

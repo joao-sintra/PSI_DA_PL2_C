@@ -13,7 +13,7 @@ namespace CineGest.Controllers {
         public static List<Filme> GetFilmes() {
 
             using (var db = new CinegestContext()) {
-                return db.Filmes.ToList();
+                return db.Filmes.Include("CategoriaID").ToList();
             }
         }
 
@@ -43,14 +43,11 @@ namespace CineGest.Controllers {
 
                 Filme fil = db.Filmes.FirstOrDefault(filmes => filmes.Id == ID);
 
-                List<Filme> list = db.Filmes
+                Filme filme = db.Filmes
                     .Where(x => x.Nome == nome)
-                    .Where(x => x.Duracao == duracao)
-                    .Where(x => x.CategoriaID == cat)
-                    .Where(x => x.Activo == activo)
-                    .ToList();
+                    .FirstOrDefault();
 
-                if (list.Count > 0) {
+                if (filme != null && filme.Id != fil.Id) {
                     MessageBox.Show("Não podes alterar o nome deste filme para: (" + nome + "), porque já existe!");
                     return;
                 }

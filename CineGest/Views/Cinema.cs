@@ -33,6 +33,11 @@ namespace CineGest.Views {
             txtNumFilas.Text = "";
         }
 
+        private void refreshLS() {
+            listaSalas.DataSource = null;
+            listaSalas.DataSource = SalaController.GetSalas();
+        }
+
         private void btNovoSala_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(txtSala.Text) || string.IsNullOrEmpty(txtNumColunas.Text) || string.IsNullOrEmpty(txtNumFilas.Text)) {
                 MessageBox.Show("Por favor, preencha os campos!");
@@ -44,14 +49,14 @@ namespace CineGest.Views {
 
                     SalaController.AdicionarSala(txtSala.Text, numColunas, numFilas);
 
-                    listaSalas.DataSource = null;
-                    listaSalas.DataSource = SalaController.GetSalas();
+                    refreshLS();
                     limparCampos();
 
                 } catch (FormatException fe) {
-                    MessageBox.Show("Campos no formato incorreto!\n\nCampo Sala: aceita tanto letras como números." +
-                        "\nCampo Número de Colunas: só aceita números inteiros.\n" +
-                        "Campo Número de Filas: só aceita números inteiros.");
+                    MessageBox.Show("Campos no formato incorreto!\n" +
+                        "\nCampo Sala: aceita tanto letras como números." +
+                        "\nCampo Número de Colunas: só aceita números inteiros." +
+                        "\nCampo Número de Filas: só aceita números inteiros.");
 
                     limparCampos();
                 }
@@ -77,18 +82,18 @@ namespace CineGest.Views {
 
                     SalaController.AlterarSala(selectedID, txtSala.Text, numColunas, numFilas);
 
-                    listaSalas.DataSource = null;
-                    listaSalas.DataSource = SalaController.GetSalas();
-                    
+                    refreshLS();
                     limparLS();
                     limparCampos();
 
                 } catch (FormatException ex) {
-                    MessageBox.Show("Campos no formato incorreto!\n\nCampo Sala: aceita tanto letras como números." +
-                        "\nCampo Número de Colunas: só aceita números inteiros.\n" +
-                        "Campo Número de Filas: só aceita números inteiros.");
+                    MessageBox.Show("Campos no formato incorreto!\n" +
+                        "\nCampo Sala: aceita tanto letras como números." +
+                        "\nCampo Número de Colunas: só aceita números inteiros." +
+                        "\nCampo Número de Filas: só aceita números inteiros.");
 
                     limparCampos();
+                    limparLS();
                 }
             }
         }
@@ -116,9 +121,7 @@ namespace CineGest.Views {
             if (dr == DialogResult.Yes) {
                 SalaController.EliminarSala(selectedID);
 
-                listaSalas.DataSource = null;
-                listaSalas.DataSource = SalaController.GetSalas();
-                
+                refreshLS();
                 limparLS();
                 limparCampos();
             }

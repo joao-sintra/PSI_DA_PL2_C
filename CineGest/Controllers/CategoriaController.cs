@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Security.Policy;
@@ -43,7 +44,6 @@ namespace CineGest.Controllers {
                     MessageBox.Show("Já existe uma categoria com este nome ("+nome+")!");
                     return;
                 }
-                //Filme func = db.Filmes.FirstOrDefault(f => f.CategoriaID == cat);
 
                 db.Categorias.Add(categorias);
                 db.SaveChanges();
@@ -51,51 +51,46 @@ namespace CineGest.Controllers {
         }
 
         public static void AlterarCategoria(int selectedCategoriaID, string nome, bool activa) {
-            
-            using (var db = new CinegestContext()) {
-                
-                Categoria cat = db.Categorias.FirstOrDefault(categorias => categorias.Id == selectedCategoriaID);
+            try {
+                using (var db = new CinegestContext()) {
 
-                //Filme fil = db.Filmes.FirstOrDefault(filmes => filmes.Id == selectedFilmeID);
+                    Categoria cat = db.Categorias.FirstOrDefault(categorias => categorias.Id == selectedCategoriaID);
 
-                /*
-                 * List<Filme> list = db.Filmes
-                    .Where(x => x.CategoriaID == cat)
-                    .ToList();
-                */
+                    Categoria categ = db.Categorias
+                        .Where(x => x.Nome == nome)
+                        .FirstOrDefault();
 
-                List<Categoria> listCat = db.Categorias
-                    .Where(x => x.Nome == nome)
-                    .Where(x => x.Activa == activa)
-                    .ToList();
+                    if (categ != null && categ.Id != cat.Id) {
+                        MessageBox.Show("Não podes alterar o nome desta categoria para: (" + nome + "), porque já existe!");
+                        return;
+                    }
 
-                if (listCat.Count > 0) {
-                    MessageBox.Show("Não podes alterar o nome desta categoria para: (" + nome + "), porque já existe!");
-                    return;
-                } 
+                    /*
+                    Filme findCat = db.Filmes
+                       .Where(x => x.CategoriaID == cat)
+                       .FirstOrDefault();
 
-                /*
-                if (list.Count > 0) {
-                    MessageBox.Show("Não podes alterar o estado da categoria, enquanto ela estiver relacionada com um filme!");
-                    return;
-                }*/
-                
-                cat.Nome = nome;
-                cat.Activa = activa;
+                    if (findCat != null) {
+                        MessageBox.Show("Não podes alterar o estado desta categoria, porque ela encontra-se relacionada com um filme!");
+                        return;
+                    }
+                    */
 
-                db.SaveChanges();
+                    cat.Nome = nome;
+                    cat.Activa = activa;
+
+                    db.SaveChanges();
+                }
+            } catch (System.NotSupportedException) {
+                MessageBox.Show("Não pode alterar o estado desta categoria, enquanto ela estiver relacionada com um filme! ");
             }
+
         }
 
-        public static void EliminarCategoria(int selectedCategoriaID, bool ativa) {
+        public static void EliminarCategoria(int selectedCategoriaID) {
             try {
                 using (var db = new CinegestContext()) {
                     Categoria ca = db.Categorias.FirstOrDefault(categorias => categorias.Id == selectedCategoriaID);
-
-                    if (ativa == true) {
-                        MessageBox.Show("Não podes eliminar esta categoria, enquanto ela estiver ativa!");
-                        return;
-                    }
 
                     db.Categorias.Remove(ca);
 
@@ -103,7 +98,7 @@ namespace CineGest.Controllers {
                 }
 
             } catch (System.Data.Entity.Infrastructure.DbUpdateException) {
-                MessageBox.Show("Selecione uma categoria da Tabela Categorias, se pretende eliminá-la!");
+                MessageBox.Show("Não pode eliminar esta categoria, porque ela encontra-se relacionada com um filme! ");
             }          
         }
     }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,8 @@ namespace CineGest.Views {
 
             listaFuncionarios.ReadOnly = true;
             listaFuncionarios.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            //listaFuncionarios.Columns[3].Visible = false;
         }
 
         private void limparDGV() {
@@ -32,6 +35,13 @@ namespace CineGest.Views {
             txtMoradaFun.Text = "";
             txtSalarioFun.Text = "";
             txtFuncaoFun.Text = "";
+        }
+
+        private void refreshLPLF() {
+            listaPessoas.DataSource = null;
+            listaFuncionarios.DataSource = null;
+            listaPessoas.DataSource = FuncionarioController.GetPessoas();
+            listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
         }
 
         private void listaFuncionarios_DoubleClick(object sender, EventArgs e) {
@@ -53,19 +63,15 @@ namespace CineGest.Views {
 
                 FuncionarioController.AdicionarPessoaFuncionario(txtNomeFun.Text, txtMoradaFun.Text, salario, txtFuncaoFun.Text);
 
-                listaPessoas.DataSource = null;
-                listaFuncionarios.DataSource = null;
-                listaPessoas.DataSource = FuncionarioController.GetPessoas();
-                listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
-
+                refreshLPLF();
                 limparCamposFunc();
 
             } catch (FormatException fe) {
-                MessageBox.Show("Campos no formato incorreto!\n\n" +
-                        "Campo Nome: aceita tanto letras como números." +
-                        "\nCampo Morada: aceita tanto letras como números." +
-                        "\nCampo Salário: só aceita números." +
-                        "\nCampo Função: aceita tanto letras como números.\n");
+                MessageBox.Show("Campos no formato incorreto!\n" +
+                         "\nCampo Nome: aceita letras e números." +
+                         "\nCampo Morada: aceita letras e números." +
+                         "\nCampo Salário: aceita números reais." +
+                         "\nCampo Função: aceita letras e números.");
 
                 limparCamposFunc();
             }
@@ -78,41 +84,33 @@ namespace CineGest.Views {
 
         private void btAlterarFun_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text)) {
-                MessageBox.Show("Tem de selecionar numa linha de cada tabela, se quiser alterar os seus campos!");
+                MessageBox.Show("Tem de selecionar numa linha da tabela Pessoas, se quiser alterar os campos!");
                 return;
 
             } else {
-                if ((listaPessoas.SelectedRows == null) || (listaFuncionarios.SelectedRows == null) || (listaPessoas.CurrentRow == null) || (listaFuncionarios.CurrentRow == null)) {
-                    MessageBox.Show("Só pode alterar o(s) campo(s) de uma pessoa ou de funcionário, se ela ou ele estiverem adicionados e selecionados nas Tabelas Pessoas e Funcionários ao mesmo tempo!");
+                if ((listaPessoas.SelectedRows == null) || (listaPessoas.CurrentRow == null)) {
+                    MessageBox.Show("Só pode alterar o(s) campo(s), se a pessoa estiver adicionada e selecionada na Tabelas Pessoas!");
                     return;
                 } else {
                     try {
                         string idPess = listaPessoas.CurrentRow.Cells[0].Value.ToString();
-                        string idFunc = listaFuncionarios.CurrentRow.Cells[0].Value.ToString();
 
                         int selectedPessoaID = Int32.Parse(idPess);
-                        int selectedFuncID = Int32.Parse(idFunc);
 
                         float salario = float.Parse(txtSalarioFun.Text);
 
-                        if (selectedPessoaID == selectedFuncID) {
-                            FuncionarioController.AlterarPessoaFuncionario(selectedPessoaID, selectedFuncID, txtNomeFun.Text, txtMoradaFun.Text, salario, txtFuncaoFun.Text);
+                        FuncionarioController.AlterarPessoaFuncionario(selectedPessoaID, txtNomeFun.Text, txtMoradaFun.Text, salario, txtFuncaoFun.Text);
 
-                            listaPessoas.DataSource = null;
-                            listaFuncionarios.DataSource = null;
-                            listaPessoas.DataSource = FuncionarioController.GetPessoas();
-                            listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
-
-                            limparDGV();
-                            limparCamposFunc();
-                        } else {
-                            MessageBox.Show("A linha que selecionaste na Tabela Pessoas não corresponde ao funcionário escolhido na Tabela Funcionários, ou viceversa!");
-                            limparDGV();
-                            return;
-                        }
+                        refreshLPLF();
+                        limparDGV();
+                        limparCamposFunc();
 
                     } catch (FormatException fe) {
-                        MessageBox.Show("Não pode deixar o(s) campo(s) vazio(s)!");
+                        MessageBox.Show("Campos no formato incorreto!\n" +
+                         "\nCampo Nome: aceita letras e números." +
+                         "\nCampo Morada: aceita letras e números." +
+                         "\nCampo Salário: aceita números reais." +
+                         "\nCampo Função: aceita letras e números.");
                     }
                 }
             }
@@ -121,51 +119,43 @@ namespace CineGest.Views {
         private void listaPessoas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             txtNomeFun.Text = listaPessoas.CurrentRow.Cells[1].Value.ToString();
             txtMoradaFun.Text = listaPessoas.CurrentRow.Cells[2].Value.ToString();
-        }
-        
-        private void listaFuncionarios_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
+
             txtSalarioFun.Text = listaFuncionarios.CurrentRow.Cells[1].Value.ToString();
             txtFuncaoFun.Text = listaFuncionarios.CurrentRow.Cells[2].Value.ToString();
+
+            //string idPess = listaPessoas.CurrentRow.Cells[0].Value.ToString();
+
+            //int selectedPessoaID = Int32.Parse(idPess);
+            //Funcionario fun = FuncionarioController.GetSalarioFuncionario(selectedPessoaID);
+            //txtFuncaoFun.Text = FuncionarioController.GetFuncaoFuncionario(selectedPessoaID);
         }
 
         private void btRemoverFun_Click(object sender, EventArgs e) {
             try {
-                if ((listaPessoas.SelectedRows == null) && (listaFuncionarios.SelectedRows == null)) {
-                    MessageBox.Show("Tem de selecionar numa linha de cada tabela, se quiser eliminá-la da tabela!");
+                if (listaPessoas.SelectedRows == null) {
+                    MessageBox.Show("Tem de selecionar numa linha da tabela Pessoas, se quiser eliminá-la!");
                     return;
                 }
 
                 string idPess = listaPessoas.CurrentRow.Cells[0].Value.ToString();
-                string idFunc = listaFuncionarios.CurrentRow.Cells[0].Value.ToString();
 
                 int selectedPessoaID = Int32.Parse(idPess);
-                int selectedFuncID = Int32.Parse(idFunc);
 
                 float salario = float.Parse(txtSalarioFun.Text);
 
-                if (selectedPessoaID == selectedFuncID) {
-                    DialogResult dr = MessageBox.Show("Pretende mesmo remover este funcionário?", "Confirmação de eliminação de funcionário",
+                DialogResult dr = MessageBox.Show("Pretende mesmo remover este funcionário?", "Confirmação de eliminação de funcionário",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-                    if (dr == DialogResult.Yes) {
-                        FuncionarioController.RemoverPessoaFuncionario(selectedPessoaID, selectedFuncID);
+                if (dr == DialogResult.Yes) {
+                    FuncionarioController.RemoverPessoaFuncionario(selectedPessoaID);
 
-                        listaPessoas.DataSource = null;
-                        listaFuncionarios.DataSource = null;
-                        listaPessoas.DataSource = FuncionarioController.GetPessoas();
-                        listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
-
-                        limparDGV();
-                        limparCamposFunc();
-                    }
-                    
-                } else {
-                    MessageBox.Show("A linha que selecionaste na tabela Pessoas não corresponde ao funcionário escolhido na tabela Funcionários!");
-                    return;
+                    refreshLPLF();
+                    limparDGV();
+                    limparCamposFunc();
                 }
 
             } catch (FormatException fe) {
-                MessageBox.Show("Tem de selecionar numa linha de cada tabela, se quiser eliminá-la da tabela!");
+                MessageBox.Show("Tem de selecionar numa linha da tabela Pessoas, se quiser eliminá-la!");
             }
         }
     }

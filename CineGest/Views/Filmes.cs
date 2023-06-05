@@ -41,8 +41,15 @@ namespace CineGest.Views {
             cbCatAtiva.Checked = false;
         }
 
+        private void refreshLF() {
+            filmeBindingSource.DataSource = null;
+            filmeBindingSource.DataSource = FilmeController.GetFilmes();
+            //listaFilmes.DataSource = null;
+            listaFilmes.DataSource = FilmeController.GetFilmes();
+        }
+
         private void btNovoF_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(txtNome.Text)) {
+            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtDuracao.Text)) {
                 MessageBox.Show("Por favor, preencha o(s) campo(s)!");
 
             } else {
@@ -52,9 +59,8 @@ namespace CineGest.Views {
 
                     FilmeController.AdicionarFilme(txtNome.Text, duracao, cbCategoriaF.Text, activo);
 
-                    listaFilmes.DataSource = null;
-                    listaFilmes.DataSource = FilmeController.GetFilmes();
-
+                    refreshLF();
+                    limparLF();
                     limparCamposF();
 
                 } catch (FormatException fe) {
@@ -74,6 +80,7 @@ namespace CineGest.Views {
         private void listaFilmes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             txtNome.Text = listaFilmes.CurrentRow.Cells[1].Value.ToString();
             txtDuracao.Text = listaFilmes.CurrentRow.Cells[2].Value.ToString();
+            cbCategoriaF.Text = listaFilmes.CurrentRow.Cells[4].Value.ToString();
             string val = listaFilmes.CurrentRow.Cells[3].Value.ToString();
 
             if (val == "True") {
@@ -84,7 +91,7 @@ namespace CineGest.Views {
         }
 
         private void btAlterarF_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(txtCat.Text)) {
+            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtDuracao.Text)) {
                 MessageBox.Show("Só pode alterar o campo de um filme, se ele estiver adicionado e selecionado na Tabela Filmes!");
                 return;
 
@@ -103,9 +110,7 @@ namespace CineGest.Views {
 
                         FilmeController.AlterarFilme(selectedID, txtNome.Text, duracao, cbCategoriaF.Text, activo);
 
-                        listaFilmes.DataSource = null;
-                        listaFilmes.DataSource = FilmeController.GetFilmes();
-
+                        refreshLF();
                         limparLF();
                         limparCamposF();
 
@@ -135,9 +140,7 @@ namespace CineGest.Views {
                 if (dr == DialogResult.Yes) {
                     FilmeController.EliminarFilme(selectedID);
 
-                    listaFilmes.DataSource = null;
-                    listaFilmes.DataSource = FilmeController.GetFilmes();
-
+                    refreshLF();
                     limparLF();
                     limparCamposF();
                 }
@@ -157,6 +160,12 @@ namespace CineGest.Views {
             cbCatAtiva.Checked = false;
         }
 
+        private void refreshLC() {
+            listaCategorias.DataSource = null;
+            listaCategorias.DataSource = CategoriaController.GetCategorias();
+            cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
+        }
+
         private void listaCategorias_DoubleClick(object sender, EventArgs e) {
             listaCategorias.DataSource = CategoriaController.GetCategorias();
             cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
@@ -174,10 +183,7 @@ namespace CineGest.Views {
 
                     CategoriaController.AdicionarCategoria(txtCat.Text, ativa);
 
-                    listaCategorias.DataSource = null;
-                    listaCategorias.DataSource = CategoriaController.GetCategorias();
-                    cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
-
+                    refreshLC();
                     limparCamposCat();
 
                 } catch (FormatException fe) {
@@ -214,10 +220,8 @@ namespace CineGest.Views {
 
                         CategoriaController.AlterarCategoria(selectedCategoriaID, txtCat.Text, ativa);
 
-                        listaCategorias.DataSource = null;
-                        listaCategorias.DataSource = CategoriaController.GetCategorias();
-                        cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
-
+                        refreshLC();
+                        refreshLF();
                         limparLC();
                         limparCamposCat();
 
@@ -244,12 +248,9 @@ namespace CineGest.Views {
                     MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 if (dr == DialogResult.Yes) {
-                    CategoriaController.EliminarCategoria(selectedCategoriaID, ativa);
+                    CategoriaController.EliminarCategoria(selectedCategoriaID);
 
-                    listaCategorias.DataSource = null;
-                    listaCategorias.DataSource = CategoriaController.GetCategorias();
-                    cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
-
+                    refreshLC();
                     limparLC();
                     limparCamposCat();
                 }

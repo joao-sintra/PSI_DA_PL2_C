@@ -18,12 +18,29 @@ namespace CineGest.Controllers {
                 return db.Pessoas.ToList();               
             }
         }
+        
 
         public static List<Funcionario> GetFuncionarios() {
 
             using (var db = new CinegestContext()) {
 
-                return db.Funcionarios.ToList();
+                return db.Funcionarios.Include("PessoaId").ToList();
+            }
+        }
+
+        public float GetSalarioFuncionario(int selectedPessoaID) {
+            using (var db = new CinegestContext()) {
+                Funcionario fun = db.Funcionarios.Where(x => x.Id == selectedPessoaID).FirstOrDefault();
+
+                return fun.Salario;
+            }
+        }
+
+        public string GetFuncaoFuncionario(int selectedPessoaID) {
+            using (var db = new CinegestContext()) {
+                Funcionario fun = db.Funcionarios.Where(x => x.Id == selectedPessoaID).FirstOrDefault();
+
+                return fun.Funcao;
             }
         }
 
@@ -47,22 +64,22 @@ namespace CineGest.Controllers {
             }
         }
 
-        public static void AlterarPessoaFuncionario(int selectedPessoaID, int selectedFuncID, string nome, string morada, float salario, string funcao) {
+        public static void AlterarPessoaFuncionario(int selectedPessoaID, string nome, string morada, float salario, string funcao) {
 
             using (var db = new CinegestContext()) {
 
                 Pessoa pess = db.Pessoas.FirstOrDefault(p => p.Id == selectedPessoaID);
-                Funcionario func = db.Funcionarios.FirstOrDefault(f => f.Id == selectedFuncID);
 
-                List<Pessoa> listPNM = db.Pessoas
+                Funcionario func = db.Funcionarios.FirstOrDefault(f => f.Id == selectedPessoaID);
+
+                Pessoa findPess = db.Pessoas
                     .Where(x => x.Nome == nome)
-                    .Where(x => x.Morada == morada)
-                    .ToList();
+                    .FirstOrDefault();
 
-                if (listPNM.Count > 0) {
-                    MessageBox.Show("Não podes alterar o nome desta Pessoa para: (" + nome + "), porque já existe!");
+                if (findPess != null && findPess.Id != pess.Id) {
+                    MessageBox.Show("Não podes alterar o nome desta pessoa para: (" + nome + "), porque já existe!");
                     return;
-                } 
+                }
 
                 pess.Nome = nome;
                 pess.Morada = morada;
@@ -73,16 +90,23 @@ namespace CineGest.Controllers {
             }
         }
 
-        public static void RemoverPessoaFuncionario(int selectedPessoaID, int selectedFuncID) {
+        public static void RemoverPessoaFuncionario(int selectedPessoaID) {
             using (var db = new CinegestContext()) {
 
                 Pessoa pess = db.Pessoas.FirstOrDefault(p => p.Id == selectedPessoaID);
-                Funcionario func = db.Funcionarios.FirstOrDefault(f => f.Id == selectedFuncID);
+                Funcionario func = db.Funcionarios.FirstOrDefault(f => f.Id == selectedPessoaID);
 
-                db.Pessoas.Remove(pess);
-                db.Funcionarios.Remove(func);
+                if (pess.Id == func.Id) {
+                    db.Pessoas.Remove(pess);
+                    db.Funcionarios.Remove(func);
 
-                db.SaveChanges();
+                    db.SaveChanges();
+                } else {
+                    MessageBox.Show("Não foi possível efetuar a ação!");
+                    return;
+                }
+
+                
             }
         }
     }

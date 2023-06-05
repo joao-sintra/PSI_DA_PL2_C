@@ -189,6 +189,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Cinema.datasource" />
+    <None Include="Properties\DataSources\Filme.datasource" />
+    <None Include="Properties\DataSources\Funcionario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

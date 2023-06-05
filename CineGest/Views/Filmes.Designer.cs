@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.gbAdicionarFilme = new System.Windows.Forms.GroupBox();
             this.cbCategoriaF = new System.Windows.Forms.ComboBox();
@@ -47,13 +48,20 @@
             this.listaFilmes = new System.Windows.Forms.DataGridView();
             this.listaCategorias = new System.Windows.Forms.DataGridView();
             this.btNovaSessao = new System.Windows.Forms.Button();
-            this.timer1 = new CineGest.Views.Timer();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new CineGest.Views.Timer();
+            this.filmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duracaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoriaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbAdicionarFilme.SuspendLayout();
             this.gbAdicionarCat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFilmes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -301,7 +309,15 @@
             // 
             // listaFilmes
             // 
+            this.listaFilmes.AutoGenerateColumns = false;
             this.listaFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaFilmes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.duracaoDataGridViewTextBoxColumn,
+            this.activoDataGridViewCheckBoxColumn,
+            this.categoriaIDDataGridViewTextBoxColumn});
+            this.listaFilmes.DataSource = this.filmeBindingSource;
             this.listaFilmes.Location = new System.Drawing.Point(23, 431);
             this.listaFilmes.Name = "listaFilmes";
             this.listaFilmes.RowHeadersWidth = 51;
@@ -334,14 +350,6 @@
             this.btNovaSessao.Text = "Nova sessão";
             this.btNovaSessao.UseVisualStyleBackColor = false;
             // 
-            // timer1
-            // 
-            this.timer1.Location = new System.Drawing.Point(809, 21);
-            this.timer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.timer1.Name = "timer1";
-            this.timer1.Size = new System.Drawing.Size(290, 42);
-            this.timer1.TabIndex = 21;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -361,6 +369,48 @@
             this.label2.Size = new System.Drawing.Size(184, 30);
             this.label2.TabIndex = 27;
             this.label2.Text = "Tabela Categorias";
+            // 
+            // timer1
+            // 
+            this.timer1.Location = new System.Drawing.Point(809, 21);
+            this.timer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.timer1.Name = "timer1";
+            this.timer1.Size = new System.Drawing.Size(290, 42);
+            this.timer1.TabIndex = 21;
+            // 
+            // filmeBindingSource
+            // 
+            this.filmeBindingSource.DataSource = typeof(CineGest.Filme);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // duracaoDataGridViewTextBoxColumn
+            // 
+            this.duracaoDataGridViewTextBoxColumn.DataPropertyName = "Duracao";
+            this.duracaoDataGridViewTextBoxColumn.HeaderText = "Duracao";
+            this.duracaoDataGridViewTextBoxColumn.Name = "duracaoDataGridViewTextBoxColumn";
+            // 
+            // activoDataGridViewCheckBoxColumn
+            // 
+            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "Activo";
+            this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
+            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
+            // 
+            // categoriaIDDataGridViewTextBoxColumn
+            // 
+            this.categoriaIDDataGridViewTextBoxColumn.DataPropertyName = "CategoriaID";
+            this.categoriaIDDataGridViewTextBoxColumn.HeaderText = "CategoriaID";
+            this.categoriaIDDataGridViewTextBoxColumn.Name = "categoriaIDDataGridViewTextBoxColumn";
             // 
             // Filmes
             // 
@@ -384,6 +434,7 @@
             this.gbAdicionarCat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFilmes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,5 +469,11 @@
         private Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duracaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource filmeBindingSource;
     }
 }

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.adicionarFunc = new System.Windows.Forms.GroupBox();
             this.btRemoverFun = new System.Windows.Forms.Button();
@@ -38,12 +39,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listaFuncionarios = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.funcaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pessoaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaPessoas = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new CineGest.Views.Timer();
             this.adicionarFunc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,14 +207,48 @@
             // 
             // listaFuncionarios
             // 
+            this.listaFuncionarios.AutoGenerateColumns = false;
             this.listaFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaFuncionarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.salarioDataGridViewTextBoxColumn,
+            this.funcaoDataGridViewTextBoxColumn,
+            this.pessoaIdDataGridViewTextBoxColumn});
+            this.listaFuncionarios.DataSource = this.funcionarioBindingSource;
             this.listaFuncionarios.Location = new System.Drawing.Point(416, 439);
             this.listaFuncionarios.Name = "listaFuncionarios";
             this.listaFuncionarios.RowHeadersWidth = 51;
             this.listaFuncionarios.Size = new System.Drawing.Size(453, 261);
             this.listaFuncionarios.TabIndex = 25;
-            this.listaFuncionarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaFuncionarios_CellMouseClick);
             this.listaFuncionarios.DoubleClick += new System.EventHandler(this.listaFuncionarios_DoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // salarioDataGridViewTextBoxColumn
+            // 
+            this.salarioDataGridViewTextBoxColumn.DataPropertyName = "Salario";
+            this.salarioDataGridViewTextBoxColumn.HeaderText = "Salario";
+            this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
+            // 
+            // funcaoDataGridViewTextBoxColumn
+            // 
+            this.funcaoDataGridViewTextBoxColumn.DataPropertyName = "Funcao";
+            this.funcaoDataGridViewTextBoxColumn.HeaderText = "Funcao";
+            this.funcaoDataGridViewTextBoxColumn.Name = "funcaoDataGridViewTextBoxColumn";
+            // 
+            // pessoaIdDataGridViewTextBoxColumn
+            // 
+            this.pessoaIdDataGridViewTextBoxColumn.DataPropertyName = "PessoaId";
+            this.pessoaIdDataGridViewTextBoxColumn.HeaderText = "PessoaId";
+            this.pessoaIdDataGridViewTextBoxColumn.Name = "pessoaIdDataGridViewTextBoxColumn";
+            // 
+            // funcionarioBindingSource
+            // 
+            this.funcionarioBindingSource.DataSource = typeof(CineGest.Funcionario);
             // 
             // listaPessoas
             // 
@@ -265,6 +306,7 @@
             this.adicionarFunc.ResumeLayout(false);
             this.adicionarFunc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaPessoas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,5 +334,10 @@
         private System.Windows.Forms.DataGridView listaPessoas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn funcaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pessoaIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource;
     }
 }
