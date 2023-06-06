@@ -84,5 +84,3 @@ C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvo
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.pdb
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Views.Clientes.resources
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Views.Sessoes.resources
-C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Migrations.InitialCreate.resources
-C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Migrations.cenas.resources
