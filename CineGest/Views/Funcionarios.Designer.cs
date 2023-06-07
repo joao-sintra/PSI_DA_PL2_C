@@ -1,5 +1,7 @@
-﻿namespace CineGest.Views {
-    partial class Funcionarios {
+﻿namespace CineGest.Views
+{
+    partial class Funcionarios
+    {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,8 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.label3 = new System.Windows.Forms.Label();
             this.adicionarFunc = new System.Windows.Forms.GroupBox();
             this.btRemoverFun = new System.Windows.Forms.Button();
@@ -203,7 +208,7 @@
             this.listaFuncionarios.RowHeadersWidth = 51;
             this.listaFuncionarios.Size = new System.Drawing.Size(454, 261);
             this.listaFuncionarios.TabIndex = 25;
-            this.listaFuncionarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaFuncionarios_CellMouseClick);
+            this.listaFuncionarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaPessoas_CellMouseClick);
             this.listaFuncionarios.DoubleClick += new System.EventHandler(this.listaFuncionarios_DoubleClick);
             // 
             // label4
@@ -219,7 +224,7 @@
             // timer1
             // 
             this.timer1.Location = new System.Drawing.Point(872, 19);
-            this.timer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.timer1.Margin = new System.Windows.Forms.Padding(4);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(221, 35);
             this.timer1.TabIndex = 22;

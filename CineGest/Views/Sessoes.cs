@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -81,6 +82,7 @@ namespace CineGest.Views
             ListaSessoes.Columns["SalaID"].HeaderText = "Sala";
             ListaSessoes.Columns["Preco"].HeaderText = "Preço (€)";
             ListaSessoes.Columns["DataHora"].HeaderText = "Data/Hora";
+            limparCamposSessao();
             limparListaSessoes();
 
         }
@@ -93,13 +95,23 @@ namespace CineGest.Views
 
         private void btAlterarSessao_Click(object sender, EventArgs e)
         {
+           
+
             if (string.IsNullOrEmpty(cbFilmeS.Text) || string.IsNullOrEmpty(cbSalaS.Text) || string.IsNullOrEmpty(txtPreco.Text))
             {
-                MessageBox.Show("Só pode alterar o campo de uma Sessão, se ele estiver adicionado e selecionado na Tabela Sessões !");
+                MessageBox.Show("Só pode alterar o(s) campo(s), se a sessão estiver adicionada e selecionada na Tabela Sessões!");
                 return;
+
+                
             }
             else
             {
+                if (ListaSessoes.SelectedRows.Count == 0 || ListaSessoes.CurrentRow == null)
+                {
+                    MessageBox.Show("Tem de selecionar em linha numa ( setinha no lado esquerdo ) da tabela Sessões, se quiser alterar os campos!");
+                    return;
+                }
+
                 try
                 {
                     string id = ListaSessoes.CurrentRow.Cells[0].Value.ToString();
@@ -111,7 +123,7 @@ namespace CineGest.Views
 
                     refreshListaSessoes();
                     limparListaSessoes();
-                    limparCamposSessao();
+                 
 
                 }
                 catch (FormatException fe)
@@ -131,7 +143,7 @@ namespace CineGest.Views
         {
             if (ListaSessoes.SelectedRows.Count == 0 || ListaSessoes.CurrentRow == null)
             {
-                MessageBox.Show("Selecione uma Sessão da Tabela Sessões, se pretende eliminá-la!");
+                MessageBox.Show("Tem de selecionar em linha numa ( setinha no lado esquerdo ) da tabela Sessões, se pretende remover a Sessão!");
                 return;
             }
 

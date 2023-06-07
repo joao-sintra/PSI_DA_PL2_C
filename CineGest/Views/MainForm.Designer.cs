@@ -39,7 +39,7 @@
             // 
             // sessoes1
             // 
-            this.sessoes1.Location = new System.Drawing.Point(252, 0);
+            this.sessoes1.Location = new System.Drawing.Point(251, 0);
             this.sessoes1.Name = "sessoes1";
             this.sessoes1.Size = new System.Drawing.Size(1121, 733);
             this.sessoes1.TabIndex = 1;

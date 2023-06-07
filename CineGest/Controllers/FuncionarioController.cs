@@ -20,8 +20,6 @@ namespace CineGest.Controllers {
             }
         }
 
-       
-
         public static void AdicionarFuncionario(string nome, string morada, float salario, string funcao) {
 
             using (var db = new CinegestContext()) {

@@ -10,62 +10,72 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CineGest.Views {
-    public partial class Funcionarios : UserControl {
-        public Funcionarios() {
+namespace CineGest.Views
+{
+    public partial class Funcionarios : UserControl
+    {
+        public Funcionarios()
+        {
             InitializeComponent();
-
-
-            listaPessoas.ReadOnly = true;
-            listaPessoas.EditMode = DataGridViewEditMode.EditProgrammatically;
 
             listaFuncionarios.ReadOnly = true;
             listaFuncionarios.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //listaFuncionarios.Columns[3].Visible = false;
-        }
 
-        private void limparDGV() {
-            listaPessoas.ClearSelection();
+        }
+        private void limparDGV()
+        {
             listaFuncionarios.ClearSelection();
         }
 
-        private void limparCamposFunc() {
+        private void limparCamposFunc()
+        {
             txtNomeFun.Text = "";
             txtMoradaFun.Text = "";
             txtSalarioFun.Text = "";
             txtFuncaoFun.Text = "";
         }
 
-        private void refreshLPLF() {
-            listaPessoas.DataSource = null;
+        private void refreshLPLF()
+        {
+
             listaFuncionarios.DataSource = null;
-            listaPessoas.DataSource = FuncionarioController.GetPessoas();
             listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
         }
+        public void ordenarCampos()
+        {
+            listaFuncionarios.Columns["Id"].Visible = false;
+            listaFuncionarios.Columns["Nome"].DisplayIndex = 0;
+            listaFuncionarios.Columns["Morada"].DisplayIndex = 1;
+            listaFuncionarios.Columns["Salario"].DisplayIndex = 2;
+            listaFuncionarios.Columns["Funcao"].DisplayIndex = 3;
+        }
 
-        private void listaFuncionarios_DoubleClick(object sender, EventArgs e) {
+        private void listaFuncionarios_DoubleClick(object sender, EventArgs e)
+        {
             listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
-            limparDGV();
-        }
-        private void listaPessoas_DoubleClick(object sender, EventArgs e) {
-            listaPessoas.DataSource = FuncionarioController.GetPessoas();
-            limparDGV();
+            ordenarCampos();
         }
 
-        private void btNovoFun_Click(object sender, EventArgs e) {
-            try {
-                if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text)) {
+        private void btNovoFun_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text))
+                {
                     MessageBox.Show("Por favor, preencha o(s) campo(s)!");
                 }
 
                 float salario = float.Parse(txtSalarioFun.Text);
 
-                FuncionarioController.AdicionarPessoaFuncionario(txtNomeFun.Text, txtMoradaFun.Text, salario, txtFuncaoFun.Text);
+                FuncionarioController.AdicionarFuncionario(txtNomeFun.Text, txtMoradaFun.Text, salario, txtFuncaoFun.Text);
 
                 refreshLPLF();
                 limparCamposFunc();
+                ordenarCampos();
 
-            } catch (FormatException fe) {
+            }
+            catch (FormatException fe)
+            {
                 MessageBox.Show("Campos no formato incorreto!\n" +
                          "\nCampo Nome: aceita letras e números." +
                          "\nCampo Morada: aceita letras e números." +
@@ -73,89 +83,110 @@ namespace CineGest.Views {
                          "\nCampo Função: aceita letras e números.");
 
                 limparCamposFunc();
+                ordenarCampos();
             }
         }
 
-        private void btLimparCamposFun_Click(object sender, EventArgs e) {
+        private void btLimparCamposFun_Click(object sender, EventArgs e)
+        {
             limparCamposFunc();
             limparDGV();
+            ordenarCampos();
         }
 
-        private void btAlterarFun_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text)) {
-                MessageBox.Show("Tem de selecionar numa linha da tabela Pessoas, se quiser alterar os campos!");
+        private void btAlterarFun_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text))
+            {
+                MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser alterar os campos!");
                 return;
 
-            } else {
-                if ((listaPessoas.SelectedRows == null) || (listaPessoas.CurrentRow == null)) {
-                    MessageBox.Show("Só pode alterar o(s) campo(s), se a pessoa estiver adicionada e selecionada na Tabelas Pessoas!");
+            }
+            else
+            {
+                if ((listaFuncionarios.SelectedRows == null) || (listaFuncionarios.CurrentRow == null))
+                {
+                    MessageBox.Show("Só pode alterar o(s) campo(s), se o funcionário estiver adicionado e selecionado na Tabelas Funcionários!");
                     return;
-                } else {
-                    try {
-                        string idPess = listaPessoas.CurrentRow.Cells[0].Value.ToString();
+                }
+                else
+                {
+                    try
+                    {
+                        string idFun = listaFuncionarios.CurrentRow.Cells[2].Value.ToString();
 
-                        int selectedPessoaID = Int32.Parse(idPess);
+                        int selectedFuncionarioID = Int32.Parse(idFun);
 
                         float salario = float.Parse(txtSalarioFun.Text);
 
-                        FuncionarioController.AlterarPessoaFuncionario(selectedPessoaID, txtNomeFun.Text, txtMoradaFun.Text, salario, txtFuncaoFun.Text);
+                        FuncionarioController.AlterarFuncionario(selectedFuncionarioID, txtNomeFun.Text, txtMoradaFun.Text, salario, txtFuncaoFun.Text);
 
                         refreshLPLF();
                         limparDGV();
                         limparCamposFunc();
+                        ordenarCampos();
 
-                    } catch (FormatException fe) {
+                    }
+                    catch (FormatException fe)
+                    {
                         MessageBox.Show("Campos no formato incorreto!\n" +
                          "\nCampo Nome: aceita letras e números." +
                          "\nCampo Morada: aceita letras e números." +
                          "\nCampo Salário: aceita números reais." +
                          "\nCampo Função: aceita letras e números.");
+
+                        ordenarCampos();
                     }
                 }
             }
         }
 
-        private void listaPessoas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
-            txtNomeFun.Text = listaPessoas.CurrentRow.Cells[1].Value.ToString();
-            txtMoradaFun.Text = listaPessoas.CurrentRow.Cells[2].Value.ToString();
+        private void listaPessoas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtNomeFun.Text = listaFuncionarios.CurrentRow.Cells[3].Value.ToString();
+            txtMoradaFun.Text = listaFuncionarios.CurrentRow.Cells[4].Value.ToString();
 
-            txtSalarioFun.Text = listaFuncionarios.CurrentRow.Cells[1].Value.ToString();
-            txtFuncaoFun.Text = listaFuncionarios.CurrentRow.Cells[2].Value.ToString();
-
-            //string idPess = listaPessoas.CurrentRow.Cells[0].Value.ToString();
-
-            //int selectedPessoaID = Int32.Parse(idPess);
-            //Funcionario fun = FuncionarioController.GetSalarioFuncionario(selectedPessoaID);
-            //txtFuncaoFun.Text = FuncionarioController.GetFuncaoFuncionario(selectedPessoaID);
+            txtSalarioFun.Text = listaFuncionarios.CurrentRow.Cells[0].Value.ToString();
+            txtFuncaoFun.Text = listaFuncionarios.CurrentRow.Cells[1].Value.ToString();
         }
 
-        private void btRemoverFun_Click(object sender, EventArgs e) {
-            try {
-                if (listaPessoas.SelectedRows == null) {
-                    MessageBox.Show("Tem de selecionar numa linha da tabela Pessoas, se quiser eliminá-la!");
+        private void btRemoverFun_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listaFuncionarios.SelectedRows == null)
+                {
+                    MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser eliminá-la!");
                     return;
                 }
 
-                string idPess = listaPessoas.CurrentRow.Cells[0].Value.ToString();
+                string idFun = listaFuncionarios.CurrentRow.Cells[2].Value.ToString();
 
-                int selectedPessoaID = Int32.Parse(idPess);
+                int selectedFuncionarioID = Int32.Parse(idFun);
 
                 float salario = float.Parse(txtSalarioFun.Text);
 
                 DialogResult dr = MessageBox.Show("Pretende mesmo remover este funcionário?", "Confirmação de eliminação de funcionário",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-                if (dr == DialogResult.Yes) {
-                    FuncionarioController.RemoverPessoaFuncionario(selectedPessoaID);
+                if (dr == DialogResult.Yes)
+                {
+                    FuncionarioController.RemoverFuncionario(selectedFuncionarioID);
 
                     refreshLPLF();
                     limparDGV();
                     limparCamposFunc();
+                    ordenarCampos();
                 }
 
-            } catch (FormatException fe) {
-                MessageBox.Show("Tem de selecionar numa linha da tabela Pessoas, se quiser eliminá-la!");
+            }
+            catch (FormatException fe)
+            {
+                MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser eliminá-la!");
+                ordenarCampos();
             }
         }
     }
 }
+
+
