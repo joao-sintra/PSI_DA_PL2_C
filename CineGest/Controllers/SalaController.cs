@@ -14,7 +14,21 @@ namespace CineGest.Controllers {
 
             using (var db = new CinegestContext()) {
 
+
                 return db.Salas.ToList();
+            }
+        }
+        public static List<string> GetOnlyNomesSalas()
+        {
+
+            using (var db = new CinegestContext())
+            {
+
+                List<string> salas = db.Salas
+
+                    .Select(sala => sala.Nome).ToList();
+
+                return salas;
             }
         }
 
@@ -23,7 +37,7 @@ namespace CineGest.Controllers {
             using (var db = new CinegestContext()) {
                 var salas = new Sala { Nome = nome, Colunas = colunas, Filas = filas, Lugares = colunas*filas };
 
-                List<Sala> list = db.Salas.Where(x => x.Nome == nome).ToList();
+                List<Sala> list = db.Salas.Where(sala => sala.Nome == nome).ToList();
 
                 if (list.Count > 0) {
                     MessageBox.Show("Esta sala ("+nome+") já existe!");

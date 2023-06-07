@@ -60,14 +60,7 @@
     <Compile Include="Controllers\FilmeController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\SalaController.cs" />
-    <Compile Include="Migrations\202305230913067_InitialCreate.cs" />
-    <Compile Include="Migrations\202305230913067_InitialCreate.designer.cs">
-      <DependentUpon>202305230913067_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202306030054424_cenas.cs" />
-    <Compile Include="Migrations\202306030054424_cenas.designer.cs">
-      <DependentUpon>202306030054424_cenas.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\SessaoController.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bilhete.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -146,12 +139,6 @@
     <Compile Include="Views\Timer.Designer.cs">
       <DependentUpon>Timer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202305230913067_InitialCreate.resx">
-      <DependentUpon>202305230913067_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306030054424_cenas.resx">
-      <DependentUpon>202306030054424_cenas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Atendimento.resx">
       <DependentUpon>Atendimento.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace CineGest {
-    public partial class MainForm : Form {
-        public MainForm() {
+namespace CineGest
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
             InitializeComponent();
             //ListViewItem item1 = new ListViewItem();
             //int colunas = 12;
@@ -30,11 +33,9 @@ namespace CineGest {
             //item1.SubItems[0].BackColor = Color.Green;
 
             //}
-          
-        }
 
-        private void atendimento1_Load(object sender, EventArgs e) {
 
         }
+
     }
 }

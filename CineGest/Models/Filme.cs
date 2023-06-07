@@ -16,5 +16,9 @@ namespace CineGest
         public bool Activo { get; set; }
 
         public Categoria CategoriaID { get; set; }
+        public override string ToString()
+        {
+            return this.Nome;
+        }
     }
 }

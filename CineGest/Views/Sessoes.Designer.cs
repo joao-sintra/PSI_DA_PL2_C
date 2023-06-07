@@ -31,19 +31,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ListaSessoes = new System.Windows.Forms.DataGridView();
             this.cliente = new System.Windows.Forms.GroupBox();
-            this.btRemoverF = new System.Windows.Forms.Button();
-            this.btAlterarF = new System.Windows.Forms.Button();
-            this.txtExibicao = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btLimparCamposF = new System.Windows.Forms.Button();
-            this.btNovoF = new System.Windows.Forms.Button();
-            this.txtCategoriaF = new System.Windows.Forms.TextBox();
-            this.txtDuracao = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbSalaS = new System.Windows.Forms.ComboBox();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.cbFilmeS = new System.Windows.Forms.ComboBox();
+            this.btRemoverSessao = new System.Windows.Forms.Button();
+            this.btAlterarSessao = new System.Windows.Forms.Button();
+            this.btLimparCamposSessao = new System.Windows.Forms.Button();
+            this.btNovoSessao = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.timer1 = new CineGest.Views.Timer();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ListaSessoes)).BeginInit();
             this.cliente.SuspendLayout();
             this.SuspendLayout();
@@ -60,126 +61,139 @@
             // 
             // ListaSessoes
             // 
+            this.ListaSessoes.AllowUserToAddRows = false;
             this.ListaSessoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaSessoes.Location = new System.Drawing.Point(25, 411);
+            this.ListaSessoes.Location = new System.Drawing.Point(260, 417);
             this.ListaSessoes.Name = "ListaSessoes";
-            this.ListaSessoes.Size = new System.Drawing.Size(1076, 303);
+            this.ListaSessoes.RowHeadersWidth = 62;
+            this.ListaSessoes.Size = new System.Drawing.Size(565, 303);
             this.ListaSessoes.TabIndex = 37;
+            this.ListaSessoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ListaSessoes_CellMouseClick_1);
+            this.ListaSessoes.DoubleClick += new System.EventHandler(this.ListaSessoes_DoubleClick);
             // 
             // cliente
             // 
-            this.cliente.Controls.Add(this.btRemoverF);
-            this.cliente.Controls.Add(this.btAlterarF);
-            this.cliente.Controls.Add(this.txtExibicao);
-            this.cliente.Controls.Add(this.label1);
-            this.cliente.Controls.Add(this.btLimparCamposF);
-            this.cliente.Controls.Add(this.btNovoF);
-            this.cliente.Controls.Add(this.txtCategoriaF);
-            this.cliente.Controls.Add(this.txtDuracao);
-            this.cliente.Controls.Add(this.txtNome);
+            this.cliente.Controls.Add(this.txtPreco);
+            this.cliente.Controls.Add(this.label2);
+            this.cliente.Controls.Add(this.cbSalaS);
+            this.cliente.Controls.Add(this.datePicker);
+            this.cliente.Controls.Add(this.cbFilmeS);
+            this.cliente.Controls.Add(this.btRemoverSessao);
+            this.cliente.Controls.Add(this.btAlterarSessao);
+            this.cliente.Controls.Add(this.btLimparCamposSessao);
+            this.cliente.Controls.Add(this.btNovoSessao);
             this.cliente.Controls.Add(this.label7);
             this.cliente.Controls.Add(this.label6);
             this.cliente.Controls.Add(this.label5);
             this.cliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cliente.Location = new System.Drawing.Point(25, 77);
             this.cliente.Name = "cliente";
-            this.cliente.Size = new System.Drawing.Size(541, 305);
+            this.cliente.Size = new System.Drawing.Size(927, 305);
             this.cliente.TabIndex = 36;
             this.cliente.TabStop = false;
             this.cliente.Text = "Adicionar Sessão";
             // 
-            // btRemoverF
+            // txtPreco
             // 
-            this.btRemoverF.BackColor = System.Drawing.Color.Brown;
-            this.btRemoverF.FlatAppearance.BorderSize = 0;
-            this.btRemoverF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRemoverF.ForeColor = System.Drawing.Color.White;
-            this.btRemoverF.Location = new System.Drawing.Point(330, 250);
-            this.btRemoverF.Name = "btRemoverF";
-            this.btRemoverF.Size = new System.Drawing.Size(133, 33);
-            this.btRemoverF.TabIndex = 15;
-            this.btRemoverF.Text = "Remover";
-            this.btRemoverF.UseVisualStyleBackColor = false;
+            this.txtPreco.Location = new System.Drawing.Point(111, 158);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(227, 29);
+            this.txtPreco.TabIndex = 44;
             // 
-            // btAlterarF
+            // label2
             // 
-            this.btAlterarF.BackColor = System.Drawing.Color.Gold;
-            this.btAlterarF.FlatAppearance.BorderSize = 0;
-            this.btAlterarF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAlterarF.ForeColor = System.Drawing.Color.White;
-            this.btAlterarF.Location = new System.Drawing.Point(179, 250);
-            this.btAlterarF.Name = "btAlterarF";
-            this.btAlterarF.Size = new System.Drawing.Size(133, 33);
-            this.btAlterarF.TabIndex = 22;
-            this.btAlterarF.Text = "Alterar";
-            this.btAlterarF.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 21);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Preço:";
             // 
-            // txtExibicao
+            // cbSalaS
             // 
-            this.txtExibicao.Location = new System.Drawing.Point(111, 196);
-            this.txtExibicao.Name = "txtExibicao";
-            this.txtExibicao.Size = new System.Drawing.Size(297, 29);
-            this.txtExibicao.TabIndex = 12;
+            this.cbSalaS.FormattingEnabled = true;
+            this.cbSalaS.Location = new System.Drawing.Point(111, 68);
+            this.cbSalaS.Name = "cbSalaS";
+            this.cbSalaS.Size = new System.Drawing.Size(297, 29);
+            this.cbSalaS.TabIndex = 27;
             // 
-            // label1
+            // datePicker
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 199);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Hora:";
+            this.datePicker.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(561, 68);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(271, 29);
+            this.datePicker.TabIndex = 41;
+            this.datePicker.Value = new System.DateTime(2023, 6, 8, 5, 12, 0, 0);
             // 
-            // btLimparCamposF
+            // cbFilmeS
             // 
-            this.btLimparCamposF.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btLimparCamposF.FlatAppearance.BorderSize = 0;
-            this.btLimparCamposF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLimparCamposF.ForeColor = System.Drawing.Color.White;
-            this.btLimparCamposF.Location = new System.Drawing.Point(30, 250);
-            this.btLimparCamposF.Name = "btLimparCamposF";
-            this.btLimparCamposF.Size = new System.Drawing.Size(133, 33);
-            this.btLimparCamposF.TabIndex = 21;
-            this.btLimparCamposF.Text = "Limpar campos";
-            this.btLimparCamposF.UseVisualStyleBackColor = false;
+            this.cbFilmeS.FormattingEnabled = true;
+            this.cbFilmeS.Location = new System.Drawing.Point(111, 115);
+            this.cbFilmeS.Name = "cbFilmeS";
+            this.cbFilmeS.Size = new System.Drawing.Size(297, 29);
+            this.cbFilmeS.TabIndex = 26;
             // 
-            // btNovoF
+            // btRemoverSessao
             // 
-            this.btNovoF.BackColor = System.Drawing.Color.ForestGreen;
-            this.btNovoF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNovoF.ForeColor = System.Drawing.Color.White;
-            this.btNovoF.Location = new System.Drawing.Point(343, 28);
-            this.btNovoF.Name = "btNovoF";
-            this.btNovoF.Size = new System.Drawing.Size(120, 33);
-            this.btNovoF.TabIndex = 10;
-            this.btNovoF.Text = "Novo";
-            this.btNovoF.UseVisualStyleBackColor = false;
+            this.btRemoverSessao.BackColor = System.Drawing.Color.Brown;
+            this.btRemoverSessao.FlatAppearance.BorderSize = 0;
+            this.btRemoverSessao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRemoverSessao.ForeColor = System.Drawing.Color.White;
+            this.btRemoverSessao.Location = new System.Drawing.Point(330, 250);
+            this.btRemoverSessao.Name = "btRemoverSessao";
+            this.btRemoverSessao.Size = new System.Drawing.Size(133, 33);
+            this.btRemoverSessao.TabIndex = 15;
+            this.btRemoverSessao.Text = "Remover";
+            this.btRemoverSessao.UseVisualStyleBackColor = false;
+            this.btRemoverSessao.Click += new System.EventHandler(this.btRemoverSessao_Click);
             // 
-            // txtCategoriaF
+            // btAlterarSessao
             // 
-            this.txtCategoriaF.Location = new System.Drawing.Point(111, 156);
-            this.txtCategoriaF.Name = "txtCategoriaF";
-            this.txtCategoriaF.Size = new System.Drawing.Size(297, 29);
-            this.txtCategoriaF.TabIndex = 7;
+            this.btAlterarSessao.BackColor = System.Drawing.Color.Gold;
+            this.btAlterarSessao.FlatAppearance.BorderSize = 0;
+            this.btAlterarSessao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAlterarSessao.ForeColor = System.Drawing.Color.White;
+            this.btAlterarSessao.Location = new System.Drawing.Point(179, 250);
+            this.btAlterarSessao.Name = "btAlterarSessao";
+            this.btAlterarSessao.Size = new System.Drawing.Size(133, 33);
+            this.btAlterarSessao.TabIndex = 22;
+            this.btAlterarSessao.Text = "Alterar";
+            this.btAlterarSessao.UseVisualStyleBackColor = false;
+            this.btAlterarSessao.Click += new System.EventHandler(this.btAlterarSessao_Click);
             // 
-            // txtDuracao
+            // btLimparCamposSessao
             // 
-            this.txtDuracao.Location = new System.Drawing.Point(111, 116);
-            this.txtDuracao.Name = "txtDuracao";
-            this.txtDuracao.Size = new System.Drawing.Size(297, 29);
-            this.txtDuracao.TabIndex = 6;
+            this.btLimparCamposSessao.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btLimparCamposSessao.FlatAppearance.BorderSize = 0;
+            this.btLimparCamposSessao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimparCamposSessao.ForeColor = System.Drawing.Color.White;
+            this.btLimparCamposSessao.Location = new System.Drawing.Point(30, 250);
+            this.btLimparCamposSessao.Name = "btLimparCamposSessao";
+            this.btLimparCamposSessao.Size = new System.Drawing.Size(133, 33);
+            this.btLimparCamposSessao.TabIndex = 21;
+            this.btLimparCamposSessao.Text = "Limpar campos";
+            this.btLimparCamposSessao.UseVisualStyleBackColor = false;
+            this.btLimparCamposSessao.Click += new System.EventHandler(this.btLimparCamposSessao_Click);
             // 
-            // txtNome
+            // btNovoSessao
             // 
-            this.txtNome.Location = new System.Drawing.Point(111, 77);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(297, 29);
-            this.txtNome.TabIndex = 5;
+            this.btNovoSessao.BackColor = System.Drawing.Color.ForestGreen;
+            this.btNovoSessao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNovoSessao.ForeColor = System.Drawing.Color.White;
+            this.btNovoSessao.Location = new System.Drawing.Point(498, 250);
+            this.btNovoSessao.Name = "btNovoSessao";
+            this.btNovoSessao.Size = new System.Drawing.Size(120, 33);
+            this.btNovoSessao.TabIndex = 10;
+            this.btNovoSessao.Text = "Nova";
+            this.btNovoSessao.UseVisualStyleBackColor = false;
+            this.btNovoSessao.Click += new System.EventHandler(this.btNovoSessao_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 156);
+            this.label7.Location = new System.Drawing.Point(508, 68);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 21);
             this.label7.TabIndex = 2;
@@ -188,7 +202,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 119);
+            this.label6.Location = new System.Drawing.Point(37, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 21);
             this.label6.TabIndex = 1;
@@ -197,7 +211,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 80);
+            this.label5.Location = new System.Drawing.Point(37, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 21);
             this.label5.TabIndex = 0;
@@ -206,19 +220,31 @@
             // timer1
             // 
             this.timer1.Location = new System.Drawing.Point(877, 19);
+            this.timer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(224, 35);
             this.timer1.TabIndex = 35;
             // 
-            // Sessao
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(461, 386);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 30);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Tabela Sessões";
+            // 
+            // Sessoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ListaSessoes);
             this.Controls.Add(this.cliente);
             this.Controls.Add(this.timer1);
-            this.Name = "Sessao";
+            this.Name = "Sessoes";
             this.Size = new System.Drawing.Size(1121, 733);
             ((System.ComponentModel.ISupportInitialize)(this.ListaSessoes)).EndInit();
             this.cliente.ResumeLayout(false);
@@ -233,18 +259,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView ListaSessoes;
         private System.Windows.Forms.GroupBox cliente;
-        private System.Windows.Forms.Button btRemoverF;
-        private System.Windows.Forms.Button btAlterarF;
-        private System.Windows.Forms.TextBox txtExibicao;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btLimparCamposF;
-        private System.Windows.Forms.Button btNovoF;
-        private System.Windows.Forms.TextBox txtCategoriaF;
-        private System.Windows.Forms.TextBox txtDuracao;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Button btRemoverSessao;
+        private System.Windows.Forms.Button btAlterarSessao;
+        private System.Windows.Forms.Button btLimparCamposSessao;
+        private System.Windows.Forms.Button btNovoSessao;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private Timer timer1;
+        private System.Windows.Forms.ComboBox cbFilmeS;
+        private System.Windows.Forms.ComboBox cbSalaS;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.Label label1;
     }
 }

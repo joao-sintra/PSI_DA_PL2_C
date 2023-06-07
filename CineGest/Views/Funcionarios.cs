@@ -21,7 +21,6 @@ namespace CineGest.Views {
 
             listaFuncionarios.ReadOnly = true;
             listaFuncionarios.EditMode = DataGridViewEditMode.EditProgrammatically;
-
             //listaFuncionarios.Columns[3].Visible = false;
         }
 

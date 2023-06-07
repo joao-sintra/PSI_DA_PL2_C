@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace CineGest
 {
-    internal class Sessao
+    internal class Sessao 
     {
         public int Id { get; set; }
         public DateTime DataHora { get; set; }
         public float Preco { get; set; }
+
+        public  Sala SalaID { get; set; }
+
+        public Filme FilmeID { get; set; }
     }
 }
