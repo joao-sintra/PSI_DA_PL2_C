@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace CineGest
 {
-    internal class Cliente
+    internal class Cliente : Pessoa
     {
-        public int Id { get; set; }
         public int NIF { get; set; }
-        public Pessoa PessoaID { get; set; }
-
     }
 }

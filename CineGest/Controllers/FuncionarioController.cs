@@ -10,79 +10,55 @@ using System.Windows.Forms;
 
 namespace CineGest.Controllers {
     internal class FuncionarioController {
-
-        public static List<Pessoa> GetPessoas() {
-
-            using (var db = new CinegestContext()) {
-
-                return db.Pessoas.ToList();               
-            }
-        }
         
 
         public static List<Funcionario> GetFuncionarios() {
 
             using (var db = new CinegestContext()) {
 
-                return db.Funcionarios.Include("PessoaId").ToList();
+                return db.Funcionarios.ToList();
             }
         }
 
-        public float GetSalarioFuncionario(int selectedPessoaID) {
-            using (var db = new CinegestContext()) {
-                Funcionario fun = db.Funcionarios.Where(x => x.Id == selectedPessoaID).FirstOrDefault();
+       
 
-                return fun.Salario;
-            }
-        }
-
-        public string GetFuncaoFuncionario(int selectedPessoaID) {
-            using (var db = new CinegestContext()) {
-                Funcionario fun = db.Funcionarios.Where(x => x.Id == selectedPessoaID).FirstOrDefault();
-
-                return fun.Funcao;
-            }
-        }
-
-        public static void AdicionarPessoaFuncionario(string nome, string morada, float salario, string funcao) {
+        public static void AdicionarFuncionario(string nome, string morada, float salario, string funcao) {
 
             using (var db = new CinegestContext()) {
-                var pessoas = new Pessoa { Nome = nome, Morada = morada };
                 
-                var funcionarios = new Funcionario { Salario = salario, Funcao = funcao, PessoaId = pessoas };
+                var funcionarios = new Funcionario { Nome = nome, Morada = morada, Salario = salario, Funcao = funcao};
 
-                List<Pessoa> list = db.Pessoas.Where(x => x.Nome == nome).ToList();
+                List<Funcionario> list = db.Funcionarios.Where(x => x.Nome == nome).ToList();
 
                 if (list.Count > 0) {
-                    MessageBox.Show("Já existe uma pessoa com este nome (" + nome + ")!");
+                    MessageBox.Show("Já existe um funcionário com este nome (" + nome + ")!");
                     return;
                 }
 
-                db.Pessoas.Add(pessoas);
                 db.Funcionarios.Add(funcionarios);
                 db.SaveChanges();
             }
         }
 
-        public static void AlterarPessoaFuncionario(int selectedPessoaID, string nome, string morada, float salario, string funcao) {
+        
+
+        public static void AlterarFuncionario(int selectedFuncionarioID, string nome, string morada, float salario, string funcao) {
 
             using (var db = new CinegestContext()) {
 
-                Pessoa pess = db.Pessoas.FirstOrDefault(p => p.Id == selectedPessoaID);
+                Funcionario func = db.Funcionarios.Find(selectedFuncionarioID);
 
-                Funcionario func = db.Funcionarios.FirstOrDefault(f => f.Id == selectedPessoaID);
-
-                Pessoa findPess = db.Pessoas
+                Funcionario findFunc = db.Funcionarios
                     .Where(x => x.Nome == nome)
                     .FirstOrDefault();
 
-                if (findPess != null && findPess.Id != pess.Id) {
-                    MessageBox.Show("Não podes alterar o nome desta pessoa para: (" + nome + "), porque já existe!");
+                if (findFunc != null && findFunc.Id != func.Id) {
+                    MessageBox.Show("Não podes alterar o nome deste funcionário para: (" + nome + "), porque já existe!");
                     return;
                 }
 
-                pess.Nome = nome;
-                pess.Morada = morada;
+                func.Nome = nome;
+                func.Morada = morada;
                 func.Salario = salario;
                 func.Funcao = funcao;
 
@@ -90,23 +66,14 @@ namespace CineGest.Controllers {
             }
         }
 
-        public static void RemoverPessoaFuncionario(int selectedPessoaID) {
+        public static void RemoverFuncionario(int selectedFuncionarioID) {
             using (var db = new CinegestContext()) {
 
-                Pessoa pess = db.Pessoas.FirstOrDefault(p => p.Id == selectedPessoaID);
-                Funcionario func = db.Funcionarios.FirstOrDefault(f => f.Id == selectedPessoaID);
+                Funcionario func = db.Funcionarios.FirstOrDefault(f => f.Id == selectedFuncionarioID);
 
-                if (pess.Id == func.Id) {
-                    db.Pessoas.Remove(pess);
-                    db.Funcionarios.Remove(func);
+                db.Funcionarios.Remove(func);
 
-                    db.SaveChanges();
-                } else {
-                    MessageBox.Show("Não foi possível efetuar a ação!");
-                    return;
-                }
-
-                
+                db.SaveChanges();                
             }
         }
     }
