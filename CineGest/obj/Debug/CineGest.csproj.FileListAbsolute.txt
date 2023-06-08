@@ -84,3 +84,28 @@ C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvo
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações\Repos (GIT)\CineGest\obj\Debug\CineGest.pdb
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Views.Clientes.resources
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\obj\Debug\CineGest.Views.Sessoes.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Atendimento.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Cinema.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Clientes.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Filmes.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Funcionarios.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Inicio.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.MainForm.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Properties.Resources.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Sessoes.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Sidebar.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.Views.Timer.resources
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.exe
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.pdb
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\CineGest.exe.config
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\CineGest.exe
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\CineGest.pdb
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\EntityFramework.dll
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\EntityFramework.xml
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.csproj.CopyComplete

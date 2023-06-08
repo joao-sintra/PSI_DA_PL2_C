@@ -46,6 +46,7 @@ namespace CineGest.Views
 
         }
 
+
         private void btNovoSessao_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cbFilmeS.Text) || string.IsNullOrEmpty(cbSalaS.Text) || string.IsNullOrEmpty(txtPreco.Text))
@@ -63,8 +64,9 @@ namespace CineGest.Views
                 }
                 catch (FormatException fe)
                 {
-                    MessageBox.Show("Campos no formato incorreto!\n\nCampos Filmes e Salas: aceita tanto letras como números." +
-                        "\n\nCampo Preço só Deve conter Dados no Formato numero!");
+                    MessageBox.Show("Campos no formato incorreto!\n" +
+                          "\nCampo Preço: Só aceita números!");
+
 
 
                     limparCamposSessao();
@@ -95,14 +97,14 @@ namespace CineGest.Views
 
         private void btAlterarSessao_Click(object sender, EventArgs e)
         {
-           
+
 
             if (string.IsNullOrEmpty(cbFilmeS.Text) || string.IsNullOrEmpty(cbSalaS.Text) || string.IsNullOrEmpty(txtPreco.Text))
             {
                 MessageBox.Show("Só pode alterar o(s) campo(s), se a sessão estiver adicionada e selecionada na Tabela Sessões!");
                 return;
 
-                
+
             }
             else
             {
@@ -123,13 +125,14 @@ namespace CineGest.Views
 
                     refreshListaSessoes();
                     limparListaSessoes();
-                 
+
 
                 }
                 catch (FormatException fe)
                 {
-                    MessageBox.Show("Campos no formato incorreto!\n\nCampo Nome: aceita tanto letras como números." +
-                        "\nCampo Duração: só aceita números inteiros.\n");
+                    MessageBox.Show("Campos no formato incorreto!\n" +
+                          "\nCampo Preço: Só aceita números!");
+
 
                     limparListaSessoes();
                     limparCamposSessao();
@@ -156,7 +159,7 @@ namespace CineGest.Views
 
             if (dr == DialogResult.Yes)
             {
-                SessaoController.EliminarSessao(selectedID);
+                SessaoController.RemoverSessao(selectedID);
 
                 refreshListaSessoes();
                 limparListaSessoes();
@@ -176,26 +179,5 @@ namespace CineGest.Views
             cbSalaS.Text = ListaSessoes.CurrentRow.Cells[3].Value.ToString();
             cbFilmeS.Text = ListaSessoes.CurrentRow.Cells[4].Value.ToString();
         }
-
-        //private void ListaSessoes_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (ListaSessoes.SelectedRows.Count == 0 || ListaSessoes.CurrentRow == null)
-        //    {
-        //        limparCamposSessao();
-        //    }
-        //    else
-        //    {
-        //        // Retrieve the selected row
-        //        var selectedRow = ListaSessoes.CurrentRow;
-
-        //        // Update the field values based on the selected row
-        //        datePicker.Value = (DateTime)selectedRow.Cells["DataHora"].Value;
-        //        txtPreco.Text = selectedRow.Cells["Preco"].Value.ToString();
-        //        cbSalaS.Text = selectedRow.Cells["SalaID"].Value.ToString();
-        //        cbFilmeS.Text = selectedRow.Cells["FilmeID"].Value.ToString();
-        //    }
-        //}
-
-
     }
 }

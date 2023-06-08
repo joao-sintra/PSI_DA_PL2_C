@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.sidebar1 = new CineGest.Views.Sidebar();
-            this.sessoes1 = new CineGest.Views.Sessoes();
+            this.clientes1 = new CineGest.Views.Clientes();
             this.SuspendLayout();
             // 
             // sidebar1
@@ -37,19 +37,19 @@
             this.sidebar1.Size = new System.Drawing.Size(255, 733);
             this.sidebar1.TabIndex = 0;
             // 
-            // sessoes1
+            // clientes1
             // 
-            this.sessoes1.Location = new System.Drawing.Point(251, 0);
-            this.sessoes1.Name = "sessoes1";
-            this.sessoes1.Size = new System.Drawing.Size(1121, 733);
-            this.sessoes1.TabIndex = 1;
+            this.clientes1.Location = new System.Drawing.Point(250, 0);
+            this.clientes1.Name = "clientes1";
+            this.clientes1.Size = new System.Drawing.Size(1121, 733);
+            this.clientes1.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 729);
-            this.Controls.Add(this.sessoes1);
+            this.Controls.Add(this.clientes1);
             this.Controls.Add(this.sidebar1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -61,7 +61,7 @@
         #endregion
 
         private Views.Sidebar sidebar1;
-        private Views.Sessoes sessoes1;
+        private Views.Clientes clientes1;
     }
 }
 

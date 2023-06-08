@@ -73,7 +73,7 @@ namespace CineGest.Controllers
                 db.SaveChanges();
             }
         }
-        public static void EliminarSessao(int ID)
+        public static void RemoverSessao(int ID)
         {
             using (var db = new CinegestContext())
             {

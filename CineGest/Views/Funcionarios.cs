@@ -113,7 +113,7 @@ namespace CineGest.Views
                 {
                     try
                     {
-                        string idFun = listaFuncionarios.CurrentRow.Cells[2].Value.ToString();
+                        string idFun = listaFuncionarios.CurrentRow.Cells[1].Value.ToString();
 
                         int selectedFuncionarioID = Int32.Parse(idFun);
 
