@@ -1,4 +1,4 @@
-<img width="350" alt="Captura de ecrã 2023-06-16 195404" src="https://github.com/joao-sintra/projeto-DA/assets/114481749/94880b5b-9090-4ffa-be77-d942c6950c86">
+<img width="350" alt="logoIPL" src="https://github.com/joao-sintra/projeto-DA/assets/114481749/94880b5b-9090-4ffa-be77-d942c6950c86">
 
 # projeto-DA
 Projeto da Unidade Curricular Desenvolvimento de Aplicações do segundo semestre do primeiro ano do curso TESP de programação de Sistemas de Informação
