@@ -1,30 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
-namespace CineGest.Controllers
-{
-    internal class FilmeController
-    {
-        public static List<Filme> GetFilmes()
-        {
+namespace CineGest.Controllers {
+    internal class FilmeController {
+        public static List<Filme> GetFilmes() {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 return db.Filmes.Include("CategoriaID").ToList();
             }
         }
-        public static List<string> GetOnlyNomesFilmes()
-        {
+        public static List<string> GetOnlyNomesFilmes() {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
 
                 List<string> filmes = db.Filmes
 
@@ -34,19 +22,16 @@ namespace CineGest.Controllers
             }
         }
 
-        public static void AdicionarFilme(string nome, int duracao, string categoria, bool activo)
-        {
+        public static void AdicionarFilme(string nome, int duracao, string categoria, bool activo) {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 var cat = db.Categorias.FirstOrDefault(x => x.Nome == categoria);
 
                 var filmes = new Filme { Nome = nome, Duracao = duracao, Activo = activo, CategoriaID = cat };
 
                 List<Filme> list = db.Filmes.Where(x => x.Nome == nome).ToList();
 
-                if (list.Count > 0)
-                {
+                if (list.Count > 0) {
                     MessageBox.Show("Já existe um filme com este nome (" + nome + ")!");
                     return;
                 }
@@ -56,11 +41,9 @@ namespace CineGest.Controllers
             }
         }
 
-        public static void AlterarFilme(int ID, string nome, int duracao, string categoria, bool activo)
-        {
+        public static void AlterarFilme(int ID, string nome, int duracao, string categoria, bool activo) {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 var cat = db.Categorias.FirstOrDefault(x => x.Nome == categoria);
 
                 Filme fil = db.Filmes.FirstOrDefault(filmes => filmes.Id == ID);
@@ -69,8 +52,7 @@ namespace CineGest.Controllers
                     .Where(x => x.Nome == nome)
                     .FirstOrDefault();
 
-                if (filme != null && filme.Id != fil.Id)
-                {
+                if (filme != null && filme.Id != fil.Id) {
                     MessageBox.Show("Não podes alterar o nome deste filme para: (" + nome + "), porque já existe!");
                     return;
                 }
@@ -84,10 +66,8 @@ namespace CineGest.Controllers
             }
         }
 
-        public static void EliminarFilme(int ID)
-        {
-            using (var db = new CinegestContext())
-            {
+        public static void EliminarFilme(int ID) {
+            using (var db = new CinegestContext()) {
                 Filme fi = db.Filmes.FirstOrDefault(filmes => filmes.Id == ID);
 
                 db.Filmes.Remove(fi);

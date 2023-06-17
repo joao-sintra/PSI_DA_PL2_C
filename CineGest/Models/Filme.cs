@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineGest
-{
+﻿namespace CineGest {
     internal class Filme {
         public int Id { get; set; }
 
@@ -16,8 +9,7 @@ namespace CineGest
         public bool Activo { get; set; }
 
         public Categoria CategoriaID { get; set; }
-        public override string ToString()
-        {
+        public override string ToString() {
             return this.Nome;
         }
     }

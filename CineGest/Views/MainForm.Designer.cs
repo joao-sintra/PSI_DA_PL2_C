@@ -41,7 +41,6 @@
             this.labelNomeFuncionario = new System.Windows.Forms.Label();
             this.panelTerminarSessao = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.sessoes1 = new CineGest.Views.Sessoes();
             this.inicio1 = new CineGest.Views.Inicio();
             this.sideBar.SuspendLayout();
             this.panelInicio.SuspendLayout();
@@ -263,28 +262,20 @@
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label9.Click += new System.EventHandler(this.panelTerminarSessao_Click);
             // 
-            // sessoes1
-            // 
-            this.sessoes1.Location = new System.Drawing.Point(254, 0);
-            this.sessoes1.Name = "sessoes1";
-            this.sessoes1.Size = new System.Drawing.Size(1121, 733);
-            this.sessoes1.TabIndex = 4;
-            // 
             // inicio1
             // 
-            this.inicio1.Location = new System.Drawing.Point(0, 0);
+            this.inicio1.Location = new System.Drawing.Point(255, 0);
             this.inicio1.Name = "inicio1";
             this.inicio1.Size = new System.Drawing.Size(1121, 733);
-            this.inicio1.TabIndex = 1;
+            this.inicio1.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 729);
-            this.Controls.Add(this.sideBar);
-            this.Controls.Add(this.sessoes1);
             this.Controls.Add(this.inicio1);
+            this.Controls.Add(this.sideBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1378, 768);
@@ -306,7 +297,6 @@
         }
 
         #endregion
-        private Views.Inicio inicio1;
         private System.Windows.Forms.Panel sideBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelInicio;
@@ -324,7 +314,7 @@
         private System.Windows.Forms.Label labelNomeFuncionario;
         private System.Windows.Forms.Panel panelTerminarSessao;
         private System.Windows.Forms.Label label9;
-        private Views.Sessoes sessoes1;
+        private Views.Inicio inicio1;
     }
 }
 

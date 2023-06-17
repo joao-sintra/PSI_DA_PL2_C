@@ -1,11 +1,6 @@
-﻿using CineGest.Views;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CineGest.Controllers {
     internal class SalaController {
@@ -18,11 +13,9 @@ namespace CineGest.Controllers {
                 return db.Salas.ToList();
             }
         }
-        public static List<string> GetOnlyNomesSalas()
-        {
+        public static List<string> GetOnlyNomesSalas() {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
 
                 List<string> salas = db.Salas
 
@@ -35,12 +28,12 @@ namespace CineGest.Controllers {
         public static void AdicionarSala(string nome, int colunas, int filas) {
 
             using (var db = new CinegestContext()) {
-                var salas = new Sala { Nome = nome, Colunas = colunas, Filas = filas, Lugares = colunas*filas };
+                var salas = new Sala { Nome = nome, Colunas = colunas, Filas = filas, Lugares = colunas * filas };
 
                 List<Sala> list = db.Salas.Where(sala => sala.Nome == nome).ToList();
 
                 if (list.Count > 0) {
-                    MessageBox.Show("Esta sala ("+nome+") já existe!");
+                    MessageBox.Show("Esta sala (" + nome + ") já existe!");
                     return;
                 }
 
@@ -61,7 +54,7 @@ namespace CineGest.Controllers {
                     .ToList();
 
                 if (list.Count > 0) {
-                    MessageBox.Show("Não podes alterar o nome desta sala para: ("+txtSala+"), porque já existe!");
+                    MessageBox.Show("Não podes alterar o nome desta sala para: (" + txtSala + "), porque já existe!");
                     return;
                 }
 

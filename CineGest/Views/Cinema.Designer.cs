@@ -216,6 +216,7 @@
             this.Name = "Cinema";
             this.Size = new System.Drawing.Size(1121, 733);
             this.Load += new System.EventHandler(this.Cinema_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Cinema_Paint);
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaSalas)).EndInit();

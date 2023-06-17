@@ -1,48 +1,33 @@
 ﻿using CineGest.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CineGest.Views
-{
-    public partial class Funcionarios : UserControl
-    {
-        public Funcionarios()
-        {
+namespace CineGest.Views {
+    public partial class Funcionarios : UserControl {
+        public Funcionarios() {
             InitializeComponent();
 
             listaFuncionarios.ReadOnly = true;
             listaFuncionarios.EditMode = DataGridViewEditMode.EditProgrammatically;
 
         }
-        private void limparDGV()
-        {
+        private void limparDGV() {
             listaFuncionarios.ClearSelection();
         }
 
-        private void limparCamposFunc()
-        {
+        private void limparCamposFunc() {
             txtNomeFun.Text = "";
             txtMoradaFun.Text = "";
             txtSalarioFun.Text = "";
             txtFuncaoFun.Text = "";
         }
 
-        private void refreshLPLF()
-        {
+        private void refreshLPLF() {
 
             listaFuncionarios.DataSource = null;
             listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
         }
-        public void ordenarCampos()
-        {
+        public void ordenarCampos() {
             listaFuncionarios.Columns["Id"].Visible = false;
             listaFuncionarios.Columns["Nome"].DisplayIndex = 0;
             listaFuncionarios.Columns["Morada"].DisplayIndex = 1;
@@ -50,14 +35,11 @@ namespace CineGest.Views
             listaFuncionarios.Columns["Funcao"].DisplayIndex = 3;
         }
 
-       
 
-        private void btNovoFun_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text))
-                {
+
+        private void btNovoFun_Click(object sender, EventArgs e) {
+            try {
+                if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text)) {
                     MessageBox.Show("Por favor, preencha o(s) campo(s)!");
                 }
 
@@ -69,9 +51,7 @@ namespace CineGest.Views
                 limparCamposFunc();
                 ordenarCampos();
 
-            }
-            catch (FormatException fe)
-            {
+            } catch (FormatException fe) {
                 MessageBox.Show("Campos no formato incorreto!\n" +
                          "\nCampo Nome: aceita letras e números." +
                          "\nCampo Morada: aceita letras e números." +
@@ -83,32 +63,23 @@ namespace CineGest.Views
             }
         }
 
-        private void btLimparCamposFun_Click(object sender, EventArgs e)
-        {
+        private void btLimparCamposFun_Click(object sender, EventArgs e) {
             limparCamposFunc();
             limparDGV();
             ordenarCampos();
         }
 
-        private void btAlterarFun_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text))
-            {
+        private void btAlterarFun_Click(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(txtNomeFun.Text) || string.IsNullOrEmpty(txtMoradaFun.Text) || string.IsNullOrEmpty(txtSalarioFun.Text) || string.IsNullOrEmpty(txtFuncaoFun.Text)) {
                 MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser alterar os campos!");
                 return;
 
-            }
-            else
-            {
-                if ((listaFuncionarios.SelectedRows == null) || (listaFuncionarios.CurrentRow == null))
-                {
+            } else {
+                if ((listaFuncionarios.SelectedRows == null) || (listaFuncionarios.CurrentRow == null)) {
                     MessageBox.Show("Só pode alterar o(s) campo(s), se o funcionário estiver adicionado e selecionado na Tabelas Funcionários!");
                     return;
-                }
-                else
-                {
-                    try
-                    {
+                } else {
+                    try {
                         string idFun = listaFuncionarios.CurrentRow.Cells[1].Value.ToString();
 
                         int selectedFuncionarioID = Int32.Parse(idFun);
@@ -122,9 +93,7 @@ namespace CineGest.Views
                         limparCamposFunc();
                         ordenarCampos();
 
-                    }
-                    catch (FormatException fe)
-                    {
+                    } catch (FormatException fe) {
                         MessageBox.Show("Campos no formato incorreto!\n" +
                          "\nCampo Nome: aceita letras e números." +
                          "\nCampo Morada: aceita letras e números." +
@@ -137,8 +106,7 @@ namespace CineGest.Views
             }
         }
 
-        private void listaPessoas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
+        private void listaPessoas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             txtNomeFun.Text = listaFuncionarios.CurrentRow.Cells[3].Value.ToString();
             txtMoradaFun.Text = listaFuncionarios.CurrentRow.Cells[4].Value.ToString();
 
@@ -146,12 +114,9 @@ namespace CineGest.Views
             txtFuncaoFun.Text = listaFuncionarios.CurrentRow.Cells[1].Value.ToString();
         }
 
-        private void btRemoverFun_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (listaFuncionarios.SelectedRows == null)
-                {
+        private void btRemoverFun_Click(object sender, EventArgs e) {
+            try {
+                if (listaFuncionarios.SelectedRows == null) {
                     MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser eliminá-la!");
                     return;
                 }
@@ -165,8 +130,7 @@ namespace CineGest.Views
                 DialogResult dr = MessageBox.Show("Pretende mesmo remover este funcionário?", "Confirmação de eliminação de funcionário",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-                if (dr == DialogResult.Yes)
-                {
+                if (dr == DialogResult.Yes) {
                     FuncionarioController.RemoverFuncionario(selectedFuncionarioID);
 
                     refreshLPLF();
@@ -175,9 +139,7 @@ namespace CineGest.Views
                     ordenarCampos();
                 }
 
-            }
-            catch (FormatException fe)
-            {
+            } catch (FormatException fe) {
                 MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser eliminá-la!");
                 ordenarCampos();
             }

@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CineGest {
     public partial class MainForm : Form {
@@ -21,7 +13,7 @@ namespace CineGest {
 
         private void HideForms() {
             inicio1.Visible = false;
-            atendimento1.Visible = false;
+            //atendimento1.Visible = false;
             //filmes1.Visible = false;
             sessoes1.Visible = false;
             //funcionarios1.Visible = false;
@@ -37,14 +29,14 @@ namespace CineGest {
 
         private void panelFilmes_Click(object sender, EventArgs e) {
             HideForms();
-          //  filmes1.Visible = true;
+            //  filmes1.Visible = true;
             panelFilmes.BackColor = Color.FromArgb(22, 26, 31);
-            
+
         }
 
         private void panelCinema_Click(object sender, EventArgs e) {
             HideForms();
-           // cinema1.Visible = true;
+            // cinema1.Visible = true;
             panelCinema.BackColor = Color.FromArgb(22, 26, 31);
         }
 
@@ -76,7 +68,7 @@ namespace CineGest {
 
         private void panelTerminarSessao_Click(object sender, EventArgs e) {
             HideForms();
-           // atendimento1.Visible = true;
+            // atendimento1.Visible = true;
         }
     }
 }

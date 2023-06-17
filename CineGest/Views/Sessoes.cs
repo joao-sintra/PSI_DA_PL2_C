@@ -1,13 +1,5 @@
 ﻿using CineGest.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CineGest.Views {
@@ -140,17 +132,17 @@ namespace CineGest.Views {
         }
 
         private void Sessoes_Paint(object sender, PaintEventArgs e) {
-        
 
-            /*cbFilmeS.DataSource = FilmeController.GetOnlyNomesFilmes();
-            cbSalaS.DataSource = SalaController.GetOnlyNomesSalas();
-            ListaSessoes.DataSource = SessaoController.GetSessoes();
+
+           // cbFilmeS.DataSource = FilmeController.GetOnlyNomesFilmes();
+            //cbSalaS.DataSource = SalaController.GetOnlyNomesSalas();
+            //ListaSessoes.DataSource = SessaoController.GetSessoes();
             ListaSessoes.Columns["FilmeID"].HeaderText = "Filme";
             ListaSessoes.Columns["SalaID"].HeaderText = "Sala";
             ListaSessoes.Columns["Preco"].HeaderText = "Preço (€)";
             ListaSessoes.Columns["DataHora"].HeaderText = "Data/Hora";
             limparCamposSessao();
-            limparListaSessoes();*/
+            limparListaSessoes();
         }
 
 

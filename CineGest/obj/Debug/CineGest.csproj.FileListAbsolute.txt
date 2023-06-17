@@ -104,3 +104,38 @@ C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Timer.resources
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
 C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.exe.config
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.exe
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.pdb
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.dll
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.xml
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CopyComplete
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.exe
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.pdb
+C:\CineGest\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+C:\CineGest\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Atendimento.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Cinema.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Clientes.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Filmes.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Funcionarios.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Inicio.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.MainForm.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Properties.Resources.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Sessoes.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Sidebar.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.Views.Timer.resources
+C:\CineGest\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+C:\CineGest\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+C:\CineGest\CineGest\bin\Debug\CineGest.exe.config
+C:\CineGest\CineGest\bin\Debug\CineGest.exe
+C:\CineGest\CineGest\bin\Debug\CineGest.pdb
+C:\CineGest\CineGest\bin\Debug\EntityFramework.dll
+C:\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.dll
+C:\CineGest\CineGest\bin\Debug\EntityFramework.xml
+C:\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.xml
+C:\CineGest\CineGest\obj\Debug\CineGest.csproj.CopyComplete
+C:\CineGest\CineGest\obj\Debug\CineGest.exe
+C:\CineGest\CineGest\obj\Debug\CineGest.pdb

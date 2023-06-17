@@ -1,11 +1,5 @@
-﻿                using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CineGest.Views {
@@ -13,7 +7,7 @@ namespace CineGest.Views {
         private bool estado;
         public Atendimento() {
             InitializeComponent();
-              
+
 
         }
         private void Atendimento_Load(object sender, EventArgs e) {
@@ -23,23 +17,23 @@ namespace CineGest.Views {
             lugares.RowCount = linhas;
 
             lugares.ColumnCount = colunas;
-            
+
             for (int j = 0; j < linhas; j++) {
-                
-               lugares.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / linhas));
+
+                lugares.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / linhas));
             }
-            
+
             for (int i = 0; i < colunas; i++) {
-                
+
                 lugares.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100 / colunas));
-                
+
             }
-           
+
 
             DrawLugares();
 
-           
-            
+
+
         }
         private void DrawLugares() {
             int cadeira = 1;
@@ -66,11 +60,11 @@ namespace CineGest.Views {
             if (labelLugar.BackColor == Color.LightGreen) {
                 labelLugar.BackColor = Color.Red;
                 listaLugaresMarcados.Items.Add(labelLugar.Text);
-            } else if(labelLugar.BackColor == Color.Red){
+            } else if (labelLugar.BackColor == Color.Red) {
                 listaLugaresMarcados.Items.Remove(labelLugar.Text);
                 labelLugar.BackColor = Color.LightGreen;
             } else if (labelLugar.BackColor == Color.Gray) {
-                MessageBox.Show("Lugar indisponivel!","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("Lugar indisponivel!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
 
@@ -91,16 +85,16 @@ namespace CineGest.Views {
         }
 
         private void listViewLugares_SelectedIndexChanged(object sender, EventArgs e) {
-           /* if (listViewLugares.SelectedIndices.Count <= 0) {
-                return;
-            }
-            int intSelectedIndex = listViewLugares.SelectedIndices[0];
-            if (intSelectedIndex >= 0) {
-                listaLugaresMarcados.Items.Add((string)listViewLugares.Items[intSelectedIndex].Text);
-            }*/
+            /* if (listViewLugares.SelectedIndices.Count <= 0) {
+                 return;
+             }
+             int intSelectedIndex = listViewLugares.SelectedIndices[0];
+             if (intSelectedIndex >= 0) {
+                 listaLugaresMarcados.Items.Add((string)listViewLugares.Items[intSelectedIndex].Text);
+             }*/
 
         }
 
-       
+
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CineGest {
@@ -13,16 +11,12 @@ namespace CineGest {
         static void Main() {
 
             bool temCinema = false;
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 var cinema = db.Cinemas.FirstOrDefault();
-                if (cinema == null)
-                {
-                    temCinema=false;
-                }
-                else
-                {
-                    temCinema=true;
+                if (cinema == null) {
+                    temCinema = false;
+                } else {
+                    temCinema = true;
                 }
             }
             Application.EnableVisualStyles();

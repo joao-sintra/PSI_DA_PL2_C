@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
-namespace CineGest
-{
-    internal class CinegestContext : DbContext
-    {
+namespace CineGest {
+    internal class CinegestContext : DbContext {
 
         public DbSet<Bilhete> Bilhetes { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
@@ -21,5 +13,5 @@ namespace CineGest
         public DbSet<Sala> Salas { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
 
-    }  
-}       
+    }
+}

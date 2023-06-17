@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CineGest.Controllers {
     internal class CategoriaController {
@@ -16,7 +8,7 @@ namespace CineGest.Controllers {
         public static List<string> GetOnlyNomesCategorias() {
 
             using (var db = new CinegestContext()) {
-                
+
                 List<string> categorias = db.Categorias
                     .Where(categoria => categoria.Activa.Equals(true))
                     .Select(categoria => categoria.Nome).ToList();
@@ -41,7 +33,7 @@ namespace CineGest.Controllers {
                 List<Categoria> list = db.Categorias.Where(x => x.Nome == nome).ToList();
 
                 if (list.Count > 0) {
-                    MessageBox.Show("Já existe uma categoria com este nome ("+nome+")!");
+                    MessageBox.Show("Já existe uma categoria com este nome (" + nome + ")!");
                     return;
                 }
 
@@ -99,7 +91,7 @@ namespace CineGest.Controllers {
 
             } catch (System.Data.Entity.Infrastructure.DbUpdateException) {
                 MessageBox.Show("Não pode eliminar esta categoria, porque ela encontra-se relacionada com um filme! ");
-            }          
+            }
         }
     }
 }

@@ -1,27 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CineGest.Controllers
-{
-    internal class ClienteController
-    {
-        public static List<Cliente> GetClientes()
-        {
+namespace CineGest.Controllers {
+    internal class ClienteController {
+        public static List<Cliente> GetClientes() {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 return db.Clientes.ToList();
             }
         }
-        public static void AdicionarCliente(int nif, string nome, string morada)
-        {
+        public static void AdicionarCliente(int nif, string nome, string morada) {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
 
                 var clientes = new Cliente { NIF = nif, Nome = nome, Morada = morada };
 
@@ -30,8 +21,7 @@ namespace CineGest.Controllers
                    .Where(s => s.NIF == nif)
                    .ToList();
 
-                if (list.Count > 0)
-                {
+                if (list.Count > 0) {
                     MessageBox.Show("Já existe um cliente com este nome (" + nome + ")!");
                     return;
                 }
@@ -41,11 +31,9 @@ namespace CineGest.Controllers
 
             }
         }
-        public static void AlterarCliente(int selectedClienteID, int nif, string nome, string morada)
-        {
+        public static void AlterarCliente(int selectedClienteID, int nif, string nome, string morada) {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 //Procura o ID introduzido pelo utilizador (Input), e verifica se existe na Database
                 Cliente func = db.Clientes.Find(selectedClienteID);
 
@@ -56,8 +44,7 @@ namespace CineGest.Controllers
 
                 //Se existir um nome do cliente na DataBase
                 //Se o id que o utilizador selecionar for diferente do id na DataBase, 
-                if (findFunc != null && findFunc.Id != func.Id)
-                {
+                if (findFunc != null && findFunc.Id != func.Id) {
                     MessageBox.Show("Não podes alterar o nome deste Cliente para: (" + nome + "), porque já existe!");
                     return;
                 }
@@ -66,14 +53,12 @@ namespace CineGest.Controllers
                 func.Nome = nome;
                 func.Morada = morada;
                 func.NIF = nif;
-               
+
                 db.SaveChanges();
             }
         }
-        public static void RemoverCliente(int selectedClienteID)
-        {
-            using (var db = new CinegestContext())
-            {
+        public static void RemoverCliente(int selectedClienteID) {
+            using (var db = new CinegestContext()) {
 
                 Cliente cliente = db.Clientes.FirstOrDefault(f => f.Id == selectedClienteID);
 

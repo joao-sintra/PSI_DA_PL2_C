@@ -1,12 +1,5 @@
 ﻿using CineGest.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CineGest.Views {
@@ -22,7 +15,7 @@ namespace CineGest.Views {
             listaSalas.ClearSelection();
         }
 
-       
+
 
         private void limparCampos() {
             txtSala.Text = "";
@@ -94,7 +87,7 @@ namespace CineGest.Views {
                 }
             }
         }
-            
+
 
         private void listaSalas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             txtSala.Text = listaSalas.CurrentRow.Cells[1].Value.ToString();
@@ -112,9 +105,9 @@ namespace CineGest.Views {
 
             int selectedID = Int32.Parse(id);
 
-            DialogResult dr = MessageBox.Show("Pretende mesmo remover esta sala?", "Confirmação de eliminação de sala", 
+            DialogResult dr = MessageBox.Show("Pretende mesmo remover esta sala?", "Confirmação de eliminação de sala",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            
+
             if (dr == DialogResult.Yes) {
                 SalaController.EliminarSala(selectedID);
 
@@ -125,7 +118,11 @@ namespace CineGest.Views {
         }
 
         private void Cinema_Load(object sender, EventArgs e) {
-            listaSalas.DataSource = SalaController.GetSalas();
+           
+        }
+
+        private void Cinema_Paint(object sender, PaintEventArgs e) {
+            //listaSalas.DataSource = SalaController.GetSalas();
             limparLS();
         }
     }

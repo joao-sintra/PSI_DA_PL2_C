@@ -1,16 +1,6 @@
 ﻿using CineGest.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CineGest.Views {
     public partial class Filmes : UserControl {
@@ -122,7 +112,7 @@ namespace CineGest.Views {
                         limparCamposF();
                     }
                 }
-            }  
+            }
         }
 
         private void btRemoverF_Click(object sender, EventArgs e) {
@@ -230,7 +220,7 @@ namespace CineGest.Views {
                         return;
                     }
                 }
-            }   
+            }
         }
 
         private void btRemoverCat_Click(object sender, EventArgs e) {
@@ -241,7 +231,7 @@ namespace CineGest.Views {
                 string idCat = listaCategorias.CurrentRow.Cells[0].Value.ToString();
 
                 int selectedCategoriaID = Int32.Parse(idCat);
-         
+
                 bool ativa = cbCatAtiva.Checked;
 
                 DialogResult dr = MessageBox.Show("Pretende mesmo remover esta categoria?", "Confirmação de eliminação de categoria",
@@ -260,7 +250,7 @@ namespace CineGest.Views {
         private void listaCategorias_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             txtCat.Text = listaCategorias.CurrentRow.Cells[1].Value.ToString();
             string val = listaCategorias.CurrentRow.Cells[2].Value.ToString();
-            
+
             if (val == "True") {
                 cbCatAtiva.Checked = true;
             } else {
@@ -274,7 +264,7 @@ namespace CineGest.Views {
             limparLC();
             listaFilmes.DataSource = FilmeController.GetFilmes();
             limparLF();
-            
+
         }
     }
 }

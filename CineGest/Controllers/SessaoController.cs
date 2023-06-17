@@ -1,28 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CineGest.Controllers
-{
-    internal class SessaoController
-    {
-        public static List<Sessao> GetSessoes()
-        {
+namespace CineGest.Controllers {
+    internal class SessaoController {
+        public static List<Sessao> GetSessoes() {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 return db.Sessoes.Include("FilmeID").Include("SalaID").ToList();
 
             }
         }
-        public static void AdicionarSessao(string Filme, string Sala, DateTime DataHora, float Preco)
-        {
+        public static void AdicionarSessao(string Filme, string Sala, DateTime DataHora, float Preco) {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
                 var filme = db.Filmes.FirstOrDefault(x => x.Nome == Filme);
                 var sala = db.Salas.FirstOrDefault(x => x.Nome == Sala);
 
@@ -33,8 +25,7 @@ namespace CineGest.Controllers
                     .Where(s => s.SalaID.Id == sala.Id)
                     .ToList();
 
-                if (list.Count > 0)
-                {
+                if (list.Count > 0) {
                     MessageBox.Show("Já existe uma sessão nesta sala e com esta data e hora. \n(" + "Sala: " + sala + " | " + "DataHora: " + DataHora + ") já existe!");
                     return;
                 }
@@ -45,11 +36,9 @@ namespace CineGest.Controllers
 
             }
         }
-        public static void AlterarSessao(int ID, string Filme, string Sala, DateTime DataHora, float Preco)
-        {
+        public static void AlterarSessao(int ID, string Filme, string Sala, DateTime DataHora, float Preco) {
 
-            using (var db = new CinegestContext())
-            {
+            using (var db = new CinegestContext()) {
 
                 Sessao sessao = db.Sessoes.FirstOrDefault(Sessao => Sessao.Id == ID);
 
@@ -59,8 +48,7 @@ namespace CineGest.Controllers
                 var sala = db.Salas.FirstOrDefault(x => x.Nome == Sala);
 
 
-                if (DataHora < currentDateTime)
-                {
+                if (DataHora < currentDateTime) {
                     MessageBox.Show("Não podes alterar os campos desta sessão porque esta sessão já foi iniciada!\n" + DataHora);
                     return;
                 }
@@ -73,10 +61,8 @@ namespace CineGest.Controllers
                 db.SaveChanges();
             }
         }
-        public static void RemoverSessao(int ID)
-        {
-            using (var db = new CinegestContext())
-            {
+        public static void RemoverSessao(int ID) {
+            using (var db = new CinegestContext()) {
                 Sessao ses = db.Sessoes.FirstOrDefault(s => s.Id == ID);
 
                 db.Sessoes.Remove(ses);

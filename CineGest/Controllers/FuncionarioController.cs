@@ -1,16 +1,11 @@
-﻿using CineGest.Views;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CineGest.Controllers {
     internal class FuncionarioController {
-        
+
 
         public static List<Funcionario> GetFuncionarios() {
 
@@ -23,8 +18,8 @@ namespace CineGest.Controllers {
         public static void AdicionarFuncionario(string nome, string morada, float salario, string funcao) {
 
             using (var db = new CinegestContext()) {
-                
-                var funcionarios = new Funcionario { Nome = nome, Morada = morada, Salario = salario, Funcao = funcao};
+
+                var funcionarios = new Funcionario { Nome = nome, Morada = morada, Salario = salario, Funcao = funcao };
 
                 List<Funcionario> list = db.Funcionarios.Where(x => x.Nome == nome).ToList();
 
@@ -38,7 +33,7 @@ namespace CineGest.Controllers {
             }
         }
 
-        
+
 
         public static void AlterarFuncionario(int selectedFuncionarioID, string nome, string morada, float salario, string funcao) {
 
@@ -71,7 +66,7 @@ namespace CineGest.Controllers {
 
                 db.Funcionarios.Remove(func);
 
-                db.SaveChanges();                
+                db.SaveChanges();
             }
         }
     }
