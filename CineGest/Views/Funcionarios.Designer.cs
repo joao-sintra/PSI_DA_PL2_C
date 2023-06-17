@@ -76,7 +76,7 @@
             this.adicionarFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adicionarFunc.Location = new System.Drawing.Point(26, 77);
             this.adicionarFunc.Name = "adicionarFunc";
-            this.adicionarFunc.Size = new System.Drawing.Size(478, 300);
+            this.adicionarFunc.Size = new System.Drawing.Size(487, 300);
             this.adicionarFunc.TabIndex = 23;
             this.adicionarFunc.TabStop = false;
             this.adicionarFunc.Text = "Adicionar funcionário";
@@ -209,7 +209,6 @@
             this.listaFuncionarios.Size = new System.Drawing.Size(454, 261);
             this.listaFuncionarios.TabIndex = 25;
             this.listaFuncionarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaPessoas_CellMouseClick);
-            this.listaFuncionarios.DoubleClick += new System.EventHandler(this.listaFuncionarios_DoubleClick);
             // 
             // label4
             // 
@@ -223,7 +222,7 @@
             // 
             // timer1
             // 
-            this.timer1.Location = new System.Drawing.Point(872, 19);
+            this.timer1.Location = new System.Drawing.Point(877, 19);
             this.timer1.Margin = new System.Windows.Forms.Padding(4);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(221, 35);
@@ -241,6 +240,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Funcionarios";
             this.Size = new System.Drawing.Size(1121, 733);
+            this.Load += new System.EventHandler(this.Funcionarios_Load);
             this.adicionarFunc.ResumeLayout(false);
             this.adicionarFunc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).EndInit();

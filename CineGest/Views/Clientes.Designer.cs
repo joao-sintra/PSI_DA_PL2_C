@@ -57,7 +57,6 @@
             this.ListaClientes.Size = new System.Drawing.Size(443, 259);
             this.ListaClientes.TabIndex = 41;
             this.ListaClientes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ListaClientes_CellMouseClick);
-            this.ListaClientes.DoubleClick += new System.EventHandler(this.ListaClientes_DoubleClick);
             // 
             // groupBox1
             // 
@@ -240,6 +239,7 @@
             this.Controls.Add(this.label3);
             this.Name = "Clientes";
             this.Size = new System.Drawing.Size(1121, 733);
+            this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ListaClientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

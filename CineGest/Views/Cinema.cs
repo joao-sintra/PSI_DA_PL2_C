@@ -22,10 +22,7 @@ namespace CineGest.Views {
             listaSalas.ClearSelection();
         }
 
-        private void listaSalas_DoubleClick(object sender, EventArgs e) {
-            listaSalas.DataSource = SalaController.GetSalas();
-            limparLS();
-        }
+       
 
         private void limparCampos() {
             txtSala.Text = "";
@@ -125,6 +122,11 @@ namespace CineGest.Views {
                 limparLS();
                 limparCampos();
             }
+        }
+
+        private void Cinema_Load(object sender, EventArgs e) {
+            listaSalas.DataSource = SalaController.GetSalas();
+            limparLS();
         }
     }
 }

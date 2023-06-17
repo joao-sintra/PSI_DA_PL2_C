@@ -63,13 +63,12 @@
             // 
             this.ListaSessoes.AllowUserToAddRows = false;
             this.ListaSessoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaSessoes.Location = new System.Drawing.Point(260, 417);
+            this.ListaSessoes.Location = new System.Drawing.Point(292, 416);
             this.ListaSessoes.Name = "ListaSessoes";
             this.ListaSessoes.RowHeadersWidth = 62;
             this.ListaSessoes.Size = new System.Drawing.Size(565, 303);
             this.ListaSessoes.TabIndex = 37;
             this.ListaSessoes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ListaSessoes_CellMouseClick_1);
-            this.ListaSessoes.DoubleClick += new System.EventHandler(this.ListaSessoes_DoubleClick);
             // 
             // cliente
             // 
@@ -88,7 +87,7 @@
             this.cliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cliente.Location = new System.Drawing.Point(25, 77);
             this.cliente.Name = "cliente";
-            this.cliente.Size = new System.Drawing.Size(927, 305);
+            this.cliente.Size = new System.Drawing.Size(1055, 305);
             this.cliente.TabIndex = 36;
             this.cliente.TabStop = false;
             this.cliente.Text = "Adicionar Sessão";
@@ -229,7 +228,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(461, 386);
+            this.label1.Location = new System.Drawing.Point(493, 385);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 30);
             this.label1.TabIndex = 39;
@@ -246,6 +245,7 @@
             this.Controls.Add(this.timer1);
             this.Name = "Sessoes";
             this.Size = new System.Drawing.Size(1121, 733);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Sessoes_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.ListaSessoes)).EndInit();
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();

@@ -17,9 +17,6 @@ namespace CineGest.Views
         {
             InitializeComponent();
 
-            
-            ListaClientes.ReadOnly = true;
-            ListaClientes.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void limparCamposCliente()
@@ -171,16 +168,7 @@ namespace CineGest.Views
         }
 
 
-        private void ListaClientes_DoubleClick(object sender, EventArgs e)
-        {
-         
-            ListaClientes.DataSource = ClienteController.GetClientes();
-            ListaClientes.Columns["Id"].HeaderText = "Nº Cliente";
-            limparCamposCliente();
-            limparListaClientes();
-            ordenarCamposClientes();
-
-        }
+     
 
         private void ListaClientes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -190,6 +178,17 @@ namespace CineGest.Views
             txtNif.Text = ListaClientes.CurrentRow.Cells[0].Value.ToString();
 
            
+        }
+
+        private void Clientes_Load(object sender, EventArgs e) {
+            ListaClientes.ReadOnly = true;
+            ListaClientes.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+           // ListaClientes.DataSource = ClienteController.GetClientes();
+            ListaClientes.Columns["Id"].HeaderText = "Nº Cliente";
+            limparCamposCliente();
+            limparListaClientes();
+            ordenarCamposClientes();
         }
     }
 }

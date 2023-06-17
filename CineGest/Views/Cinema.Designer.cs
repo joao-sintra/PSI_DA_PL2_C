@@ -184,7 +184,6 @@
             this.listaSalas.Size = new System.Drawing.Size(554, 356);
             this.listaSalas.TabIndex = 21;
             this.listaSalas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaSalas_CellMouseClick);
-            this.listaSalas.DoubleClick += new System.EventHandler(this.listaSalas_DoubleClick);
             // 
             // timer1
             // 
@@ -216,6 +215,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Cinema";
             this.Size = new System.Drawing.Size(1121, 733);
+            this.Load += new System.EventHandler(this.Cinema_Load);
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaSalas)).EndInit();

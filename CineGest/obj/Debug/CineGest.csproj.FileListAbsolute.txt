@@ -1,13 +1,3 @@
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.exe.config
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.exe
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\CineGest.pdb
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Properties.Resources.resources
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.exe
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.pdb
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\bin\Debug\CineGest.exe.config
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\bin\Debug\CineGest.exe
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\bin\Debug\CineGest.pdb
@@ -24,16 +14,6 @@ C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvo
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\obj\Debug\CineGest.csproj.CopyComplete
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\obj\Debug\CineGest.exe
 C:\Users\ruben\OneDrive - IPLeiria\Documents\TESP PSI (IPL)\2º Semestre\Desenvolvimento de Aplicações e TS\Repos\CineGest\obj\Debug\CineGest.pdb
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.dll
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.xml
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Atendimento.resources
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.MainForm.resources
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CopyComplete
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Sidebar.resources
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Inicio.resources
-C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Timer.resources
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\bin\Debug\CineGest.exe.config
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\bin\Debug\CineGest.exe
 C:\Users\kikof\OneDrive - IPLeiria\Desktop\TrabalhosIPLeiria\2_Semestre\DA\Projeto\projeto-DA\CineGest\bin\Debug\CineGest.pdb
@@ -109,3 +89,18 @@ D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\EntityFram
 D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\EntityFramework.xml
 D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\bin\Debug\EntityFramework.SqlServer.xml
 D:\Repos ( GIT )\Desenvolvimento Aplicações (DA)\CineGest\obj\Debug\CineGest.csproj.CopyComplete
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Atendimento.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Cinema.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Clientes.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Filmes.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Funcionarios.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Inicio.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.MainForm.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Properties.Resources.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Sessoes.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Sidebar.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.Views.Timer.resources
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+C:\Users\sintr\OneDrive - IPLeiria\DA\CineGest\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache

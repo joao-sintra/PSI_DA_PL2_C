@@ -267,5 +267,14 @@ namespace CineGest.Views {
                 cbCatAtiva.Checked = false;
             }
         }
+
+        private void Filmes_Load(object sender, EventArgs e) {
+            listaCategorias.DataSource = CategoriaController.GetCategorias();
+            cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
+            limparLC();
+            listaFilmes.DataSource = FilmeController.GetFilmes();
+            limparLF();
+            
+        }
     }
 }

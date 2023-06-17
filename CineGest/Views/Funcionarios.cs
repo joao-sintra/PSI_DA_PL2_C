@@ -50,11 +50,7 @@ namespace CineGest.Views
             listaFuncionarios.Columns["Funcao"].DisplayIndex = 3;
         }
 
-        private void listaFuncionarios_DoubleClick(object sender, EventArgs e)
-        {
-            listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
-            ordenarCampos();
-        }
+       
 
         private void btNovoFun_Click(object sender, EventArgs e)
         {
@@ -185,6 +181,11 @@ namespace CineGest.Views
                 MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser eliminá-la!");
                 ordenarCampos();
             }
+        }
+
+        private void Funcionarios_Load(object sender, EventArgs e) {
+            listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
+            ordenarCampos();
         }
     }
 }

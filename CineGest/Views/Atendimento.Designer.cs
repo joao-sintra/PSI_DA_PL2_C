@@ -25,10 +25,7 @@
         private void InitializeComponent() {
             this.btEmitirBilhete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btRemoverLugar = new System.Windows.Forms.Button();
             this.listaLugaresMarcados = new System.Windows.Forms.ListBox();
-            this.listViewLugares = new System.Windows.Forms.ListView();
-            this.timer1 = new CineGest.Views.Timer();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
@@ -46,7 +43,8 @@
             this.listaClientes = new System.Windows.Forms.ListBox();
             this.txtPesquisaClientes = new System.Windows.Forms.TextBox();
             this.btAnularBilhete = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lugares = new System.Windows.Forms.TableLayoutPanel();
+            this.timer1 = new CineGest.Views.Timer();
             this.cliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,57 +66,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(261, 60);
+            this.label1.Location = new System.Drawing.Point(355, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "Tela";
-            // 
-            // btRemoverLugar
-            // 
-            this.btRemoverLugar.BackColor = System.Drawing.Color.Brown;
-            this.btRemoverLugar.FlatAppearance.BorderSize = 0;
-            this.btRemoverLugar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRemoverLugar.ForeColor = System.Drawing.Color.White;
-            this.btRemoverLugar.Location = new System.Drawing.Point(568, 343);
-            this.btRemoverLugar.Name = "btRemoverLugar";
-            this.btRemoverLugar.Size = new System.Drawing.Size(180, 30);
-            this.btRemoverLugar.TabIndex = 7;
-            this.btRemoverLugar.Text = "Remover";
-            this.btRemoverLugar.UseVisualStyleBackColor = false;
-            this.btRemoverLugar.Click += new System.EventHandler(this.btRemoverLugar_Click);
             // 
             // listaLugaresMarcados
             // 
             this.listaLugaresMarcados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaLugaresMarcados.FormattingEnabled = true;
             this.listaLugaresMarcados.ItemHeight = 21;
-            this.listaLugaresMarcados.Location = new System.Drawing.Point(568, 123);
+            this.listaLugaresMarcados.Location = new System.Drawing.Point(731, 102);
             this.listaLugaresMarcados.Name = "listaLugaresMarcados";
-            this.listaLugaresMarcados.Size = new System.Drawing.Size(180, 214);
+            this.listaLugaresMarcados.Size = new System.Drawing.Size(44, 277);
             this.listaLugaresMarcados.TabIndex = 6;
-            // 
-            // listViewLugares
-            // 
-            this.listViewLugares.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.listViewLugares.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewLugares.ForeColor = System.Drawing.Color.White;
-            this.listViewLugares.GridLines = true;
-            this.listViewLugares.HideSelection = false;
-            this.listViewLugares.Location = new System.Drawing.Point(18, 102);
-            this.listViewLugares.Name = "listViewLugares";
-            this.listViewLugares.Size = new System.Drawing.Size(535, 271);
-            this.listViewLugares.TabIndex = 5;
-            this.listViewLugares.UseCompatibleStateImageBehavior = false;
-            this.listViewLugares.View = System.Windows.Forms.View.Details;
-            this.listViewLugares.SelectedIndexChanged += new System.EventHandler(this.listViewLugares_SelectedIndexChanged);
-            // 
-            // timer1
-            // 
-            this.timer1.Location = new System.Drawing.Point(894, 3);
-            this.timer1.Name = "timer1";
-            this.timer1.Size = new System.Drawing.Size(224, 38);
-            this.timer1.TabIndex = 11;
             // 
             // label3
             // 
@@ -160,7 +122,7 @@
             this.listaBilhetes.ItemHeight = 21;
             this.listaBilhetes.Location = new System.Drawing.Point(18, 441);
             this.listaBilhetes.Name = "listaBilhetes";
-            this.listaBilhetes.Size = new System.Drawing.Size(730, 193);
+            this.listaBilhetes.Size = new System.Drawing.Size(757, 193);
             this.listaBilhetes.TabIndex = 15;
             // 
             // label2
@@ -290,21 +252,29 @@
             this.btAnularBilhete.Text = "Anular Bilhete";
             this.btAnularBilhete.UseVisualStyleBackColor = false;
             // 
-            // label8
+            // lugares
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(567, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(182, 30);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Lugares Marcados";
+            this.lugares.ColumnCount = 1;
+            this.lugares.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.lugares.Location = new System.Drawing.Point(23, 102);
+            this.lugares.Name = "lugares";
+            this.lugares.RowCount = 1;
+            this.lugares.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.lugares.Size = new System.Drawing.Size(691, 277);
+            this.lugares.TabIndex = 22;
+            // 
+            // timer1
+            // 
+            this.timer1.Location = new System.Drawing.Point(894, 3);
+            this.timer1.Name = "timer1";
+            this.timer1.Size = new System.Drawing.Size(224, 38);
+            this.timer1.TabIndex = 11;
             // 
             // Atendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lugares);
             this.Controls.Add(this.btAnularBilhete);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cliente);
@@ -316,12 +286,11 @@
             this.Controls.Add(this.timer1);
             this.Controls.Add(this.btEmitirBilhete);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btRemoverLugar);
             this.Controls.Add(this.listaLugaresMarcados);
-            this.Controls.Add(this.listViewLugares);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Atendimento";
             this.Size = new System.Drawing.Size(1121, 733);
+            this.Load += new System.EventHandler(this.Atendimento_Load);
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -335,9 +304,7 @@
 
         private System.Windows.Forms.Button btEmitirBilhete;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btRemoverLugar;
         private System.Windows.Forms.ListBox listaLugaresMarcados;
-        private System.Windows.Forms.ListView listViewLugares;
         private Timer timer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -356,6 +323,6 @@
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.TextBox txtPesquisaClientes;
         private System.Windows.Forms.ListBox listaClientes;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel lugares;
     }
 }

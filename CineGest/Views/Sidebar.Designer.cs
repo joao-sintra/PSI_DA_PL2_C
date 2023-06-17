@@ -56,6 +56,7 @@
             this.panelInicio.Name = "panelInicio";
             this.panelInicio.Size = new System.Drawing.Size(248, 64);
             this.panelInicio.TabIndex = 1;
+            this.panelInicio.Click += new System.EventHandler(this.panelInicio_Click);
             // 
             // label2
             // 
