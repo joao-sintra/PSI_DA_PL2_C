@@ -1,4 +1,4 @@
-<img width="350" alt="logoIPL" src="https://github.com/joao-sintra/projeto-DA/assets/114481749/94880b5b-9090-4ffa-be77-d942c6950c86">
+<img width="350" alt="logoIPL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Log%C3%B3tipo_Polit%C3%A9cnico_Leiria_01.png/1920px-Log%C3%B3tipo_Polit%C3%A9cnico_Leiria_01.png">
 
 # Projeto DA
 Projeto da Unidade Curricular Desenvolvimento de Aplicações do segundo semestre do primeiro ano do curso TESP de programação de Sistemas de Informação
