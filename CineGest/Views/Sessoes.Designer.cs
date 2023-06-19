@@ -245,7 +245,6 @@
             this.Controls.Add(this.timer1);
             this.Name = "Sessoes";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Sessoes_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.ListaSessoes)).EndInit();
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();

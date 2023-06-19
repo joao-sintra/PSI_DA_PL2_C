@@ -51,7 +51,7 @@ namespace CineGest.Views {
                 limparCamposFunc();
                 ordenarCampos();
 
-            } catch (FormatException fe) {
+            } catch (FormatException) {
                 MessageBox.Show("Campos no formato incorreto!\n" +
                          "\nCampo Nome: aceita letras e números." +
                          "\nCampo Morada: aceita letras e números." +
@@ -93,7 +93,7 @@ namespace CineGest.Views {
                         limparCamposFunc();
                         ordenarCampos();
 
-                    } catch (FormatException fe) {
+                    } catch (FormatException) {
                         MessageBox.Show("Campos no formato incorreto!\n" +
                          "\nCampo Nome: aceita letras e números." +
                          "\nCampo Morada: aceita letras e números." +
@@ -139,13 +139,14 @@ namespace CineGest.Views {
                     ordenarCampos();
                 }
 
-            } catch (FormatException fe) {
+            } catch (FormatException) {
                 MessageBox.Show("Tem de selecionar numa linha da tabela Funcionários, se quiser eliminá-la!");
                 ordenarCampos();
             }
         }
 
-        private void Funcionarios_Load(object sender, EventArgs e) {
+     
+        public void CarregaDataGrid() {
             listaFuncionarios.DataSource = FuncionarioController.GetFuncionarios();
             ordenarCampos();
         }

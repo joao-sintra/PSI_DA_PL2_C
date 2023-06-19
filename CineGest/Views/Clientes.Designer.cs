@@ -32,8 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtMorada = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btRemoverCliente = new System.Windows.Forms.Button();
             this.btAlterarCliente = new System.Windows.Forms.Button();
             this.btLimparCamposCliente = new System.Windows.Forms.Button();
@@ -52,9 +50,9 @@
             // ListaClientes
             // 
             this.ListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaClientes.Location = new System.Drawing.Point(329, 450);
+            this.ListaClientes.Location = new System.Drawing.Point(204, 450);
             this.ListaClientes.Name = "ListaClientes";
-            this.ListaClientes.Size = new System.Drawing.Size(443, 259);
+            this.ListaClientes.Size = new System.Drawing.Size(644, 259);
             this.ListaClientes.TabIndex = 41;
             this.ListaClientes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ListaClientes_CellMouseClick);
             // 
@@ -62,8 +60,6 @@
             // 
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.txtMorada);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btRemoverCliente);
             this.groupBox1.Controls.Add(this.btAlterarCliente);
             this.groupBox1.Controls.Add(this.btLimparCamposCliente);
@@ -93,24 +89,6 @@
             this.txtMorada.Name = "txtMorada";
             this.txtMorada.Size = new System.Drawing.Size(297, 29);
             this.txtMorada.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(852, 253);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 44);
-            this.textBox1.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(651, 260);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 37);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Total (Bilhetes):";
             // 
             // btRemoverCliente
             // 
@@ -203,7 +181,7 @@
             // 
             // timer1
             // 
-            this.timer1.Location = new System.Drawing.Point(877, 41);
+            this.timer1.Location = new System.Drawing.Point(877, 19);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(218, 35);
             this.timer1.TabIndex = 39;
@@ -212,7 +190,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 41);
+            this.label3.Location = new System.Drawing.Point(20, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(193, 30);
             this.label3.TabIndex = 38;
@@ -222,11 +200,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(324, 417);
+            this.label1.Location = new System.Drawing.Point(419, 417);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 30);
             this.label1.TabIndex = 42;
             this.label1.Text = "Tabela Clientes";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Clientes
             // 
@@ -239,7 +218,6 @@
             this.Controls.Add(this.label3);
             this.Name = "Clientes";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ListaClientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -252,8 +230,6 @@
 
         private System.Windows.Forms.DataGridView ListaClientes;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btRemoverCliente;
         private System.Windows.Forms.Button btAlterarCliente;
         private System.Windows.Forms.Button btLimparCamposCliente;

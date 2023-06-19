@@ -15,6 +15,23 @@ namespace CineGest.Controllers {
             }
         }
 
+        
+        public static List<string> GetFuncionariosString() {
+
+            using (var db = new CinegestContext()) {
+
+                List<Funcionario> funcionarios = db.Funcionarios.ToList();
+
+                List<string> funcionariosString = new List<string>();
+
+                foreach (Funcionario funcionario in funcionarios) {
+                    funcionariosString.Add(funcionario.Nome);
+                }
+
+                return funcionariosString;
+            }
+        }
+
         public static void AdicionarFuncionario(string nome, string morada, float salario, string funcao) {
 
             using (var db = new CinegestContext()) {

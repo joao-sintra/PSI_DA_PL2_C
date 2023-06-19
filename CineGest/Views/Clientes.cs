@@ -6,25 +6,35 @@ namespace CineGest.Views {
     public partial class Clientes : UserControl {
         public Clientes() {
             InitializeComponent();
-
+            ListaClientes.ReadOnly = true;
+            ListaClientes.EditMode = DataGridViewEditMode.EditProgrammatically;
+         
+            DataGridViewTextBoxColumn coluna = new DataGridViewTextBoxColumn();
+            coluna.HeaderText = "Total de bilhetes";
+            coluna.Name = "TotalBilhetes";
+            ListaClientes.Columns.Add(coluna);
+            DataGridViewTextBoxColumn coluna2 = new DataGridViewTextBoxColumn();
+            coluna2.HeaderText = "Total de dinheiro gasto";
+            coluna2.Name = "TotalDinheiro";
+            ListaClientes.Columns.Add(coluna2);
         }
 
-        private void limparCamposCliente() {
+        private void limpaCamposCliente() {
 
             txtNif.Text = string.Empty;
             txtNome.Text = string.Empty;
             txtMorada.Text = string.Empty;
         }
 
-        private void limparListaClientes() {
+        private void limpaListaClientes() {
             ListaClientes.ClearSelection();
         }
         private void btLimparCamposCliente_Click(object sender, EventArgs e) {
-            limparCamposCliente();
-            limparListaClientes();
+            limpaCamposCliente();
+            limpaListaClientes();
         }
 
-        public void ordenarCamposClientes() {
+        public void ordenaCamposClientes() {
 
             ListaClientes.Columns["Id"].DisplayIndex = 0;
             ListaClientes.Columns["NIF"].DisplayIndex = 1;
@@ -35,6 +45,7 @@ namespace CineGest.Views {
         private void refreshListaClientes() {
             ListaClientes.DataSource = null;
             ListaClientes.DataSource = ClienteController.GetClientes();
+            InsereValoresLC();
         }
 
         private void btNovoCliente_Click(object sender, EventArgs e) {
@@ -43,20 +54,35 @@ namespace CineGest.Views {
 
             } else {
                 try {
+
+                    //validação para um inteiro com 9 digitos e validar se o NIF já existe na base de dados e se sao numeros
+                  /*  if (ClienteController.GetClienteByNif(Int32.Parse(txtNif.Text)) != null) {
+                        MessageBox.Show("O NIF já existe na base de dados!");
+                        return;
+                    }
+                    //valida se o nif 
+                    if (txtNif.Text.Length != 9) {
+                        MessageBox.Show("O NIF tem de ter 9 digitos!");
+                        return;
+                    }*/
+
+
+
+
                     int nif = Int32.Parse(txtNif.Text);
 
                     ClienteController.AdicionarCliente(nif, txtNome.Text, txtMorada.Text);
                     refreshListaClientes();
-                    limparListaClientes();
-                    ordenarCamposClientes();
-                } catch (FormatException fe) {
+                    limpaListaClientes();
+                    ordenaCamposClientes();
+                } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n" +
                            "\nCampo Nome: aceita letras!" +
                            "\nCampo Morada: aceita letras e números!" +
                            "\nCampo NIF: Só aceita números!");
 
-                    limparCamposCliente();
-                    ordenarCamposClientes();
+                    limpaCamposCliente();
+                    ordenaCamposClientes();
 
                 }
             }
@@ -87,19 +113,19 @@ namespace CineGest.Views {
                     ClienteController.AlterarCliente(selectedID, nif, txtNome.Text, txtMorada.Text);
 
                     refreshListaClientes();
-                    limparListaClientes();
-                    ordenarCamposClientes();
+                    limpaListaClientes();
+                    ordenaCamposClientes();
 
 
-                } catch (FormatException fe) {
+                } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n" +
                           "\nCampo Nome: aceita letras!" +
                           "\nCampo Morada: aceita letras e números!" +
                           "\nCampo NIF: Só aceita números!");
 
-                    limparListaClientes();
-                    limparCamposCliente();
-                    ordenarCamposClientes();
+                    limpaListaClientes();
+                    limpaCamposCliente();
+                    ordenaCamposClientes();
                 }
 
             }
@@ -110,8 +136,8 @@ namespace CineGest.Views {
                 MessageBox.Show("Tem de selecionar em linha numa ( setinha no lado esquerdo ) da tabela Clientes, se pretende remover o Cliente!");
                 return;
             }
-
-            string id = ListaClientes.CurrentRow.Cells[1].Value.ToString();
+           
+            string id = ListaClientes.CurrentRow.Cells[3].Value.ToString();
 
             int selectedID = Int32.Parse(id);
 
@@ -122,13 +148,14 @@ namespace CineGest.Views {
                 ClienteController.RemoverCliente(selectedID);
 
                 refreshListaClientes();
-                limparListaClientes();
-                limparCamposCliente();
-                ordenarCamposClientes();
+                limpaListaClientes();
+                limpaCamposCliente();
+                ordenaCamposClientes();
+                
             } else {
-                limparListaClientes();
-                limparCamposCliente();
-                ordenarCamposClientes();
+                limpaListaClientes();
+                limpaCamposCliente();
+                ordenaCamposClientes();
             }
         }
 
@@ -137,22 +164,34 @@ namespace CineGest.Views {
 
         private void ListaClientes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
 
-            txtNome.Text = ListaClientes.CurrentRow.Cells[2].Value.ToString();
-            txtMorada.Text = ListaClientes.CurrentRow.Cells[3].Value.ToString();
-            txtNif.Text = ListaClientes.CurrentRow.Cells[0].Value.ToString();
-
+            txtNome.Text = ListaClientes.CurrentRow.Cells[4].Value.ToString();
+            txtMorada.Text = ListaClientes.CurrentRow.Cells[5].Value.ToString();
+            txtNif.Text = ListaClientes.CurrentRow.Cells[2].Value.ToString();
 
         }
 
-        private void Clientes_Load(object sender, EventArgs e) {
-            ListaClientes.ReadOnly = true;
-            ListaClientes.EditMode = DataGridViewEditMode.EditProgrammatically;
+        public void InsereValoresLC() {
+            
+            foreach (DataGridViewRow row in ListaClientes.Rows) {
+                row.Cells["TotalBilhetes"].Value = BilheteController.GetQuantidadeBilhetesCliente(row.Cells["Nome"].Value.ToString());
+                row.Cells["TotalDinheiro"].Value = BilheteController.GetValorBilhetesCliente(row.Cells["Nome"].Value.ToString()) + " €";
+            }
+        }
 
-            // ListaClientes.DataSource = ClienteController.GetClientes();
+        public void CarregaDataGrid() {
+            ListaClientes.DataSource = ClienteController.GetClientes();
             ListaClientes.Columns["Id"].HeaderText = "Nº Cliente";
-            limparCamposCliente();
-            limparListaClientes();
-            ordenarCamposClientes();
+            //adiciona uma coluna na lista de clientes
+          
+            InsereValoresLC();
+            limpaCamposCliente();
+            limpaListaClientes();
+            ordenaCamposClientes();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e) {
+
         }
     }
 }

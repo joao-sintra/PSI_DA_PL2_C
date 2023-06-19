@@ -38,8 +38,17 @@
             this.listaSalas = new System.Windows.Forms.DataGridView();
             this.timer1 = new CineGest.Views.Timer();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.btAlterarCinema = new System.Windows.Forms.Button();
+            this.txtMorada = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaSalas)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -187,7 +196,7 @@
             // 
             // timer1
             // 
-            this.timer1.Location = new System.Drawing.Point(851, 18);
+            this.timer1.Location = new System.Drawing.Point(877, 19);
             this.timer1.Margin = new System.Windows.Forms.Padding(4);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(254, 37);
@@ -203,10 +212,90 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Tabela Salas";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.btAlterarCinema);
+            this.groupBox1.Controls.Add(this.txtMorada);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(609, 72);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(496, 217);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Editar Cinema";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(97, 29);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(297, 29);
+            this.txtNome.TabIndex = 35;
+            // 
+            // btAlterarCinema
+            // 
+            this.btAlterarCinema.BackColor = System.Drawing.Color.Gold;
+            this.btAlterarCinema.FlatAppearance.BorderSize = 0;
+            this.btAlterarCinema.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAlterarCinema.ForeColor = System.Drawing.Color.White;
+            this.btAlterarCinema.Location = new System.Drawing.Point(191, 168);
+            this.btAlterarCinema.Name = "btAlterarCinema";
+            this.btAlterarCinema.Size = new System.Drawing.Size(133, 33);
+            this.btAlterarCinema.TabIndex = 22;
+            this.btAlterarCinema.Text = "Alterar";
+            this.btAlterarCinema.UseVisualStyleBackColor = false;
+            this.btAlterarCinema.Click += new System.EventHandler(this.btAlterarCinema_Click);
+            // 
+            // txtMorada
+            // 
+            this.txtMorada.Location = new System.Drawing.Point(97, 73);
+            this.txtMorada.Name = "txtMorada";
+            this.txtMorada.Size = new System.Drawing.Size(297, 29);
+            this.txtMorada.TabIndex = 34;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(97, 118);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(297, 29);
+            this.txtEmail.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 121);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Email";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(24, 79);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 21);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Morada:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(24, 29);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 21);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Nome:";
+            // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timer1);
             this.Controls.Add(this.listaSalas);
@@ -215,11 +304,11 @@
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Cinema";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.Load += new System.EventHandler(this.Cinema_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Cinema_Paint);
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaSalas)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +331,13 @@
         private System.Windows.Forms.DataGridView listaSalas;
         private Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btAlterarCinema;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtMorada;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

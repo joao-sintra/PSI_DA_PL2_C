@@ -34,7 +34,7 @@ namespace CineGest.Views {
         private void refreshLF() {
             filmeBindingSource.DataSource = null;
             filmeBindingSource.DataSource = FilmeController.GetFilmes();
-            //listaFilmes.DataSource = null;
+            listaFilmes.DataSource = null;
             listaFilmes.DataSource = FilmeController.GetFilmes();
         }
 
@@ -53,7 +53,7 @@ namespace CineGest.Views {
                     limparLF();
                     limparCamposF();
 
-                } catch (FormatException fe) {
+                } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n\nCampo Nome: aceita tanto letras como números." +
                         "\nCampo Duração: só aceita números inteiros.\n");
 
@@ -104,7 +104,7 @@ namespace CineGest.Views {
                         limparLF();
                         limparCamposF();
 
-                    } catch (FormatException fe) {
+                    } catch (FormatException ) {
                         MessageBox.Show("Campos no formato incorreto!\n\nCampo Nome: aceita tanto letras como números." +
                             "\nCampo Duração: só aceita números inteiros.\n");
 
@@ -156,11 +156,7 @@ namespace CineGest.Views {
             cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
         }
 
-        private void listaCategorias_DoubleClick(object sender, EventArgs e) {
-            listaCategorias.DataSource = CategoriaController.GetCategorias();
-            cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
-            limparLC();
-        }
+       
 
         private void btNovaCat_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(txtCat.Text)) {
@@ -176,7 +172,7 @@ namespace CineGest.Views {
                     refreshLC();
                     limparCamposCat();
 
-                } catch (FormatException fe) {
+                } catch (FormatException) {
                     MessageBox.Show("Campo no formato incorreto!\n\nCampo Nome: aceita tanto letras como números.");
 
                     limparCamposF();
@@ -215,7 +211,7 @@ namespace CineGest.Views {
                         limparLC();
                         limparCamposCat();
 
-                    } catch (FormatException fe) {
+                    } catch (FormatException) {
                         MessageBox.Show("Não pode deixar o(s) campo(s) vazio(s)!");
                         return;
                     }
@@ -258,13 +254,13 @@ namespace CineGest.Views {
             }
         }
 
-        private void Filmes_Load(object sender, EventArgs e) {
+      
+        public void CarregaDataGrid() {
             listaCategorias.DataSource = CategoriaController.GetCategorias();
             cbCategoriaF.DataSource = CategoriaController.GetOnlyNomesCategorias();
             limparLC();
             listaFilmes.DataSource = FilmeController.GetFilmes();
             limparLF();
-
         }
     }
 }

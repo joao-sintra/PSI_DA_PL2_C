@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CineGest.Controllers;
+using CineGest.Views;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,19 +11,19 @@ namespace CineGest {
         /// </summary>
         [STAThread]
         static void Main() {
-
-            bool temCinema = false;
-            using (var db = new CinegestContext()) {
-                var cinema = db.Cinemas.FirstOrDefault();
-                if (cinema == null) {
-                    temCinema = false;
-                } else {
-                    temCinema = true;
-                }
-            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+           
+           bool cinema = CinemaController.ExisteCinema();
+               
+                if (!cinema) {
+                    Application.Run(new CriacaoCinema());
+                } else {
+                    Application.Run(new MainForm());
+                }
+            }
+           
+            
         }
     }
-}
+

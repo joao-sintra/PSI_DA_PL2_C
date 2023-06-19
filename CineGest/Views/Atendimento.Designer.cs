@@ -23,15 +23,15 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.btEmitirBilhete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listaLugaresMarcados = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LabelInformacoesSessao = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.listaBilhetes = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cliente = new System.Windows.Forms.GroupBox();
+            this.btLimparCamposCliente = new System.Windows.Forms.Button();
             this.txtMoradaCliente = new System.Windows.Forms.TextBox();
             this.txtNumFiscalCliente = new System.Windows.Forms.TextBox();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
@@ -40,13 +40,28 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listaClientes = new System.Windows.Forms.ListBox();
+            this.ListaClientes = new System.Windows.Forms.DataGridView();
             this.txtPesquisaClientes = new System.Windows.Forms.TextBox();
             this.btAnularBilhete = new System.Windows.Forms.Button();
             this.lugares = new System.Windows.Forms.TableLayoutPanel();
+            this.listaBilhetes = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clienteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.funcionarioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SessaoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bilheteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new CineGest.Views.Timer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bilheteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaBilhetes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bilheteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bilheteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btEmitirBilhete
@@ -54,7 +69,7 @@
             this.btEmitirBilhete.BackColor = System.Drawing.Color.ForestGreen;
             this.btEmitirBilhete.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEmitirBilhete.ForeColor = System.Drawing.Color.White;
-            this.btEmitirBilhete.Location = new System.Drawing.Point(572, 685);
+            this.btEmitirBilhete.Location = new System.Drawing.Point(519, 686);
             this.btEmitirBilhete.Name = "btEmitirBilhete";
             this.btEmitirBilhete.Size = new System.Drawing.Size(179, 32);
             this.btEmitirBilhete.TabIndex = 9;
@@ -77,7 +92,7 @@
             this.listaLugaresMarcados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaLugaresMarcados.FormattingEnabled = true;
             this.listaLugaresMarcados.ItemHeight = 21;
-            this.listaLugaresMarcados.Location = new System.Drawing.Point(731, 102);
+            this.listaLugaresMarcados.Location = new System.Drawing.Point(740, 102);
             this.listaLugaresMarcados.Name = "listaLugaresMarcados";
             this.listaLugaresMarcados.Size = new System.Drawing.Size(44, 277);
             this.listaLugaresMarcados.TabIndex = 6;
@@ -92,15 +107,15 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Atendimento";
             // 
-            // label4
+            // LabelInformacoesSessao
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(355, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(393, 60);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Sessão 01- Sala 01 Filme";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LabelInformacoesSessao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelInformacoesSessao.Location = new System.Drawing.Point(198, 3);
+            this.LabelInformacoesSessao.Name = "LabelInformacoesSessao";
+            this.LabelInformacoesSessao.Size = new System.Drawing.Size(690, 60);
+            this.LabelInformacoesSessao.TabIndex = 13;
+            this.LabelInformacoesSessao.Text = "Sessão 01- Sala 01 Filme";
+            this.LabelInformacoesSessao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btCancelar
             // 
@@ -108,35 +123,17 @@
             this.btCancelar.FlatAppearance.BorderSize = 0;
             this.btCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.ForeColor = System.Drawing.Color.White;
-            this.btCancelar.Location = new System.Drawing.Point(433, 686);
+            this.btCancelar.Location = new System.Drawing.Point(385, 687);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(133, 30);
             this.btCancelar.TabIndex = 14;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
-            // 
-            // listaBilhetes
-            // 
-            this.listaBilhetes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaBilhetes.FormattingEnabled = true;
-            this.listaBilhetes.ItemHeight = 21;
-            this.listaBilhetes.Location = new System.Drawing.Point(18, 441);
-            this.listaBilhetes.Name = "listaBilhetes";
-            this.listaBilhetes.Size = new System.Drawing.Size(757, 193);
-            this.listaBilhetes.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 408);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 30);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Bilhetes";
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // cliente
             // 
+            this.cliente.Controls.Add(this.btLimparCamposCliente);
             this.cliente.Controls.Add(this.txtMoradaCliente);
             this.cliente.Controls.Add(this.txtNumFiscalCliente);
             this.cliente.Controls.Add(this.txtNomeCliente);
@@ -147,10 +144,24 @@
             this.cliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cliente.Location = new System.Drawing.Point(798, 102);
             this.cliente.Name = "cliente";
-            this.cliente.Size = new System.Drawing.Size(297, 235);
+            this.cliente.Size = new System.Drawing.Size(297, 277);
             this.cliente.TabIndex = 18;
             this.cliente.TabStop = false;
             this.cliente.Text = "Cliente";
+            // 
+            // btLimparCamposCliente
+            // 
+            this.btLimparCamposCliente.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btLimparCamposCliente.FlatAppearance.BorderSize = 0;
+            this.btLimparCamposCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimparCamposCliente.ForeColor = System.Drawing.Color.White;
+            this.btLimparCamposCliente.Location = new System.Drawing.Point(10, 230);
+            this.btLimparCamposCliente.Name = "btLimparCamposCliente";
+            this.btLimparCamposCliente.Size = new System.Drawing.Size(133, 33);
+            this.btLimparCamposCliente.TabIndex = 22;
+            this.btLimparCamposCliente.Text = "Limpar campos";
+            this.btLimparCamposCliente.UseVisualStyleBackColor = false;
+            this.btLimparCamposCliente.Click += new System.EventHandler(this.btLimparCamposCliente_Click);
             // 
             // txtMoradaCliente
             // 
@@ -176,12 +187,13 @@
             // checkBoxAnonimoCliente
             // 
             this.checkBoxAnonimoCliente.AutoSize = true;
-            this.checkBoxAnonimoCliente.Location = new System.Drawing.Point(188, 194);
+            this.checkBoxAnonimoCliente.Location = new System.Drawing.Point(188, 235);
             this.checkBoxAnonimoCliente.Name = "checkBoxAnonimoCliente";
             this.checkBoxAnonimoCliente.Size = new System.Drawing.Size(93, 25);
             this.checkBoxAnonimoCliente.TabIndex = 4;
             this.checkBoxAnonimoCliente.Text = "Anônimo";
             this.checkBoxAnonimoCliente.UseVisualStyleBackColor = true;
+            this.checkBoxAnonimoCliente.CheckedChanged += new System.EventHandler(this.checkBoxAnonimoCliente_CheckedChanged);
             // 
             // label7
             // 
@@ -212,32 +224,32 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listaClientes);
+            this.groupBox2.Controls.Add(this.ListaClientes);
             this.groupBox2.Controls.Add(this.txtPesquisaClientes);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(798, 356);
+            this.groupBox2.Location = new System.Drawing.Point(704, 408);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 360);
+            this.groupBox2.Size = new System.Drawing.Size(391, 308);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista Clientes";
             // 
-            // listaClientes
+            // ListaClientes
             // 
-            this.listaClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaClientes.FormattingEnabled = true;
-            this.listaClientes.ItemHeight = 21;
-            this.listaClientes.Location = new System.Drawing.Point(29, 94);
-            this.listaClientes.Name = "listaClientes";
-            this.listaClientes.Size = new System.Drawing.Size(252, 256);
-            this.listaClientes.TabIndex = 21;
+            this.ListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaClientes.Location = new System.Drawing.Point(20, 87);
+            this.ListaClientes.Name = "ListaClientes";
+            this.ListaClientes.Size = new System.Drawing.Size(355, 227);
+            this.ListaClientes.TabIndex = 42;
+            this.ListaClientes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ListaClientes_CellMouseClick);
             // 
             // txtPesquisaClientes
             // 
             this.txtPesquisaClientes.Location = new System.Drawing.Point(29, 42);
             this.txtPesquisaClientes.Name = "txtPesquisaClientes";
-            this.txtPesquisaClientes.Size = new System.Drawing.Size(252, 29);
+            this.txtPesquisaClientes.Size = new System.Drawing.Size(346, 29);
             this.txtPesquisaClientes.TabIndex = 0;
+            this.txtPesquisaClientes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisaClientes_KeyDown);
             // 
             // btAnularBilhete
             // 
@@ -251,6 +263,7 @@
             this.btAnularBilhete.TabIndex = 20;
             this.btAnularBilhete.Text = "Anular Bilhete";
             this.btAnularBilhete.UseVisualStyleBackColor = false;
+            this.btAnularBilhete.Click += new System.EventHandler(this.btAnularBilhete_Click);
             // 
             // lugares
             // 
@@ -260,28 +273,106 @@
             this.lugares.Name = "lugares";
             this.lugares.RowCount = 1;
             this.lugares.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.lugares.Size = new System.Drawing.Size(691, 277);
+            this.lugares.Size = new System.Drawing.Size(711, 277);
             this.lugares.TabIndex = 22;
+            // 
+            // listaBilhetes
+            // 
+            this.listaBilhetes.AutoGenerateColumns = false;
+            this.listaBilhetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaBilhetes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.lugarDataGridViewTextBoxColumn,
+            this.estadoDataGridViewCheckBoxColumn,
+            this.clienteIDDataGridViewTextBoxColumn,
+            this.funcionarioIDDataGridViewTextBoxColumn,
+            this.SessaoID});
+            this.listaBilhetes.DataSource = this.bilheteBindingSource1;
+            this.listaBilhetes.Location = new System.Drawing.Point(23, 443);
+            this.listaBilhetes.Name = "listaBilhetes";
+            this.listaBilhetes.Size = new System.Drawing.Size(645, 191);
+            this.listaBilhetes.TabIndex = 24;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // lugarDataGridViewTextBoxColumn
+            // 
+            this.lugarDataGridViewTextBoxColumn.DataPropertyName = "Lugar";
+            this.lugarDataGridViewTextBoxColumn.HeaderText = "Lugar";
+            this.lugarDataGridViewTextBoxColumn.Name = "lugarDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewCheckBoxColumn
+            // 
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // clienteIDDataGridViewTextBoxColumn
+            // 
+            this.clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
+            this.clienteIDDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
+            // 
+            // funcionarioIDDataGridViewTextBoxColumn
+            // 
+            this.funcionarioIDDataGridViewTextBoxColumn.DataPropertyName = "FuncionarioID";
+            this.funcionarioIDDataGridViewTextBoxColumn.HeaderText = "Funcionario";
+            this.funcionarioIDDataGridViewTextBoxColumn.Name = "funcionarioIDDataGridViewTextBoxColumn";
+            // 
+            // SessaoID
+            // 
+            this.SessaoID.DataPropertyName = "SessaoID";
+            this.SessaoID.HeaderText = "Sessao";
+            this.SessaoID.Name = "SessaoID";
+            // 
+            // bilheteBindingSource1
+            // 
+            this.bilheteBindingSource1.DataSource = typeof(CineGest.Bilhete);
             // 
             // timer1
             // 
-            this.timer1.Location = new System.Drawing.Point(894, 3);
+            this.timer1.Location = new System.Drawing.Point(877, 19);
             this.timer1.Name = "timer1";
             this.timer1.Size = new System.Drawing.Size(224, 38);
             this.timer1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 408);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 30);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Bilhetes";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SessaoID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Sessao";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // bilheteBindingSource
+            // 
+            this.bilheteBindingSource.DataSource = typeof(CineGest.Bilhete);
             // 
             // Atendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listaBilhetes);
             this.Controls.Add(this.lugares);
             this.Controls.Add(this.btAnularBilhete);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cliente);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listaBilhetes);
             this.Controls.Add(this.btCancelar);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.LabelInformacoesSessao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.timer1);
             this.Controls.Add(this.btEmitirBilhete);
@@ -290,11 +381,14 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Atendimento";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.Load += new System.EventHandler(this.Atendimento_Load);
             this.cliente.ResumeLayout(false);
             this.cliente.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaBilhetes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bilheteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bilheteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,10 +401,8 @@
         private System.Windows.Forms.ListBox listaLugaresMarcados;
         private Timer timer1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LabelInformacoesSessao;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.ListBox listaBilhetes;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox cliente;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btAnularBilhete;
@@ -322,7 +414,19 @@
         private System.Windows.Forms.TextBox txtNumFiscalCliente;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.TextBox txtPesquisaClientes;
-        private System.Windows.Forms.ListBox listaClientes;
         private System.Windows.Forms.TableLayoutPanel lugares;
+        private System.Windows.Forms.DataGridView ListaClientes;
+        private System.Windows.Forms.Button btLimparCamposCliente;
+        private System.Windows.Forms.DataGridView listaBilhetes;
+        private System.Windows.Forms.BindingSource bilheteBindingSource;
+        private System.Windows.Forms.BindingSource bilheteBindingSource1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lugarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clienteIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn funcionarioIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SessaoID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

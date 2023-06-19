@@ -5,5 +5,9 @@
         public string Nome { get; set; }
 
         public string Morada { get; set; }
+
+        public override string ToString() {
+            return this.Nome;
+        }
     }
 }

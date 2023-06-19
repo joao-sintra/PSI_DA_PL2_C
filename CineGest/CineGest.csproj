@@ -57,7 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AtendimentoController.cs" />
+    <Compile Include="Controllers\BilheteController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FilmeController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
@@ -99,6 +101,12 @@
     </Compile>
     <Compile Include="Views\Filmes.Designer.cs">
       <DependentUpon>Filmes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CriarCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CriarCinema.Designer.cs">
+      <DependentUpon>CriarCinema.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Funcionarios.cs">
       <SubType>UserControl</SubType>
@@ -154,6 +162,9 @@
     <EmbeddedResource Include="Views\Filmes.resx">
       <DependentUpon>Filmes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CriarCinema.resx">
+      <DependentUpon>CriarCinema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcionarios.resx">
       <DependentUpon>Funcionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,7 +189,9 @@
       <DependentUpon>Timer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Bilhete.datasource" />
     <None Include="Properties\DataSources\Cinema.datasource" />
+    <None Include="Properties\DataSources\Cliente.datasource" />
     <None Include="Properties\DataSources\Filme.datasource" />
     <None Include="Properties\DataSources\Funcionario.datasource" />
     <None Include="Properties\Settings.settings">

@@ -53,7 +53,6 @@
             this.categoriaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaCategorias = new System.Windows.Forms.DataGridView();
-            this.btNovaSessao = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new CineGest.Views.Timer();
@@ -321,7 +320,7 @@
             this.listaFilmes.Location = new System.Drawing.Point(23, 431);
             this.listaFilmes.Name = "listaFilmes";
             this.listaFilmes.RowHeadersWidth = 51;
-            this.listaFilmes.Size = new System.Drawing.Size(555, 235);
+            this.listaFilmes.Size = new System.Drawing.Size(555, 275);
             this.listaFilmes.TabIndex = 24;
             this.listaFilmes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaFilmes_CellMouseClick);
             // 
@@ -365,22 +364,9 @@
             this.listaCategorias.Location = new System.Drawing.Point(637, 431);
             this.listaCategorias.Name = "listaCategorias";
             this.listaCategorias.RowHeadersWidth = 51;
-            this.listaCategorias.Size = new System.Drawing.Size(353, 235);
+            this.listaCategorias.Size = new System.Drawing.Size(353, 275);
             this.listaCategorias.TabIndex = 25;
             this.listaCategorias.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.listaCategorias_CellMouseClick);
-            // 
-            // btNovaSessao
-            // 
-            this.btNovaSessao.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btNovaSessao.Enabled = false;
-            this.btNovaSessao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNovaSessao.ForeColor = System.Drawing.Color.White;
-            this.btNovaSessao.Location = new System.Drawing.Point(23, 682);
-            this.btNovaSessao.Name = "btNovaSessao";
-            this.btNovaSessao.Size = new System.Drawing.Size(189, 33);
-            this.btNovaSessao.TabIndex = 23;
-            this.btNovaSessao.Text = "Nova sessão";
-            this.btNovaSessao.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -407,7 +393,7 @@
             this.timer1.Location = new System.Drawing.Point(877, 19);
             this.timer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.timer1.Name = "timer1";
-            this.timer1.Size = new System.Drawing.Size(290, 42);
+            this.timer1.Size = new System.Drawing.Size(240, 42);
             this.timer1.TabIndex = 21;
             // 
             // Filmes
@@ -416,7 +402,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btNovaSessao);
             this.Controls.Add(this.listaCategorias);
             this.Controls.Add(this.listaFilmes);
             this.Controls.Add(this.gbAdicionarCat);
@@ -426,7 +411,6 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Filmes";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.Load += new System.EventHandler(this.Filmes_Load);
             this.gbAdicionarFilme.ResumeLayout(false);
             this.gbAdicionarFilme.PerformLayout();
             this.gbAdicionarCat.ResumeLayout(false);
@@ -462,7 +446,6 @@
         private System.Windows.Forms.DataGridView listaFilmes;
         private System.Windows.Forms.DataGridView listaCategorias;
         private System.Windows.Forms.CheckBox cbCatAtiva;
-        private System.Windows.Forms.Button btNovaSessao;
         private System.Windows.Forms.CheckBox cbAtivoF;
         private System.Windows.Forms.ComboBox cbCategoriaF;
         private Timer timer1;

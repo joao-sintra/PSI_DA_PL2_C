@@ -12,6 +12,17 @@ namespace CineGest.Controllers {
 
             }
         }
+        //mostrar as sessoes de hoje
+        public static List<Sessao> GetSessoesHoje() {
+
+            using (var db = new CinegestContext()) {
+                DateTime today = DateTime.Today;
+                DateTime tomorrow = today.AddDays(1);
+                return db.Sessoes.Include("FilmeID").Include("SalaID").Where(s => s.DataHora >= today && s.DataHora < tomorrow).ToList();
+
+            }
+        }
+        
         public static void AdicionarSessao(string Filme, string Sala, DateTime DataHora, float Preco) {
 
             using (var db = new CinegestContext()) {
@@ -19,14 +30,21 @@ namespace CineGest.Controllers {
                 var sala = db.Salas.FirstOrDefault(x => x.Nome == Sala);
 
                 var sessao = new Sessao { DataHora = DataHora, Preco = Preco, FilmeID = filme, SalaID = sala };
+                DateTime currentDateTime = DateTime.Now;
 
                 List<Sessao> list = db.Sessoes
                     .Where(s => s.DataHora == DataHora)
                     .Where(s => s.SalaID.Id == sala.Id)
                     .ToList();
+                //valida para que nao seja possivel a criação de uma nova sessao no espaço de tempo de uma hora
+                //antes ou depois de uma sessao existente
+                //converte minutos para DateTime
 
                 if (list.Count > 0) {
                     MessageBox.Show("Já existe uma sessão nesta sala e com esta data e hora. \n(" + "Sala: " + sala + " | " + "DataHora: " + DataHora + ") já existe!");
+                    return;
+                } else if (DataHora < currentDateTime) {
+                    MessageBox.Show("Não pode adicionar uma sessao com a data anterior à atual!\n" + DataHora);
                     return;
                 }
 
@@ -49,7 +67,7 @@ namespace CineGest.Controllers {
 
 
                 if (DataHora < currentDateTime) {
-                    MessageBox.Show("Não podes alterar os campos desta sessão porque esta sessão já foi iniciada!\n" + DataHora);
+                    MessageBox.Show("Não pode alterar uma sessao com a data anterior à atual!!\n" + DataHora);
                     return;
                 }
 

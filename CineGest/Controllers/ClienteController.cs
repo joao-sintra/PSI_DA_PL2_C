@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CineGest.Views;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,6 +11,23 @@ namespace CineGest.Controllers {
                 return db.Clientes.ToList();
             }
         }
+
+        public static List<Cliente> ProcuraCliente(string nome) {
+            using (var db = new CinegestContext()) {
+                return db.Clientes.Where(c => c.Nome.Contains(nome)).ToList();
+            }
+        }
+
+        public static bool VerificaExistenciaCliente( string nome) {
+            using (var db = new CinegestContext()) {
+                List<Cliente> list = db.Clientes.Where(c => c.Nome==nome).ToList();
+                if (list.Count > 0) {
+                   // MessageBox.Show("Já existe um cliente com este nome (" + nome + ")!");
+                    return false;
+                }else
+                return true;
+            }
+        }
         public static void AdicionarCliente(int nif, string nome, string morada) {
 
             using (var db = new CinegestContext()) {
@@ -18,13 +36,22 @@ namespace CineGest.Controllers {
 
                 List<Cliente> list = db.Clientes
                    .Where(s => s.Nome == nome)
-                   .Where(s => s.NIF == nif)
                    .ToList();
 
                 if (list.Count > 0) {
                     MessageBox.Show("Já existe um cliente com este nome (" + nome + ")!");
                     return;
                 }
+
+                list = db.Clientes
+                   .Where(s => s.NIF == nif)
+                   .ToList();
+
+                if (list.Count > 0) {
+                    MessageBox.Show("Já existe um cliente com este NIF (" + nif + ")!");
+                    return;
+                }
+
 
                 db.Clientes.Add(clientes);
                 db.SaveChanges();
@@ -48,6 +75,10 @@ namespace CineGest.Controllers {
                     MessageBox.Show("Não podes alterar o nome deste Cliente para: (" + nome + "), porque já existe!");
                     return;
                 }
+                if (func.Nome == "Anônimo") {
+                    MessageBox.Show("Não pode alterar este Cliente!");
+                    return;
+                }
 
                 //Alterar os Campos conforme o Input do Utilizador
                 func.Nome = nome;
@@ -61,7 +92,12 @@ namespace CineGest.Controllers {
             using (var db = new CinegestContext()) {
 
                 Cliente cliente = db.Clientes.FirstOrDefault(f => f.Id == selectedClienteID);
-
+                //valida se o utilizador ter o nome de Anônimo nao poder eliminar
+                if (cliente.Nome == "Anônimo") {
+                    MessageBox.Show("Não pode eliminar este Cliente!");
+                    return;
+                }
+               
                 db.Clientes.Remove(cliente);
 
                 db.SaveChanges();

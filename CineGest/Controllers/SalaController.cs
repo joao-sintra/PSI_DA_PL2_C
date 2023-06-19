@@ -25,6 +25,28 @@ namespace CineGest.Controllers {
             }
         }
 
+        public static int GetColunas(string nome) {
+
+            using (var db = new CinegestContext()) {
+
+                int colunas = db.Salas
+                    .Where(sala => sala.Nome == nome)
+                    .Select(sala => sala.Colunas).FirstOrDefault();
+
+                return colunas;
+            }
+        }
+        public static int GetLinhas(string nome) { 
+          using (var db = new CinegestContext()) {
+
+                int linhas = db.Salas
+                    .Where(sala => sala.Nome == nome)
+                    .Select(sala => sala.Filas).FirstOrDefault();
+
+                return linhas;
+            }
+        }
+
         public static void AdicionarSala(string nome, int colunas, int filas) {
 
             using (var db = new CinegestContext()) {

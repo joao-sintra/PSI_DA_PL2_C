@@ -38,10 +38,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panelFuncionarios = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.labelNomeFuncionario = new System.Windows.Forms.Label();
-            this.panelTerminarSessao = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.inicio1 = new CineGest.Views.Inicio();
+            this.filmes1 = new CineGest.Views.Filmes();
+            this.funcionarios1 = new CineGest.Views.Funcionarios();
+            this.clientes1 = new CineGest.Views.Clientes();
+            this.cinema1 = new CineGest.Views.Cinema();
+            this.sessoes1 = new CineGest.Views.Sessoes();
             this.sideBar.SuspendLayout();
             this.panelInicio.SuspendLayout();
             this.panelCinema.SuspendLayout();
@@ -49,7 +51,6 @@
             this.panelSessoes.SuspendLayout();
             this.panelClientes.SuspendLayout();
             this.panelFuncionarios.SuspendLayout();
-            this.panelTerminarSessao.SuspendLayout();
             this.SuspendLayout();
             // 
             // sideBar
@@ -62,8 +63,6 @@
             this.sideBar.Controls.Add(this.panelSessoes);
             this.sideBar.Controls.Add(this.panelClientes);
             this.sideBar.Controls.Add(this.panelFuncionarios);
-            this.sideBar.Controls.Add(this.labelNomeFuncionario);
-            this.sideBar.Controls.Add(this.panelTerminarSessao);
             this.sideBar.Location = new System.Drawing.Point(0, 0);
             this.sideBar.Name = "sideBar";
             this.sideBar.Size = new System.Drawing.Size(255, 733);
@@ -227,47 +226,50 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Click += new System.EventHandler(this.panelFuncionarios_Click);
             // 
-            // labelNomeFuncionario
-            // 
-            this.labelNomeFuncionario.AutoSize = true;
-            this.labelNomeFuncionario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomeFuncionario.ForeColor = System.Drawing.Color.White;
-            this.labelNomeFuncionario.Location = new System.Drawing.Point(23, 701);
-            this.labelNomeFuncionario.Name = "labelNomeFuncionario";
-            this.labelNomeFuncionario.Size = new System.Drawing.Size(203, 21);
-            this.labelNomeFuncionario.TabIndex = 12;
-            this.labelNomeFuncionario.Text = "Nome Funcionario (Função)";
-            // 
-            // panelTerminarSessao
-            // 
-            this.panelTerminarSessao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTerminarSessao.Controls.Add(this.label9);
-            this.panelTerminarSessao.Location = new System.Drawing.Point(3, 619);
-            this.panelTerminarSessao.Name = "panelTerminarSessao";
-            this.panelTerminarSessao.Size = new System.Drawing.Size(248, 64);
-            this.panelTerminarSessao.TabIndex = 11;
-            this.panelTerminarSessao.Click += new System.EventHandler(this.panelTerminarSessao_Click);
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Image = global::CineGest.Properties.Resources.icons8_exit_48;
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Location = new System.Drawing.Point(8, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(236, 46);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Terminar Sessão";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Click += new System.EventHandler(this.panelTerminarSessao_Click);
-            // 
             // inicio1
             // 
             this.inicio1.Location = new System.Drawing.Point(255, 0);
             this.inicio1.Name = "inicio1";
             this.inicio1.Size = new System.Drawing.Size(1121, 733);
-            this.inicio1.TabIndex = 3;
+            this.inicio1.TabIndex = 10;
+            // 
+            // filmes1
+            // 
+            this.filmes1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filmes1.Location = new System.Drawing.Point(255, 0);
+            this.filmes1.Name = "filmes1";
+            this.filmes1.Size = new System.Drawing.Size(1121, 733);
+            this.filmes1.TabIndex = 9;
+            // 
+            // funcionarios1
+            // 
+            this.funcionarios1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarios1.Location = new System.Drawing.Point(255, 0);
+            this.funcionarios1.Name = "funcionarios1";
+            this.funcionarios1.Size = new System.Drawing.Size(1121, 733);
+            this.funcionarios1.TabIndex = 8;
+            // 
+            // clientes1
+            // 
+            this.clientes1.Location = new System.Drawing.Point(255, 0);
+            this.clientes1.Name = "clientes1";
+            this.clientes1.Size = new System.Drawing.Size(1121, 733);
+            this.clientes1.TabIndex = 7;
+            // 
+            // cinema1
+            // 
+            this.cinema1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cinema1.Location = new System.Drawing.Point(257, 0);
+            this.cinema1.Name = "cinema1";
+            this.cinema1.Size = new System.Drawing.Size(1121, 733);
+            this.cinema1.TabIndex = 5;
+            // 
+            // sessoes1
+            // 
+            this.sessoes1.Location = new System.Drawing.Point(257, 0);
+            this.sessoes1.Name = "sessoes1";
+            this.sessoes1.Size = new System.Drawing.Size(1121, 733);
+            this.sessoes1.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -276,6 +278,11 @@
             this.ClientSize = new System.Drawing.Size(1362, 729);
             this.Controls.Add(this.inicio1);
             this.Controls.Add(this.sideBar);
+            this.Controls.Add(this.filmes1);
+            this.Controls.Add(this.funcionarios1);
+            this.Controls.Add(this.clientes1);
+            this.Controls.Add(this.cinema1);
+            this.Controls.Add(this.sessoes1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1378, 768);
@@ -284,14 +291,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineGest";
             this.sideBar.ResumeLayout(false);
-            this.sideBar.PerformLayout();
             this.panelInicio.ResumeLayout(false);
             this.panelCinema.ResumeLayout(false);
             this.panelFilmes.ResumeLayout(false);
             this.panelSessoes.ResumeLayout(false);
             this.panelClientes.ResumeLayout(false);
             this.panelFuncionarios.ResumeLayout(false);
-            this.panelTerminarSessao.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -311,9 +316,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panelFuncionarios;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label labelNomeFuncionario;
-        private System.Windows.Forms.Panel panelTerminarSessao;
-        private System.Windows.Forms.Label label9;
+       
+        private Views.Sessoes sessoes1;
+        private Views.Cinema cinema1;
+        private Views.Clientes clientes1;
+        private Views.Funcionarios funcionarios1;
+        private Views.Filmes filmes1;
         private Views.Inicio inicio1;
     }
 }

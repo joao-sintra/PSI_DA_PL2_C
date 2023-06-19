@@ -41,7 +41,7 @@ namespace CineGest.Views {
                     SessaoController.AdicionarSessao(cbFilmeS.Text, cbSalaS.Text, datePicker.Value, float.Parse(txtPreco.Text));
                     refreshListaSessoes();
                     limparListaSessoes();
-                } catch (FormatException fe) {
+                } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n" +
                           "\nCampo Preço: Só aceita números!");
 
@@ -86,7 +86,7 @@ namespace CineGest.Views {
                     limparListaSessoes();
 
 
-                } catch (FormatException fe) {
+                } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n" +
                           "\nCampo Preço: Só aceita números!");
 
@@ -131,12 +131,10 @@ namespace CineGest.Views {
             cbFilmeS.Text = ListaSessoes.CurrentRow.Cells[4].Value.ToString();
         }
 
-        private void Sessoes_Paint(object sender, PaintEventArgs e) {
-
-
-           // cbFilmeS.DataSource = FilmeController.GetOnlyNomesFilmes();
-            //cbSalaS.DataSource = SalaController.GetOnlyNomesSalas();
-            //ListaSessoes.DataSource = SessaoController.GetSessoes();
+        public void CarregaDatagrid() {
+            cbFilmeS.DataSource = FilmeController.GetOnlyNomesFilmes();
+            cbSalaS.DataSource = SalaController.GetOnlyNomesSalas();
+            ListaSessoes.DataSource = SessaoController.GetSessoes();
             ListaSessoes.Columns["FilmeID"].HeaderText = "Filme";
             ListaSessoes.Columns["SalaID"].HeaderText = "Sala";
             ListaSessoes.Columns["Preco"].HeaderText = "Preço (€)";
@@ -144,9 +142,5 @@ namespace CineGest.Views {
             limparCamposSessao();
             limparListaSessoes();
         }
-
-
-        /* */
-
-    }
+     }
 }

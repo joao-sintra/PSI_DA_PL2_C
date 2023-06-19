@@ -240,7 +240,6 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Funcionarios";
             this.Size = new System.Drawing.Size(1121, 733);
-            this.Load += new System.EventHandler(this.Funcionarios_Load);
             this.adicionarFunc.ResumeLayout(false);
             this.adicionarFunc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFuncionarios)).EndInit();

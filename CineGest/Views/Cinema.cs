@@ -42,7 +42,7 @@ namespace CineGest.Views {
                     refreshLS();
                     limparCampos();
 
-                } catch (FormatException fe) {
+                } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n" +
                         "\nCampo Sala: aceita tanto letras como números." +
                         "\nCampo Número de Colunas: só aceita números inteiros." +
@@ -76,7 +76,7 @@ namespace CineGest.Views {
                     limparLS();
                     limparCampos();
 
-                } catch (FormatException ex) {
+                } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n" +
                         "\nCampo Sala: aceita tanto letras como números." +
                         "\nCampo Número de Colunas: só aceita números inteiros." +
@@ -117,13 +117,41 @@ namespace CineGest.Views {
             }
         }
 
-        private void Cinema_Load(object sender, EventArgs e) {
-           
+
+
+        public void CarregaDataGrid() {
+            listaSalas.DataSource = SalaController.GetSalas();
+            limparLS();
+            carregaInfosCinema();
         }
 
-        private void Cinema_Paint(object sender, PaintEventArgs e) {
-            //listaSalas.DataSource = SalaController.GetSalas();
-            limparLS();
+        public void carregaInfosCinema() {
+            txtNome.Text = CinemaController.GetNomeCinema();
+            txtMorada.Text = CinemaController.GetMoradaCinema();
+            txtEmail.Text = CinemaController.GetEmailCinema();
+        }
+
+        private void btAlterarCinema_Click(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(txtMorada.Text) || string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtEmail.Text)) {
+                MessageBox.Show("Por favor, preencha o(s) campo(s)!");
+
+            } else {
+                try {
+
+                    var addr = new System.Net.Mail.MailAddress(txtEmail.Text);
+
+                    CinemaController.AlterarCinema(txtNome.Text, addr.Address, txtEmail.Text);
+
+
+
+                } catch (FormatException) {
+                    MessageBox.Show("Campos no formato incorreto!\n" +
+                           "\nCampo Nome: aceita letras!" +
+                           "\nCampo Morada: aceita letras e números!" +
+                           "\nCampo Email: Só aceita email!");
+                }
+
+            }
         }
     }
 }
