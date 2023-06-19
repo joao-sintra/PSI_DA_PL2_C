@@ -12,7 +12,6 @@ namespace CineGest.Controllers {
 
             }
         }
-        //mostrar as sessoes de hoje
         public static List<Sessao> GetSessoesHoje() {
 
             using (var db = new CinegestContext()) {
@@ -36,9 +35,7 @@ namespace CineGest.Controllers {
                     .Where(s => s.DataHora == DataHora)
                     .Where(s => s.SalaID.Id == sala.Id)
                     .ToList();
-                //valida para que nao seja possivel a criação de uma nova sessao no espaço de tempo de uma hora
-                //antes ou depois de uma sessao existente
-                //converte minutos para DateTime
+               
 
                 if (list.Count > 0) {
                     MessageBox.Show("Já existe uma sessão nesta sala e com esta data e hora. \n(" + "Sala: " + sala + " | " + "DataHora: " + DataHora + ") já existe!");
@@ -88,45 +85,6 @@ namespace CineGest.Controllers {
                 db.SaveChanges();
             }
         }
-        //public static void AlterarSala(int ID, string txtSala, int txtNumColunas, int txtNumFilas)
-        //{
-
-        //    using (var db = new CinegestContext())
-        //    {
-        //        Sala sala = db.Salas.FirstOrDefault(salas => salas.Id == ID);
-
-        //        List<Sala> list = db.Salas
-        //            .Where(x => x.Nome == txtSala)
-        //            .Where(x => x.Colunas == txtNumColunas)
-        //            .Where(x => x.Filas == txtNumFilas)
-        //            .ToList();
-
-        //        if (list.Count > 0)
-        //        {
-        //            MessageBox.Show("Não podes alterar o nome desta sala para: (" + txtSala + "), porque já existe!");
-        //            return;
-        //        }
-
-        //        sala.Nome = txtSala;
-        //        sala.Colunas = txtNumColunas;
-        //        sala.Filas = txtNumFilas;
-        //        sala.Lugares = sala.Colunas * sala.Filas;
-
-        //        db.SaveChanges();
-        //    }
-        //}
-
-        //public static void EliminarSala(int ID)
-        //{
-        //    using (var db = new CinegestContext())
-        //    {
-        //        Sala sa = db.Salas.FirstOrDefault(salas => salas.Id == ID);
-
-        //        db.Salas.Remove(sa);
-
-        //        db.SaveChanges();
-        //    }
-        //}
     }
 
 }

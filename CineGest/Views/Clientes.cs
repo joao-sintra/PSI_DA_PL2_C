@@ -55,21 +55,21 @@ namespace CineGest.Views {
             } else {
                 try {
 
-                    //validação para um inteiro com 9 digitos e validar se o NIF já existe na base de dados e se sao numeros
-                  /*  if (ClienteController.GetClienteByNif(Int32.Parse(txtNif.Text)) != null) {
-                        MessageBox.Show("O NIF já existe na base de dados!");
+                   //valida se o nif é digitos
+                   if (!int.TryParse(txtNif.Text, out int nif)) {
+                        MessageBox.Show("O NIF só aceita números!");
                         return;
                     }
-                    //valida se o nif 
+                    
                     if (txtNif.Text.Length != 9) {
                         MessageBox.Show("O NIF tem de ter 9 digitos!");
                         return;
-                    }*/
+                    }
 
 
 
 
-                    int nif = Int32.Parse(txtNif.Text);
+                   // int nif = Int32.Parse(txtNif.Text);
 
                     ClienteController.AdicionarCliente(nif, txtNome.Text, txtMorada.Text);
                     refreshListaClientes();

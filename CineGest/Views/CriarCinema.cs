@@ -25,12 +25,12 @@ namespace CineGest.Views {
 
             } else {
                 try {
-                    
+
                     var addr = new System.Net.Mail.MailAddress(txtEmail.Text);
 
                     CinemaController.AdicionarCinema(txtNome.Text, addr.Address, txtEmail.Text);
                     FuncionarioController.AdicionarFuncionario("Admin", "morada", 0, "Administrador");
-                    ClienteController.AdicionarCliente(999999999,"Anônimo","x");
+                    ClienteController.AdicionarCliente(999999999, "Anônimo", "x");
                     CategoriaController.AdicionarCategoria("Comédia", true);
                     CategoriaController.AdicionarCategoria("Sci-fi", true);
                     CategoriaController.AdicionarCategoria("Terror", true);
@@ -44,23 +44,20 @@ namespace CineGest.Views {
                     CategoriaController.AdicionarCategoria("Fantasia", true);
                     CategoriaController.AdicionarCategoria("Animação", true);
 
-                   
+                    var mainForm = new MainForm();
 
-
-                                        var mainForm = new MainForm();
-                
                     mainForm.Show();
                     this.Hide();
-                    this.Close();
+
                 } catch (FormatException) {
                     MessageBox.Show("Campos no formato incorreto!\n" +
                            "\nCampo Nome: aceita letras!" +
                            "\nCampo Morada: aceita letras e números!" +
                            "\nCampo Email: Só aceita email!");
                 }
-              
+
             }
-           
+
         }
 
         private void btLimparCamposCliente_Click(object sender, EventArgs e) {

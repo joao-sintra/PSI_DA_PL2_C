@@ -112,9 +112,18 @@ namespace CineGest.Views {
                     MessageBox.Show("Por favor, preencha o(s) campo(s) do cliente !");
                     return;
                 } else {
+                    if (!int.TryParse(txtNumFiscalCliente.Text, out int nif)) {
+                        MessageBox.Show("O NIF só aceita números!");
+                        return;
+                    }
+
+                    if (txtNumFiscalCliente.Text.Length != 9) {
+                        MessageBox.Show("O NIF tem de ter 9 digitos!");
+                        return;
+                    }
                     nomecliente = txtNomeCliente.Text;
                     if (ClienteController.VerificaExistenciaCliente(nomecliente)) {
-                        ClienteController.AdicionarCliente(Int32.Parse(txtNumFiscalCliente.Text), txtNomeCliente.Text, txtMoradaCliente.Text);
+                        ClienteController.AdicionarCliente(nif, txtNomeCliente.Text, txtMoradaCliente.Text);
                     }
 
                 }
@@ -219,7 +228,6 @@ namespace CineGest.Views {
         }
 
         private void btAnularBilhete_Click(object sender, EventArgs e) {
-            //funcao para anular bilhete
             if (listaBilhetes.SelectedRows == null || listaBilhetes.CurrentRow == null) {
                 MessageBox.Show("Selecione um bilhete para anular!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
