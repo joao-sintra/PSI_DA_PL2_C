@@ -104,7 +104,7 @@ namespace CineGest.Views {
                 }
 
                 try {
-                    string id = ListaClientes.CurrentRow.Cells[1].Value.ToString();
+                    string id = ListaClientes.CurrentRow.Cells[3].Value.ToString();
 
                     int selectedID = Int32.Parse(id);
                     int nif = Int32.Parse(txtNif.Text);

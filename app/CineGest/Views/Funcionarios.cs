@@ -80,7 +80,7 @@ namespace CineGest.Views {
                     return;
                 } else {
                     try {
-                        string idFun = listaFuncionarios.CurrentRow.Cells[1].Value.ToString();
+                        string idFun = listaFuncionarios.CurrentRow.Cells[2].Value.ToString();
 
                         int selectedFuncionarioID = Int32.Parse(idFun);
 

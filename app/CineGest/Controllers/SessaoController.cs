@@ -21,7 +21,19 @@ namespace CineGest.Controllers {
 
             }
         }
-        
+
+        public static List<string> GetOnlyFilmesAtivos() {
+
+            using (var db = new CinegestContext()) {
+
+                List<string> filmes = db.Filmes
+                    .Where(filme => filme.Activo.Equals(true))
+                    .Select(filme => filme.Nome).ToList();
+
+                return filmes;
+            }
+        }
+
         public static void AdicionarSessao(string Filme, string Sala, DateTime DataHora, float Preco) {
 
             using (var db = new CinegestContext()) {

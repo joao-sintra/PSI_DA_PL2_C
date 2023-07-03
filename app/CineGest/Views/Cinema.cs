@@ -140,7 +140,7 @@ namespace CineGest.Views {
 
                     var addr = new System.Net.Mail.MailAddress(txtEmail.Text);
 
-                    CinemaController.AlterarCinema(txtNome.Text, addr.Address, txtEmail.Text);
+                    CinemaController.AlterarCinema(txtNome.Text, txtMorada.Text, addr.Address);
 
 
 

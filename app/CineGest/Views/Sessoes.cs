@@ -28,7 +28,7 @@ namespace CineGest.Views {
         private void refreshListaSessoes() {
             ListaSessoes.DataSource = null;
             ListaSessoes.DataSource = SessaoController.GetSessoes();
-
+            cbFilmeS.DataSource = SessaoController.GetOnlyFilmesAtivos();
         }
 
 
@@ -135,6 +135,7 @@ namespace CineGest.Views {
             cbFilmeS.DataSource = FilmeController.GetOnlyNomesFilmes();
             cbSalaS.DataSource = SalaController.GetOnlyNomesSalas();
             ListaSessoes.DataSource = SessaoController.GetSessoes();
+            cbFilmeS.DataSource = SessaoController.GetOnlyFilmesAtivos();
             ListaSessoes.Columns["FilmeID"].HeaderText = "Filme";
             ListaSessoes.Columns["SalaID"].HeaderText = "Sala";
             ListaSessoes.Columns["Preco"].HeaderText = "Preço (€)";
